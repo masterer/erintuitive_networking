@@ -3,7 +3,6 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var UUID = require('node-uuid');
 var bodyParser = require('body-parser');
 
 /////////////Tell Socket.io to accept connections

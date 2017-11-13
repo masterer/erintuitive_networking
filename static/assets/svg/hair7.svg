@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="hair" class="hair" width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <svg id="svg_13" preserveAspectRatio="xMidYMid meet" viewBox="0 0  1170 480" height="480px" width="1170px">
+      <defs>
+        <path stroke-width=" 1px" fill="white" stroke="black" id="svgEditorClosePathDefs"/>
+      </defs>
+      <rect fill=" none" height="480" width="1170" y="0" x="0" id="svgEditorBackground"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="63.73486" cx="685.08441" id="e1041_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="67.71827" cx="624.33759" id="e342_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="83.65187" cx="705.00141" id="e354_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="57.75975" cx="559.60736" id="e366_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="75.6851" cx="492.88544" id="e402_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="53.77642" cx="482.92694" id="e414_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="63.73492" cx="405.25067" id="e426_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="82.65608" cx="355.45819" id="e438_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="109.54403" cx="354.46234" id="e450_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="157.34482" cx="308.65326" id="e462_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="143.40294" cx="683.09302" id="e474_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="141.41116" cx="740.85199" id="e548_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="203.15385" cx="741.84784" id="e560_ellipse"/>
+      <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="229.04601" cx="323.59094" id="e572_ellipse"/>
+    </svg>
+  </defs>
+  <rect id="rect-1" y="-0.367" width="1170.002" height="479.999" style="fill: none; stroke: none;" transform="matrix(0.999992, -0.003962, 0.005892, 0.999985, -160.518254, -2.895127)"/>
+  <polygon stroke="black" id="e3_polygon" style="stroke-width: 1px;" points="347.622 137.175 363.502 105.675 293.163 18.175 371.107 94.175 369.716 93.175 311.207 17.675 430.566 6.175 429.171 4.175 422.414 73.175 440.34 28.175 431.923 -4.825 443.766 11.175 452.859 37.175 434.919 77.175 433.527 75.175 463.958 34.175 480.509 -5.825 477.828 30.175 464.053 70.175 491.727 36.175 452.84 30.175 424.998 1.175 500.062 38.175 484.864 65.175 520.842 22.175 519.554 59.175 473.613 11.175 537.536 35.175 555.62 49.175 562.599 63.175 562.529 37.175 481.279 22.675 526.398 23.175 572.241 35.175 579.245 58.175 580.571 35.175 523.597 14.175 588.906 37.175 590.326 49.175 556.924 17.175 616.727 58.175 551.379 20.175 658.392 65.175 654.198 54.175 648.702 75.175 519.43 13.175 611.105 32.175 670.874 60.175 702.867 84.175 801.807 224.175 707.691 330.174 690.448 112.175 386.424 112.175 342.357 244.175 276.219 171.175" fill="red" transform="matrix(0.999992, -0.003962, 0.003962, 0.999992, -0.638299, 2.136823)"/>
+</svg>

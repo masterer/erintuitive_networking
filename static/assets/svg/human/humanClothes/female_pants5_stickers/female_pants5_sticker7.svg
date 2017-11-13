@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="glasses" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
+    <linearGradient id="linearGradient2332" y2="515.88" gradientUnits="userSpaceOnUse" x2="311.82" y1="414.34" x1="238.13">
+      <stop id="stop2328" style="stop-color:#ffffff" offset="0"/>
+      <stop id="stop2330" style="stop-color:#7d7d7d;stop-opacity:.98824" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient2300" y2="265.17" gradientUnits="userSpaceOnUse" x2="97.051" y1="417.04" x1="204.89">
+      <stop id="stop2296" style="stop-color:#000000" offset="0"/>
+      <stop id="stop2298" style="stop-color:#ffffff;stop-opacity:0" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="clothes"/>
+  <path d="M 174.999 783.441 L 175.56 782.88 Z" style="stroke: black; fill: none;" class="clothes"/>
+  <rect style="fill: rgb(216, 216, 216);" transform="matrix(0.943511, 0.331341, -0.331339, 0.943508, 219.358556, 594.37619)" x="55.756" y="144.959" width="55.756" height="8.404"/>
+  <g transform="matrix(0.069073, 0, 0, 0.069073, 225.043045, 747.415222)">
+    <g id="layer1" transform="translate(-232.89 -306.61)">
+      <g id="g2336" transform="matrix(1.0074 0 0 .97321 143.35 58.093)">
+        <path id="path1334" style="color:#000000;stroke:#000000;stroke-width:4;fill:url(#linearGradient2300)" d="m237.03 535.89c-34.69-0.38-62.85-28.54-62.85-63.24s28.16-62.86 62.85-63c34.7-0.14 62.86-28.3 62.86-63s-28.16-62.86-62.86-63.56c-66.99-0.71-121.36 56.08-121.36 126.05s54.37 126.75 121.36 126.75z"/>
+        <path id="path2238" style="color:#000000;stroke:#000000;stroke-width:4;fill:url(#linearGradient2332)" d="m238.52 283.08c34.7 0.39 62.86 28.55 62.86 63.25 0 34.69-28.16 62.85-62.86 63-34.69 0.14-62.85 28.3-62.85 63 0 34.69 28.16 62.85 62.85 63.56 67 0.7 121.37-56.08 121.37-126.05s-54.37-126.76-121.37-126.76z"/>
+        <g id="g2322">
+          <path id="path2240" style="color:#000000;fill:#000000" d="m-125.81 288.98a7.6383 7.6383 0 1 1 -15.27 0 7.6383 7.6383 0 1 1 15.27 0z" transform="matrix(1.8235 0 0 1.8235 481.45 -57.363)"/>
+          <path id="path2304" style="color:#000000;fill:#ffffff" d="m-125.81 288.98a7.6383 7.6383 0 1 1 -15.27 0 7.6383 7.6383 0 1 1 15.27 0z" transform="matrix(1.8235 0 0 1.8235 481.45 -184.97)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

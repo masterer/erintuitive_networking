@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <radialGradient id="radialGradient830" gradientUnits="userSpaceOnUse" cy="48.245" cx="75.284" gradientTransform="matrix(1.0357 0 0 1.0361 -24.689 -25.482)" r="38.95">
+      <stop id="stop828" style="stop-color:#ffffff" offset="0"/>
+      <stop id="stop829" style="stop-color:#ffc613" offset="1"/>
+    </radialGradient>
+  </defs>
+  <g transform="matrix(0.496442, 0, 0, 0.496442, 214.657455, 677.97644)">
+    <path id="path826" style="stroke-linejoin:round;fill-rule:evenodd;stroke:#000000;stroke-width:2.5;fill:url(#radialGradient830)" d="m108.88 50.588c0 27.235-22.111 49.342-49.363 49.342-27.247 0-49.36-22.107-49.36-49.342 0-27.234 22.113-49.338 49.36-49.338 27.252 0 49.363 22.104 49.363 49.338z"/>
+    <path id="path3012" style="stroke:#000000;stroke-width:2.5;fill:none" d="m28.651 32.361 20.385 11.458-22.543 3.6184"/>
+    <path id="path3833" d="m90.389 32.361-20.385 11.458 22.543 3.6184" style="stroke:#000000;stroke-width:2.5;fill:none"/>
+    <path id="path3859" style="stroke:#000000;stroke-width:2.5;fill:#ffffff" d="m1.25 65.754c16.512-0.623 27.136 1.801 44.461-7.553s23.49-6.321 17.335 12.254c-6.155 18.577-28.149 32.887-43.848 47.197-0.19145-6.2221 2.0505-13.748-0.57435-18.666s-8.711-4.5948-13.066-6.8922c1.7709-4.7384 3.3698-6.8109 5.3127-14.215 1.9429-7.4043-7.9189-6.0484-9.6203-12.125z"/>
+    <path id="path3861" style="stroke:#000000;stroke-width:2.5;fill:none" d="m18.472 75.333c8.1661-4.9933 16.738-1.2549 23.889-5.2328"/>
+    <path id="path3863" style="stroke:#000000;stroke-width:2.5;fill:none" d="m21.297 91.512c10.452-1.4129 17.654-6.684 25.263-13.376"/>
+    <path id="path3865" style="stroke:#000000;stroke-width:2.5;fill:none" d="m65.468 85.112c2.031-8.465 7.31-13.474 17.061-13.203"/>
+  </g>
+</svg>

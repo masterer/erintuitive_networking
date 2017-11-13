@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes"/>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: rgb(245, 42, 42);"/>
+    </pattern>
+  </defs>
+  <g transform="matrix(0.13337931315104168, 0, 0, 0.13337931315104168, 213.39443969726562, 794.1778564453125)">
+    <g id="layer1" transform="translate(-132.14 -293.08)">
+      <path id="path3315" style="stroke:#ff0000;stroke-width:54.107;fill:#ffffff" d="m1440 432.36c0 119.92-96.578 217.14-215.71 217.14-119.14 0-215.71-97.218-215.71-217.14s96.579-217.14 215.71-217.14c119.14 0 215.71 97.218 215.71 217.14z" transform="matrix(.92715 0 0 .92105 -777.96 119.85)"/>
+      <path id="path4089" style="stroke:#ff0000;stroke-width:50;fill:#ff0000" d="m211.43 395.22 297.14 260"/>
+    </g>
+  </g>
+</svg>

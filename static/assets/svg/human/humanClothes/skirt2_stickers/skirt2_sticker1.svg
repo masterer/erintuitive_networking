@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="skirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.406982421875" width="86.59329986572266" height="380.0480041503906" style="fill: none; stroke: none;" class="clothes"/>
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes"/>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+    <pattern id="pattern-0-0" patternTransform="matrix(1, 0, 0, 1, 237.320496, 861.622498)" xlink:href="#pattern-0"/>
+  </defs>
+  <polygon id="e1_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern-0-0);" points="212.268 789.833 204.708 818.7 209.519 957.536 230.138 960.285 253.506 958.911 268.627 958.224 289.933 955.474 287.872 862 287.184 817.326 284.435 800.143 280.999 793.957 276.187 792.583 278.249 782.96 241.822 784.335" class="clothes"/>
+</svg>

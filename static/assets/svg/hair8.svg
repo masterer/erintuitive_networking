@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="hair" width="1170px" height="480px" viewBox="0 0 1170 480" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <rect id="svgEditorBackground" x="0" y="0" width="1170" height="480" style="fill: none; stroke: none;"/>
+  <rect id="rect-1" width="1170" height="480" style="fill: none; stroke: none;"/>
+  <polygon stroke="black" id="e44_polygon" style="stroke-width: 1px;" points="341.641 98.069 341.641 96.077 365.542 77.156 366.538 89.106 377.492 75.164 378.488 77.156 390.438 92.094 404.38 72.177 407.368 94.085 407.368 91.098 426.289 50.268 426.289 52.26 437.243 128.94 438.239 125.953 471.102 47.28 469.11 44.293 517.907 244.459 576.662 38.318 601.558 116.99 599.567 114.002 625.459 46.285 646.372 101.056 655.334 50.268 663.301 94.085 677.243 65.206 697.16 101.056 698.156 74.168 761.89 174.749 730.023 76.16 693.177 19.397 345.625 24.376 310.77 179.729" fill="black"/>
+</svg>

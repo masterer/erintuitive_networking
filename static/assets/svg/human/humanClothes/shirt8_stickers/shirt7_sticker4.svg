@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 5.128 4.808 L 55.128 4.808 L 55.128 104.808 L 5.128 104.808 Z" style="fill: rgb(89, 97, 131);"/>
+      <g transform="matrix(0.116772, 0, 0, 0.102925, 10.054114, 54.642281)">
+        <g id="ombra">
+          <mask id="SVGID_1_" height="342.704" width="622.892" y="107.484" x="109.746" maskUnits="userSpaceOnUse"/>
+          <g mask="url(#SVGID_1_)">
+            <g>
+              <g>
+                <path stroke="#FFFFFF" d="m201.39 212.83c-28.917 0-145.91 77.133-60.415 62.134 18.917 0-25.758 62.719 42.117 31.788 11.169 0 84.857 25.724 87.637 66.157 2.126 30.931 13.317 8.162 67.446 28.782 54.128 20.62 8.162 108.69 190.31-22.769 11.599-11.599 28.798-42.519-29.849-65.077s-297.26-101.01-297.26-101.01z" style="fill: url(#pattern-1-0);"/>
+                <path stroke="#FFFFFF" d="m533.56 214.95s201.42-78.521 198.55-98.073c-4.841-32.963-157.66 33.078-202.77 78.186 0 8.58 4.22 19.88 4.22 19.88z" style="fill: url(#pattern-1-1);"/>
+                <g>
+                  <mask id="SVGID_1_" height="66.666" width="131.196" y="309.378" x="362.627" maskUnits="userSpaceOnUse"/>
+                  <g>
+                    <path d="m493.82 328.82s-90.896 48.825-109.82 47.186c-63.5-5.5 34.28-61.279 39-66s70.82 18.81 70.82 18.81" style="fill: url(#pattern-1-2);"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="hammer">
+          <g stroke="#B2B2B2">
+            <path d="m452.34 115.89l29.318 0.977c4.153-12.46 21.986-15.636 31.76-5.863 20.707 0 175.44-49.566 200.29-38.967 21.835 10.549 16.427 25.546 4.188 37.784-27.442 27.442-186.4 27.333-193.24 43.206-46.65 8.78-72.32-37.15-72.32-37.15z" style="fill: url(#pattern-1-3);"/>
+            <path d="m185.9 97.643c-25.194 53.171 7.273 95.951 16.435 115.45-131.18-34.08-38.09-248.33 79.54-169.56-8.22 2.597-68.72-3.415-95.98 54.113z" style="fill: url(#pattern-1-4);"/>
+            <path d="m199.94 109.3c-25.194 53.171-6.771 84.297 2.391 103.79-86.761-40.067-4.025-210.59 85.076-167.13-8.21 2.597-60.21 5.809-87.47 63.34z" style="fill: url(#pattern-1-5);"/>
+            <path d="m245.98 116.69c-27.306 57.942 62.982 112.84 29.353 123.84-65.859 21.546-110.66-60.461-79.144-132.74 27.667-63.457 120.74-96.979 159.14-20.401 15.47 30.841-79.8-33.389-109.35 29.301z" style="fill: url(#pattern-1-6);"/>
+            <path d="m380.5 98.177c-54.5 14.5-95.5 159.5-73 157l-50.5-23c-84.5-17-7.5-225.5 88.5-149l35 14.997z" style="fill: url(#pattern-1-7);"/>
+            <path d="m367.83 177.84c-45.498 106.83 35.408 132.6 15.072 128.13-93.404 8.201-95.941-84.151-70.823-143.88 22.801-54.221 96.919-114.42 158.9-40.528-42.39-4.3-75.99-7.49-103.15 56.28z" style="fill: url(#pattern-1-8);"/>
+            <path d="m397 195.18c-23.939 50.398 18.536 122.05-14.259 110.43-32.328-11.45-45.709-65.887-24.697-118.26 28.956-72.171 80.198-79.598 111.49-65.495 30.96 13.94-46.63 18.79-72.53 73.32z" style="fill: url(#pattern-1-9);"/>
+            <path d="m422.62 341.36c-109.96-35.625-9.625-277.19 100.29-208.8 59.42 48.62-149.87 127.82-100.29 208.8z" style="fill: url(#pattern-1-10);"/>
+            <path d="m531.5 265.68c-27.306 57.942-74.532 87.485-108 76-32.991-11.321-34.202-69.567-8.765-129.15 23.092-54.092 72.83-96.176 104.62-81.817 31.44 14.2 41.68 72.28 12.14 134.97z" style="fill: url(#pattern-1-11);"/>
+          </g>
+        </g>
+      </g>
+    </pattern>
+    <pattern id="pattern-0-0" patternTransform="matrix(0.024117, -0.451208, 0.724892, 0.038745, 233.899448, 692.679437)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-1" viewBox="0 0 100 100" patternUnits="userSpaceOnUse" preserveAspectRatio="none" width="100" height="100">
+      <g transform="matrix(0.412352, 0, 0, 0.364093, -3.784185, -6.149425)">
+        <g id="g1311" transform="matrix(.53750 0 0 .53750 -171.63 -55.95)">
+          <path id="path5729" style="fill-rule:evenodd;stroke:#000000;stroke-width:5;fill:#40ff40" d="m440.31 106.59s-7.875 21.75-1 61 22.625 47 30 101 1.6875 158.5 1.6875 158.5l19 7s3.9375-110.75-3.6875-165.5-22.25-62.75-29-101c-1.0503-5.9518-1.7339-11.449-2.125-16.5 7.8016 18.62 18.4 39.212 31.125 52.5 28.25 29.5 109.69 89.5 109.69 89.5l11-11s-86.937-68.25-114.69-95.5c-27.75-27.25-31-78-31-78h-8.3438l-12.656-2z"/>
+          <path id="path1354" style="fill-rule:evenodd;stroke:#000000;stroke-width:5;fill:#0080ff" d="m344.85 585.11 29-13s-51.058-36.051-52-86c-1-53 18.037-97.641 75.473-112 76-19 162.56 34.562 182.67 92.988 21 61-35.42 121.66-86.147 136.01-53 15-84-6-84-6l-17 21-13-21-16 6 2-16-21-2z"/>
+          <path id="path2229" style="fill-rule:evenodd;stroke:#000000;stroke-width:5;fill:#0080ff" d="m630 444.09c70.111-1.0161 140.5-92.25 136-156s-90.75-106-160-95-112.5 65.25-108 129 63 123 132 122z"/>
+          <path id="path3104" style="fill-rule:evenodd;stroke:#000000;stroke-width:5;fill:#0000ff" d="m616.82 351.09 15-17 25 3-6-24 17-14-34-2-17-15 1 23-17 13 21 10-5 23z"/>
+        </g>
+        <path id="path1314" style="fill-rule:evenodd;fill:#00b5ff" d="m127.33 69.369c0.39045-3.7596 21.285-15.912 38.264-17.788 16.979-1.8763 38.317 8.1538 37.926 11.913-0.39045 3.7596-19.803-5.7062-36.782-3.8299s-39.799 13.464-39.408 9.7044z"/>
+        <path id="path3070" style="fill-rule:evenodd;fill:#00b5ff" d="m83.795 156.08c3.3673-3.6019-24.5-9.5782-39.69-5.8025-16.649 4.1382-33.449 30.433-29.006 33.476 4.0681 2.7863 16.731-19.826 32.139-24.578 16.394-5.0554 33.19 0.50602 36.557-3.0959z"/>
+      </g>
+    </pattern>
+    <pattern id="pattern-1-0" patternTransform="matrix(1, 0, 0, 1, 275.185364, 281.25885)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-1" patternTransform="matrix(1, 0, 0, 1, 580.740173, 111.468254)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-2" patternTransform="matrix(1, 0, 0, 1, 378.224548, 292.713196)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-3" patternTransform="matrix(1, 0, 0, 1, 540.459839, 62.346668)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-4" patternTransform="matrix(1, 0, 0, 1, 160.159027, 69.676773)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-5" patternTransform="matrix(1, 0, 0, 1, 176.506165, 76.007996)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-6" patternTransform="matrix(1, 0, 0, 1, 221.446259, 93.614037)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-7" patternTransform="matrix(1, 0, 0, 1, 250.60318, 110.789917)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-8" patternTransform="matrix(1, 0, 0, 1, 334.74884, 146.830154)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-9" patternTransform="matrix(1, 0, 0, 1, 362.319336, 161.422302)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-10" patternTransform="matrix(1, 0, 0, 1, 404.313599, 180.895996)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1-11" patternTransform="matrix(1, 0, 0, 1, 423.047791, 186.000641)" xlink:href="#pattern-1"/>
+  </defs>
+  <g transform="matrix(0.987432, 0, 0, 1.836878, 569.032532, -276.123749)"/>
+  <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-0);" points="245.958 722.662 259.357 658.102 267.274 658.102 250.221 728.143 238.04 726.925 226.468 658.102 233.777 654.448"/>
+</svg>

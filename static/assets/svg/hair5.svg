@@ -1,0 +1,29 @@
+<svg class="hair" width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <svg id="svg_13" preserveAspectRatio="xMidYMid meet" viewBox="0 0  1170 480" height="480px" width="1170px" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+    <path stroke-width=" 1px" fill="white" stroke="black" id="svgEditorClosePathDefs"/>
+   </defs>
+   <rect fill=" none" height="480" width="1170" y="0" x="0" id="svgEditorBackground"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="63.73486" cx="685.08441" id="e1041_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="67.71827" cx="624.33759" id="e342_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="83.65187" cx="705.00141" id="e354_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="57.75975" cx="559.60736" id="e366_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="75.6851" cx="492.88544" id="e402_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="53.77642" cx="482.92694" id="e414_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="63.73492" cx="405.25067" id="e426_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="82.65608" cx="355.45819" id="e438_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="109.54403" cx="354.46234" id="e450_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="157.34482" cx="308.65326" id="e462_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="143.40294" cx="683.09302" id="e474_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="141.41116" cx="740.85199" id="e548_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="203.15385" cx="741.84784" id="e560_ellipse"/>
+   <ellipse stroke-width=" 1px" fill="black" ry="54.7718" rx="55.7676" stroke="black" cy="229.04601" cx="323.59094" id="e572_ellipse"/>
+  </svg>
+ </defs>
+ <g>
+  <title>Layer 3</title>
+  <use x="-199" y="16" id="svg_14" xlink:href="#svg_13"/>
+ </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
+  </defs>
+  <g transform="matrix(0.044147, 0, 0, 0.04184, 209.379333, 603.158691)">
+    <rect id="svgEditorBackground" width="1610" height="870" style="fill: none; stroke: none;"/>
+    <path class="whites" d="M 149 419 C 234.222 381.891 300.888 355.891 349 341 C 397.112 326.109 463.112 346.775 547 403 C 630.888 459.225 677.555 483.558 687 476 C 696.445 468.442 663.112 477.442 587 503 C 510.888 528.558 438.888 528.225 371 502 C 303.112 475.775 229.112 448.109 149 419 Z" id="path-2" fill="whitesmoke" style="stroke-width: 1px; stroke: none;"/>
+    <circle class="irises" id="e7_circle" cx="445" cy="453" style="stroke-width: 1px; stroke: none;" r="48.522" fill="navy"/>
+    <path d="M 148 419 C 233.222 381.891 299.888 355.891 348 341 C 396.112 326.109 462.112 346.775 546 403 C 629.888 459.225 663.221 480.225 646 466 C 628.779 451.775 606.112 440.442 578 432 C 549.888 423.558 493.888 414.558 410 405 C 326.112 395.442 238.778 400.109 148 419 Z" id="path-3" class="skin" fill="khaki" style="stroke-width: 1px; stroke: none;"/>
+    <path class="lines" d="M 49 301 C 96.436 264.731 209.933 216.753 269 208 C 328.067 199.247 488.576 223.528 554 254 C 619.424 284.472 606.421 332.047 709 398 C 811.579 463.953 583.511 309.306 479 291 C 374.489 272.694 316.82 257.628 262 259 C 207.18 260.372 139.236 245.407 49 301 Z" id="e11_areaS3" fill="black" style="stroke-width: 1px; stroke: none;"/>
+    <path class="whites" d="M 915.947 441.245 C 1006.743 478.353 1077.77 504.353 1129.029 519.245 C 1180.288 534.136 1250.605 513.469 1339.98 457.245 C 1429.355 401.02 1479.075 376.687 1489.138 384.245 C 1499.201 391.803 1463.687 382.803 1382.597 357.245 C 1301.506 331.687 1224.797 332.02 1152.468 358.245 C 1080.139 384.469 1001.299 412.136 915.947 441.245 Z" id="path-4" fill="whitesmoke" style="stroke-width: 1px; stroke: none;" transform="matrix(-1, 0, 0, -1, 2406.751456, 862.24522)"/>
+    <circle class="irises" id="e1_circle" cx="445" cy="453" style="stroke-width: 1px; stroke: none;" r="48.5219" fill="navy" transform="matrix(-1.06541, 0, 0, 1, 1649.550049, 2)"/>
+    <path d="M 956.607 389.631 C 1047.403 426.74 1118.431 452.74 1169.689 467.631 C 1220.948 482.522 1291.265 461.856 1380.641 405.631 C 1470.016 349.406 1505.53 328.406 1487.182 342.631 C 1468.834 356.856 1444.684 368.189 1414.734 376.631 C 1384.783 385.073 1325.12 394.073 1235.745 403.631 C 1146.37 413.189 1053.324 408.522 956.607 389.631 Z" id="e2_areaS2" class="skin" fill="khaki" style="stroke-width: 1px; stroke: none;" transform="matrix(-1, 0, 0, -1, 2448.476506, 810.630794)"/>
+    <path class="lines" d="M 866.57 321.464 C 917.109 357.732 1038.03 405.71 1100.961 414.464 C 1163.892 423.217 1334.899 398.936 1404.603 368.464 C 1474.306 337.992 1460.452 290.416 1569.741 224.464 C 1679.03 158.511 1436.044 313.157 1324.697 331.464 C 1213.349 349.77 1151.908 364.836 1093.503 363.464 C 1035.098 362.091 962.709 377.056 866.57 321.464 Z" id="path-5" fill="black" style="stroke-width: 1px; stroke: none;" transform="matrix(-1, 0, 0, -1, 2463.917808, 624.46428)"/>
+    <circle id="e12_circle" cx="445" cy="451" style="stroke-width: 1px; stroke: none;" r="15.012" fill="purple"/>
+    <circle id="e2_circle" cx="1173" cy="456" style="stroke-width: 1px; stroke: none;" r="15.012" fill="purple"/>
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Erintuitive's psychic chatroom</title>	
+	<script src="/assets/js/socket.io.js"></script>
+	<script src="/assets/js/htmlgl.js"></script>
+	<script src="/assets/js/pixi.min.js"></script>
+</head>
+<body bgcolor="purple">
+<img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
+<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
+<style>
+	body {
+		overflow: hidden;
+	}
+</style>
+<script>
+	var app = new PIXI.Application();
+	document.getElementById("staging").appendChild(app.view);
+	app.stage.interactive = true;
+	
+	var container = new PIXI.Container();
+	app.stage.addChild(container);
+	
+	var spriteSVGImage_room = "/assets/svg/fire_room.svg";
+	var spriteSVGTexture_room = PIXI.Texture.fromImage(spriteSVGImage_room);
+	var SpriteSVG_room = new PIXI.Sprite(spriteSVGTexture_room);
+	container.addChild(SpriteSVG_room);
+	
+	var fireContainer = new PIXI.Container();
+	app.stage.addChild(fireContainer);
+	
+	var spriteSVGImage = "/assets/svg/fire_room_torchlight.svg";
+	var spriteSVGTexture = PIXI.Texture.fromImage(spriteSVGImage);
+	var SpriteSVG = new PIXI.Sprite(spriteSVGTexture);
+	fireContainer.addChild(SpriteSVG);
+	
+	var displacementSprite = new PIXI.Sprite.fromImage("/assets/img/displacement_map.jpg");
+	var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+	fireContainer.addChild(displacementSprite);
+	
+	var blurFilter = new PIXI.filters.BlurFilter();
+	
+	fireContainer.filters = [displacementFilter, blurFilter];
+	fireContainer.y = 5;
+	
+	displacementFilter.scale.x = 25;
+	displacementFilter.scale.y = -350;
+	displacementFilter.rotation = 20;
+	
+	var count = 0;
+	
+	app.ticker.add(function(delta) {
+		count -= 0.1;
+		displacementSprite.y = count * 10;
+		blurFilter.blur = count * -0.3;
+		if (count == -4.5)
+		count = 0;
+	});
+		
+	//index.js
+	/*var host = window.location.origin.replace('http', 'ws');//process.env.HOST;
+	var ws = new WebSocket(host);
+	ws.onmessage = function(event) {
+		console.log("Success!");
+	};*/
+	
+	var variableToSend = "cheese";
+	var socket = io.connect("/");
+	socket.on("connect", function(){
+		console.log("excelente!");
+		socket.emit("sendVar", variableToSend);
+	});
+</script>
+</body>
+</html>

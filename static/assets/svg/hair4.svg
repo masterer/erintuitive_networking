@@ -1,0 +1,16 @@
+<svg class="hair" width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <svg id="svg_11" preserveAspectRatio="xMidYMid meet" viewBox="0 0  1170 480" height="480px" width="1170px" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+    <path stroke-width=" 1px" fill="white" stroke="black" id="svgEditorClosePathDefs"/>
+   </defs>
+   <rect fill=" none" height="480" width="1170" y="0" x="0" id="svgEditorBackground"/>
+   <path stroke-width=" 1px" fill="white" id="e372_area3" stroke="black" d="m305.664,77.6764c-29.80899,-18.5829 20.547,-30.3149 -63.735,-50.7884c42.192,-1.5524 104.088,25.582 113.52699,34.8547c9.44,9.2728 7.90701,4.5419 1.992,1.9917c-5.91501,-2.5501 11.35699,-22.7021 -15.93298,-51.7842c-1.39902,1.7892 61.90399,48.1803 62.73798,35.8506c0.83401,-12.3297 2.30701,-35.5429 -6.97098,-41.82569c-9.27802,-6.28285 76.61899,60.91949 71.70099,50.78839c-4.91699,-10.1311 3.69,2.8846 -0.995,-1.9917c-4.686,-4.8763 -27.23401,-47.34148 -14.93802,-49.79255c0.34601,12.48675 1.25601,33.47555 67.71802,64.73025c-87.89502,-26.5046 -185.29602,26.5497 -215.104,7.9668l0,0.0001z"/>
+  </svg>
+ </defs>
+ <g>
+  <title>Layer 3</title>
+  <use x="-171" y="17" id="svg_12" xlink:href="#svg_11"/>
+ </g>
+</svg>

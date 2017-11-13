@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: rgb(120, 52, 52);"/>
+    </pattern>
+    <pattern id="pattern-0-1" patternTransform="matrix(1, 0, 0, 1, 237.175995, 743.418945)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-2" patternTransform="matrix(1, 0, 0, 1, 76.789497, 179.110504)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-1" patternTransform="matrix(1.016971, 0.000001, -0.000003, 0.812276, 60.750443, 122.976738)" xlink:href="#pattern-2"/>
+    <pattern id="pattern-2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+    <pattern id="pattern-3" patternTransform="matrix(1.016974, -0.000006, 0.000002, 0.812274, 402.244476, 622.659668)" xlink:href="#pattern-2"/>
+    <pattern id="pattern-4" patternTransform="matrix(1.016972, -0.000001, 0, 0.812275, 78.092819, 145.487732)" xlink:href="#pattern-2"/>
+    <pattern id="pattern-6" patternTransform="matrix(1.002048, 0, 0.205215, 0.692374, 206.829254, 717.353027)" xlink:href="#pattern-2"/>
+    <pattern id="pattern-0-5" patternTransform="matrix(1, 0, 0, 1, 59.736504, 151.398499)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-6" patternTransform="matrix(1, 0, 0, 1, 69.786003, 124.295502)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-7" patternTransform="matrix(1, 0, 0, 1, 267.018982, 664.242004)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-8" patternTransform="matrix(1, 0, 0, 1, 402.413513, 550.033997)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-0" patternTransform="matrix(1, 0, 0, 1, 341.117523, 254.936981)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-3" patternTransform="matrix(1, 0, 0, 1, -10, -10)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-4" patternTransform="matrix(1, 0, 0, 1, -10, -10)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-9" patternTransform="matrix(1, 0, 0, 1, -10, -10)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-10" patternTransform="matrix(1, 0, 0, 1, 59.736504, 151.398499)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-11" patternTransform="matrix(1, 0, 0, 1, 237.175995, 743.418945)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-12" patternTransform="matrix(1, 0, 0, 1, 76.789497, 179.110504)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-13" patternTransform="matrix(1, 0, 0, 1, 69.786003, 124.295502)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-14" patternTransform="matrix(1, 0, 0, 1, 267.018982, 664.242004)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-15" patternTransform="matrix(1, 0, 0, 1, 60.919502, 121.100006)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-16" patternTransform="matrix(1, 0, 0, 1, 402.411987, 620.783508)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-17" patternTransform="matrix(1, 0, 0, 1, 78.261993, 143.610001)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-18" patternTransform="matrix(1, 0, 0, 1, 402.413513, 550.033997)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-19" patternTransform="matrix(1, 0, 0, 1, 210.298004, 713.093994)" xlink:href="#pattern-0"/>
+  </defs>
+  <rect transform="matrix(1.000011, 0, 0, 1, 167.386105, 532.028564)" x="348.377" y="263.11" width="5.481" height="3.654" style="fill: url(#pattern-0-0);"/>
+  <rect transform="matrix(NaN, NaN, NaN, NaN, NaN, NaN)" style="fill: url(#pattern-0-3);"/>
+  <rect transform="matrix(NaN, NaN, NaN, NaN, NaN, NaN)" style="fill: url(#pattern-0-4);"/>
+  <rect transform="matrix(NaN, NaN, NaN, NaN, NaN, NaN)" style="fill: url(#pattern-0-9);"/>
+  <rect style="stroke: url(#pattern-0-5); fill: url(#pattern-0-10);" transform="matrix(1, 0, 0, 0.999998, 167.390031, 532.028853)" x="60.296" y="152.872" width="18.881" height="17.053"/>
+  <rect style="stroke: url(#pattern-0-1); fill: url(#pattern-0-11);" x="224.032" y="736.061" width="46.288" height="34.716"/>
+  <rect style="stroke: url(#pattern-0-2); fill: url(#pattern-0-12);" transform="matrix(1, 0, 0, 1.000002, 167.389994, 532.028244)" x="73.086" y="179.67" width="27.407" height="18.881"/>
+  <rect style="stroke-opacity: 0; stroke: url(#pattern-0-6); fill: url(#pattern-0-13);" transform="matrix(0.999999, 0, 0, 1, 167.39005, 532.028564)" x="65.778" y="124.246" width="28.016" height="20.099"/>
+  <polygon style="stroke-opacity: 0; stroke: url(#pattern-0-7); fill: url(#pattern-0-14);" points="273.974 661.756 287.373 669.674 285.546 686.728 266.665 682.464"/>
+  <rect style="stroke: url(#pattern-1); fill: url(#pattern-0-15);" transform="matrix(0.908734, 0.417376, 0.220662, 1.201778, 138.058651, 518.384652)" x="61.319" y="124.174" width="19.201" height="13.852"/>
+  <rect style="stroke: url(#pattern-3); fill: url(#pattern-0-16);" x="388.875" y="616.684" width="47.074" height="28.199" transform="matrix(0.908732, 0.417379, 0.22066, 1.201782, -262.487429, -161.829953)"/>
+  <rect style="stroke: url(#pattern-4); fill: url(#pattern-0-17);" transform="matrix(0.908733, 0.417376, 0.220661, 1.201781, 138.058602, 518.38301)" x="74.326" y="145.942" width="27.872" height="15.336"/>
+  <rect style="stroke-opacity: 0; stroke: url(#pattern-0-8); fill: url(#pattern-0-18);" x="398.168" y="551.871" width="28.491" height="16.326" transform="matrix(0.908732, 0.417381, 0.220659, 1.201779, -262.485897, -161.824931)"/>
+  <polygon style="stroke-opacity: 0; stroke: url(#pattern-6); fill: url(#pattern-0-19);" points="213.475 714.449 228.527 719.93 230.195 731.739 210.401 728.786" transform="matrix(0.992845, -0.11941, 0.11941, 0.992845, -84.768409, 31.479493)"/>
+</svg>

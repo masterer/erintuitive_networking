@@ -1,0 +1,13 @@
+<svg class="hair" width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="hair">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1170px" height="480px" viewBox="0 0 1170 480" preserveAspectRatio="xMidYMid meet" id="svg_15">
+   <rect id="svgEditorBackground" x="0" y="0" width="1170" height="480" fill=" none"/>
+   <polygon stroke="black" id="e3_polygon" points="333 109 362.5 106.5 330 22 386 98 385 97 429 10 428 8 423 77 436 32 460 9 445 41 432 81 431 79 453 38 465 -2 463 34 453 74 473 40 471 38 471 10 479 42 468 69 494 26 493 63 503 12 506 39 519 53 524 67 524 41 511 14 531 39 536 62 537 39 529 14 543 41 544 53 547 23 563 62 556 31 593 69 590 58 591 59 618 96 611 71 653 107 646 100 655 149 670 216 616 116 397 116 330 235 317.5 175" fill="maroon" stroke-width=" 1px"/>
+  </svg>
+ </defs>
+ <g>
+  <title>Layer 2</title>
+  <use xlink:href="#svg_15" id="svg_16" transform="matrix(1.2545, 0, 0, 1.21734, -1093.91, -161.107)" y="135.68474" x="631.73496"/>
+ </g>
+</svg>

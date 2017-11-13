@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="skirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.406982421875" width="86.59329986572266" height="380.0480041503906" style="fill: none; stroke: none;" class="clothes"/>
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes"/>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path id="path2456" style="fill-rule: evenodd; fill: rgb(170, 0, 0);" d="M -2.58 -0.857 L 23.127 -0.857 L 48.834 -0.857 L 74.445 -0.857 L 100.129 -0.857 L 106.751 27.803 L 113.35 56.555 L 119.949 85.307 L 126.548 113.966 C 126.548 113.966 103.974 120.103 87.643 113.966 C 71.146 107.76 55.884 121.404 43.636 120.01 C 31.506 118.685 20.184 107.946 8.837 106.993 C -2.414 105.947 -28.999 113.966 -28.999 113.966 L -22.4 85.307 L -15.801 56.555 L -9.179 27.803 L -2.58 -0.857 Z"/>
+      <path id="path2458" style="fill-rule: evenodd; filter: url(#filter2424); fill: rgb(0, 0, 0);" d="M -2.557 -0.88 L 23.127 -0.88 L 48.81 -0.88 L 74.445 -0.88 L 100.129 -0.88 L 106.751 27.849 L 113.35 56.555 L 119.973 85.261 L 126.595 113.99 C 126.595 113.99 103.926 120.056 87.691 113.99 C 71.099 107.807 55.836 121.381 43.659 120.01 C 31.482 118.662 20.184 107.946 8.885 106.97 C -2.437 105.971 -28.975 113.99 -28.975 113.99 L -22.4 85.261 L -15.778 56.555 L -9.179 27.849 L -2.557 -0.88 Z"/>
+      <rect transform="matrix(1, 0, 0, 1.000001, -29.326927, -25.120248)" x="46.074" y="68.91" width="45.272" height="5.208" style="fill: rgb(0, 255, 0);"/>
+      <rect x="7.732" y="69.231" width="23.237" height="31.651" style="fill: rgb(0, 255, 0);"/>
+      <rect transform="matrix(1, 0, 0, 1.000001, -29.326924, -25.120221)" x="46.875" y="36.659" width="53.686" height="2.804" style="fill: rgb(0, 255, 0);"/>
+      <rect x="62.019" y="8.934" width="0.401" height="17.628" style="fill: rgb(0, 255, 0);"/>
+      <rect x="67.027" y="5.729" width="0.2" height="19.431" style="fill: rgb(0, 255, 0);"/>
+      <rect x="71.234" y="5.929" width="1.803" height="22.436" style="fill: rgb(0, 255, 0);"/>
+      <rect transform="matrix(1.000001, 0, 0, 1, -29.326973, -25.120193)" x="83.934" y="59.095" width="7.011" height="33.454" style="fill: rgb(0, 255, 0);"/>
+      <rect x="46.194" y="88.462" width="33.053" height="14.022" style="fill: rgb(0, 255, 0);"/>
+      <rect x="-42.619" y="-5.422" width="183.888" height="140.068" style="fill: rgba(234, 255, 0, 0.863);"/>
+    </pattern>
+    <pattern id="pattern-0-0" patternTransform="matrix(1, 0, 0, 1, 236.290009, 813.510986)" xlink:href="#pattern-0"/>
+    <filter id="filter2424">
+      <feTurbulence id="feTurbulence2426" baseFrequency="0 0.18436213991769548" seed="5" result="result0" numOctaves="1" type="turbulence"/>
+      <feTurbulence id="feTurbulence2428" baseFrequency="0.28477366255144032 0" seed="57" result="result3" in="SourceAlpha" numOctaves="1" type="turbulence"/>
+      <feComposite id="feComposite2430" operator="over" result="result1" in2="result0"/>
+      <feMerge id="feMerge2432" result="result2">
+        <feMergeNode id="feMergeNode2434" in="result1"/>
+        <feMergeNode id="feMergeNode2436" in="result0"/>
+      </feMerge>
+      <feComposite id="feComposite2438" operator="in" result="result4" in2="result2" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <polygon id="e1_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern-0-0);" points="212.268 789.833 204.708 818.7 204.708 864.062 228.076 863.375 239.76 863.375 250.07 862.688 261.067 862.688 287.872 862 287.184 817.326 284.435 800.143 280.999 793.957 276.187 792.583 278.249 782.96 241.822 784.335" class="clothes"/>
+</svg>

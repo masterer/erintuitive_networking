@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
+  </defs>
+  <g transform="matrix(0.056107, 0, 0, 0.056107, 210.383682, 602.232422)">
+    <rect id="rect-1" width="1270" height="720" style="fill: none; stroke: none;"/>
+    <path class="whites" d="M 276.53 448.275 C 276.532 448.052 276.532 447.604 276.53 446.932 C 250.156 443.77 216.122 427.873 174.429 399.24 C 202.062 365.663 238.782 339.018 284.59 319.306 C 330.011 308.269 388.226 313.866 459.236 336.099 C 498.359 345.101 527.467 358.311 546.559 375.73 C 532.641 400.28 511.146 418.864 482.074 431.483 C 462.977 436.371 424.018 442.417 365.196 449.619 C 336.76 454.083 307.205 453.636 276.53 448.275 Z" id="e4_area2" fill="#FFFAF0" style="stroke-width: 1px; stroke: none;"/>
+    <circle class="irises" id="e5_circle" cx="276.075" cy="214.949" style="stroke-width: 1px; stroke: none;" r="52.553" fill="black" transform="matrix(0.999999, 0, 0, 1, 84.41938, 168.842058)"/>
+    <circle class="whites" id="e6_circle" cx="299.585" cy="188.752" stroke="black" style="stroke-width: 1px;" r="11.461" fill="white" transform="matrix(1.000003, 0, 0, 0.999999, 84.418392, 168.842231)"/>
+    <circle class="whites" id="e7_circle" cx="296.226" cy="205.545" style="stroke-width: 1px; stroke: none;" r="14.375" fill="white" transform="matrix(1.000002, 0, 0, 1, 84.418561, 168.84198)"/>
+    <path class="whites" d="M 780.82 311.482 C 780.822 311.706 780.822 312.154 780.82 312.826 C 755.87 315.988 723.675 331.885 684.233 360.518 C 710.374 394.095 745.111 420.74 788.445 440.452 C 831.413 451.489 886.484 445.892 953.659 423.659 C 990.67 414.657 1018.205 401.447 1036.266 384.028 C 1023.1 359.478 1002.766 340.893 975.264 328.275 C 957.198 323.387 920.343 317.341 864.698 310.139 C 837.798 305.674 809.839 306.122 780.82 311.482 Z" id="path-1" fill="#FFFAF0" style="stroke-width: 1px; stroke: none;" transform="matrix(-1, 0, 0, -1, 1720.499032, 753.039897)"/>
+    <circle class="irises" id="circle-1" cx="1037" cy="312" style="stroke-width: 1px; stroke: none;" r="78.2368" fill="black" transform="matrix(-0.635439, 0, 0, 0.671715, 1519.199951, 167.498001)"/>
+    <circle class="whites" id="circle-2" cx="1004.36" cy="277" stroke="black" style="stroke-width: 1px;" r="17.0629" fill="white" transform="matrix(-0.635439, 0, 0, 0.671715, 1519.199951, 167.498001)"/>
+    <circle class="whites" id="circle-3" cx="1007.84" cy="298" style="stroke-width: 1px; stroke: none;" r="21.4009" fill="white" transform="matrix(-0.635439, 0, 0, 0.671715, 1519.199951, 167.498001)"/>
+    <path d="M 99.868 287.063 C 149.978 194.33 236.405 159.849 359.15 183.619 C 481.895 207.39 548.171 229.332 557.978 249.447 C 567.784 269.562 527.034 261.502 435.726 225.266 C 344.418 189.03 232.465 209.629 99.868 287.063 Z" id="e10_areaS2" fill="black" style="stroke-width: 1px; stroke: none;"/>
+    <path d="M 666.689 185.749 C 720.777 278.482 814.066 312.963 946.555 289.193 C 1079.045 265.422 1150.583 243.479 1161.168 223.365 C 1171.753 203.25 1127.767 211.31 1029.21 247.546 C 930.653 283.782 809.813 263.183 666.689 185.749 Z" id="path-2" fill="black" style="stroke-width: 1px; stroke: none;" transform="matrix(-1, 0, 0, -1, 1829.396971, 482.216705)"/>
+  </g>
+</svg>

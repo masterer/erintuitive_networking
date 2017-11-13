@@ -1,0 +1,17 @@
+<svg class="hair" width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <svg id="svg_9" preserveAspectRatio="xMidYMid meet" viewBox="0 0  1170 480" height="480px" width="1170px" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+    <path stroke-width=" 1px" fill="white" stroke="black" id="svgEditorClosePathDefs"/>
+   </defs>
+   <rect fill=" none" height="480" width="1170" y="0" x="0" id="svgEditorBackground"/>
+   <ellipse stroke-width=" 1px" fill="white" ry="54.7718" rx="55.7676" stroke="black" cy="63.73486" cx="685.08441" id="e1041_ellipse"/>
+   <path stroke-width=" 1px" fill="white" id="e45_area3" stroke="black" d="m277.78009,194.19087c-19.20016,-42.59023 23.89532,-140.79304 58.75519,-162.32365c34.85986,-21.53061 118.00143,-25.80103 155.35269,-26.88797c37.35129,-1.08693 123.18961,30.98764 136.43155,43.81743c13.24194,12.82979 4.16705,-0.58659 2.98755,2.98755c-1.1795,3.57414 -0.41412,22.81766 -2.98755,27.88382c-2.57343,5.06615 14.02887,27.56091 16.92944,24.89627c2.90057,-2.66465 3.84106,-3.39391 0.99585,-0.99586c-2.84521,2.39804 27.65894,18.08099 27.88379,13.94192c0.22491,-4.13909 6.50427,-2.16515 0,-1.99171c-6.50427,0.17342 16.0603,52.41761 20.9129,47.80083c4.8526,-4.61678 21.0957,7.36427 0.99585,-0.99585c-20.09985,-8.36011 -139.41345,-41.67071 -168.29877,-46.80499c-28.88531,-5.13428 -58.48755,-32.29931 -59.75104,-6.97096c-1.26349,25.32836 -171.00729,128.23339 -190.20746,85.64317z"/>
+  </svg>
+ </defs>
+ <g>
+  <title>Layer 2</title>
+  <use x="-171" y="24" id="svg_10" xlink:href="#svg_9"/>
+ </g>
+</svg>

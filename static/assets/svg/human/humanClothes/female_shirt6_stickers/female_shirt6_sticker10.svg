@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes"/>
+    <style id="style6" type="text/css">
+    .str9 {stroke:#1F1A17;stroke-width:0.1764}
+    .str11 {stroke:#C2C1C1;stroke-width:0.1764}
+    .str10 {stroke:#C2C1C1;stroke-width:0.1764;stroke-linejoin:bevel}
+    .str6 {stroke:#EF9A48;stroke-width:0.1764}
+    .str3 {stroke:#007CC3;stroke-width:0.3528}
+    .str15 {stroke:#00923F;stroke-width:0.3528}
+    .str12 {stroke:#1F1A17;stroke-width:0.3528}
+    .str2 {stroke:#28166F;stroke-width:0.3528}
+    .str4 {stroke:#AAA9A9;stroke-width:0.3528}
+    .str0 {stroke:#C2C1C1;stroke-width:0.3528}
+    .str5 {stroke:#C2C1C1;stroke-width:0.3528;stroke-linejoin:bevel}
+    .str7 {stroke:#DA251D;stroke-width:0.3528;stroke-linejoin:bevel}
+    .str13 {stroke:#E77817;stroke-width:0.3528;stroke-linejoin:bevel}
+    .str1 {stroke:#EF9A48;stroke-width:0.3528}
+    .str14 {stroke:#8B2829;stroke-width:0.3528}
+    .str16 {stroke:#8B2829;stroke-width:0.3528;stroke-linejoin:bevel}
+    .str8 {stroke:#8E292A;stroke-width:0.3528}
+    .fil6 {fill:none}
+    .fil4 {fill:#0093DD}
+    .fil9 {fill:#1F1A17}
+    .fil10 {fill:#3BB3C2}
+    .fil2 {fill:#6D609E}
+    .fil11 {fill:#72706F}
+    .fil0 {fill:#75C5F0}
+    .fil12 {fill:#84C225}
+    .fil8 {fill:#DA251D}
+    .fil3 {fill:#DEDEDD}
+    .fil7 {fill:#E77817}
+    .fil5 {fill:white}
+    .fil13 {fill:#8D2929}
+    .fil1 {fill:#F0C4A6}
+  </style>
+    <linearGradient id="gradient-0" gradientUnits="userSpaceOnUse" x1="259.663" y1="784.779" x2="259.663" y2="799.681">
+      <stop offset="0" style="stop-color: rgba(0, 255, 34, 1)"/>
+      <stop offset="1" style="stop-color: rgba(0, 153, 20, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-1" gradientUnits="userSpaceOnUse" x1="224.983" y1="783.089" x2="224.983" y2="796.683">
+      <stop offset="0" style="stop-color: rgba(0, 255, 34, 1)"/>
+      <stop offset="1" style="stop-color: rgba(0, 153, 20, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-2" gradientUnits="userSpaceOnUse" x1="246.073" y1="654.969" x2="246.073" y2="660.452">
+      <stop offset="0" style="stop-color: rgba(0, 255, 34, 1)"/>
+      <stop offset="1" style="stop-color: rgba(0, 153, 20, 1)"/>
+    </linearGradient>
+    <linearGradient id="gradient-3" gradientUnits="userSpaceOnUse" x1="246.056" y1="655.32" x2="246.056" y2="662.609">
+      <stop offset="0" style="stop-color: rgba(0, 255, 34, 1)"/>
+      <stop offset="1" style="stop-color: rgba(0, 153, 20, 1)"/>
+    </linearGradient>
+  </defs>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="clothes"/>
+  <rect id="rect-1" x="-403.988" y="499.579" width="1300" height="550" style="fill: none; stroke: none;" class="clothes"/>
+  <g>
+    <path id="path49" style="stroke-linejoin: bevel; stroke: rgb(194, 193, 193); stroke-width: 0.49542; fill: url(#gradient-0);" d="M 262.698 794.08 C 264.103 799.489 270.501 798.432 268.424 793.34 C 268.356 793.179 267.863 792.402 267.807 792.303 C 271.111 797.041 274.532 793.517 272.214 790.474 C 275.191 793.892 278.047 794.916 276.68 789.938 C 282.167 787.506 274.939 782.037 270.486 786.442 L 270.709 788.158 C 259.781 790.357 258.028 791.32 240.862 790.338 L 240.719 791.385 C 240.224 795.272 243.713 797.385 245.161 793.93 C 245.296 797.823 249.402 798.885 251 797.413 C 251.691 796.778 251.898 795.75 251.898 795.75 C 253.272 802.541 258.822 798.951 257.819 796.658 C 258.84 799.189 261.281 799.82 262.318 798.594 C 263.806 796.846 262.699 795.09 262.698 794.08 Z" class="fil5 str5" transform="matrix(0.995741, 0.092197, -0.092197, 0.995741, 74.147096, -20.565822)"/>
+    <path id="path49-1" style="stroke-linejoin: bevel; fill-rule: evenodd; stroke: rgb(194, 193, 193); stroke-width: 0.45503; fill: url(#gradient-1);" d="M 223.208 790.999 C 222.964 796.488 217.466 795.416 218.322 790.247 C 218.351 790.085 218.627 789.295 218.657 789.196 C 216.72 794.004 213.275 790.427 214.682 787.339 C 212.792 790.808 210.593 791.847 210.878 786.795 C 205.902 784.325 210.381 780.747 214.836 785.218 L 213.957 786.301 C 222.898 787.228 229.282 786.398 240.716 787.201 L 241.016 788.264 C 242.091 792.209 239.552 794.353 237.757 790.847 C 238.312 794.799 235.079 795.875 233.5 794.381 C 232.816 793.736 232.469 792.694 232.469 792.694 C 232.488 799.587 227.261 795.942 227.703 793.616 C 227.287 796.183 225.366 796.824 224.295 795.58 C 222.759 793.805 223.379 792.024 223.207 790.999 Z" class="fil5 str5" transform="matrix(0.995741, 0.092197, -0.092197, 0.995741, 73.783432, -17.378489)"/>
+    <path id="path55-1" style="stroke-linejoin: bevel; stroke: rgb(194, 193, 193); stroke-width: 0.51163; fill: url(#gradient-2);" d="M 238.818 659.171 C 240.4 657.903 244.49 659.462 247.97 659.376 C 251.572 659.286 254.542 657.608 254.64 659.701 L 257.236 660.452 C 258.869 659.709 257.712 658.383 254.976 657.183 C 255.932 657.501 256.845 658.021 257.697 658.846 C 258.552 656.894 259.003 655.409 256.079 654.989 C 254.305 654.734 249.909 656.968 246.654 656.903 C 242.543 656.871 238.378 654.913 236.132 655.75 C 235.371 656.035 236.757 656.518 235.948 657.045 C 235.271 657.493 233.578 657.849 233.83 658.449 C 234.09 659.07 234.935 658.578 235.917 658.672 C 236.524 658.05 237.557 657.508 238.651 657.096 C 236.687 657.898 235.581 658.744 235.553 659.745 L 238.818 659.171 Z" class="fil5 str5"/>
+    <path id="path55" class="fil5 str5" style="stroke-linejoin: bevel; stroke: rgb(194, 193, 193); stroke-width: 0.51163; fill: url(#gradient-3);" d="M 239.045 656.601 C 242.263 659.182 254.674 660.187 254.868 656.071 L 257.464 655.32 C 259.096 656.063 257.939 657.389 255.203 658.589 C 256.16 658.271 257.073 657.75 257.923 656.927 C 259.261 659.977 256.624 662.428 247.585 662.608 C 242.08 662.652 237.926 661.445 234.731 659.363 C 234.054 658.914 233.689 658.654 233.942 658.054 C 234.202 657.432 235.162 657.194 236.145 657.1 C 236.752 657.721 237.785 658.263 238.878 658.676 C 236.915 657.874 235.809 657.027 235.78 656.027 L 239.045 656.601 Z"/>
+  </g>
+</svg>

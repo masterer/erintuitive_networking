@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" fill="red" style="stroke-width: 0px; stroke: none;"/>
+    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+    </pattern>
+    <pattern id="pattern-0-0" patternTransform="matrix(0.743002, 0.184315, -0.477418, 1.924544, 244.624878, 810.287476)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-1" patternTransform="matrix(0.473875, 0, 0, 0.721463, 236.971497, 775.882019)" xlink:href="#pattern-0"/>
+    <pattern id="pattern-0-2" patternTransform="matrix(0.992567, -0.121698, 0.1217, 0.992566, 230.257843, 758.294312)" xlink:href="#pattern-0"/>
+  </defs>
+  <g>
+    <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-0);" points="217.57 786.191 249.138 870.371 286.276 782.478 281.943 774.431 247.9 843.137"/>
+    <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-1);" points="218.189 775.669 226.855 791.762 246.043 821.473 275.754 768.241 266.469 750.291 242.948 798.571"/>
+    <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-2);" points="218.808 762.671 227.474 752.148 242.948 773.812 263.993 745.958 242.329 788.048"/>
+  </g>
+</svg>

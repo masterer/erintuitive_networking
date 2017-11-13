@@ -46,8 +46,9 @@ app.post("/world", function(req, res){
 	res.sendFile("/"+req.body.world, { root: __dirname });
 });
 
-
+//app listen to port
+var port = process.env.PORT || 8081;
 //If you're running locally, you can now open localhost:8080 in a web browser and see it running!
-http.listen(8081, function(){
+http.listen(port, function(){
   console.log('listening on *:8081');
 });

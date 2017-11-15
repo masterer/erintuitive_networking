@@ -3,16 +3,15 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var domtoimage = require('dom-to-image');
 var bodyParser = require('body-parser');
 
 /////////////Tell Socket.io to accept connections
 io.on('connection', function(socket){
   //A new user has connected!
   console.log("Hello user!")//This will output on the server side
-
-  //If the server gets a 'new-click' message, tell everyone who's connected!
-  socket.on('new-click', function(msg){
-    io.emit('new-click', msg);
+  socket.on('firstPlace', function(msg){
+	  io.emit('firstPlaceAvatar', msg[0]);
   });
 });
 
@@ -28,9 +27,7 @@ app.get('/clothed', (req, res) => {
 });
 //just use a different route
 app.get("/world", function(req, res, next){
-	var file = req.params[0];
-	res.sendFile(__dirname + "/" + file);
-	//return res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.sendFile('/world.html', { root: __dirname });
 });
 
 app.use(express.static((__dirname + '/static')));

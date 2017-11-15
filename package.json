@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "Basic setup for networking experiments!",
   "dependencies": {
+    "dom-to-image": "^2.6.0",
     "express": "^4.10.2",
+    "img": "^3.0.3",
     "socket.io": "^1.4.4"
   },
   "scripts": {
-	"start": "node basic_networking.js"
+    "start": "node basic_networking.js"
   }
 }

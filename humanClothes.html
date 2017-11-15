@@ -43,18 +43,17 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
 	<table width="740px">
-	<td>
 		<tr>
-			<td width="10%">
+			<td>
 				<div id="avatarOptions" class="topsBottoms">
 					Please wait while your avatar loads.
 				</div>
 			</td>
-			<td id="itemPreview" width="10%">
+			<td id="itemPreview">
 				Avatar builder step. You can skip any step by pressing "Next".
 				
 			</td>
-			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
+			<td id="result" style="border-style: dashed; border-width: 6px;">
 				
 				<div id="relativeContainer" style="position: relative;" width="86px" height="380px">
 				<div id="shirtStuff"></div>
@@ -324,9 +323,14 @@
 	}
 	function postAvatarWithName(){
 		$("#buttons").html('');
-		relativeContainer.innerHTML = '<div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">'+relativeContainer.innerHTML + '</div>';
+		relativeContainer.innerHTML = '<div id="rightBlinkless"><div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">'+relativeContainer.innerHTML + '</div></div><div id="leftBlinkless"><div class="sprite" style="webkit-transform: scale(-0.45, 0.45); -ms-transform: scale(-0.45, 0.45); transform: scale(-0.45, 0.45);">'+relativeContainer.innerHTML + '</div></div><div id="rightBlink"><div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">'+relativeContainer.innerHTML + '</div></div></div><div id="leftBlink"><div class="sprite" style="webkit-transform: scale(-0.45, 0.45); -ms-transform: scale(-0.45, 0.45); transform: scale(-0.45, 0.45);">'+relativeContainer.innerHTML + '</div></div>';
+		$("#rightBlink .blink").css({'visibility':'visible'});
+		$("#leftBlink .blink").css({'visibility':'visible'});
 		window.localStorage.setItem("name", document.getElementById("avatarName").value);
-		window.localStorage.setItem("avatarClothed", document.getElementById("relativeContainer").innerHTML);
+		window.localStorage.setItem("avatarClothed_right", document.getElementById("rightBlinkless").innerHTML);
+		window.localStorage.setItem("avatarClothed_left", document.getElementById("leftBlinkless").innerHTML);
+		window.localStorage.setItem("avatarClothed_rightBlink", document.getElementById("rightBlink").innerHTML);
+		window.localStorage.setItem("avatarClothed_leftBlink", document.getElementById("leftBlink").innerHTML);
 		itemPreview.innerHTML = '<form action="/world" method="post"><input type="hidden" name="world" value="world.html"/><input id="skip" value="Go inworld!" name="clothingSubmit" type="submit"/></form>';
 	}
 	function spriteSheet(){

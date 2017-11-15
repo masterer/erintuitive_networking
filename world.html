@@ -5,10 +5,13 @@
 	<script src="/assets/js/socket.io.js"></script>
 	<script src="/assets/js/htmlgl.js"></script>
 	<script src="/assets/js/pixi.min.js"></script>
+	<script src="/assets/js/pixi.dom.js"></script>
+	<script src="/assets/js/jquery.js"></script>
 </head>
 <body bgcolor="purple">
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
+<div id="staging2" style="position: absolute; left: 7px; top: 0;"></div>
 <style>
 	body {
 		overflow: hidden;
@@ -54,23 +57,70 @@
 		count -= 0.1;
 		displacementSprite.y = count * 10;
 		blurFilter.blur = count * -0.3;
-		if (count == -4.5)
-		count = 0;
+		if (count == -4.5){
+			count = 0;
+		}
 	});
-		
-	//index.js
-	/*var host = window.location.origin.replace('http', 'ws');//process.env.HOST;
-	var ws = new WebSocket(host);
-	ws.onmessage = function(event) {
-		console.log("Success!");
-	};*/
-	
-	var variableToSend = "cheese";
+	//get avatar
+	var variableToSend = [window.localStorage.getItem("avatarClothed_right"), userId, 0, 0, false, false];
+	//set user id
+	var userId = Math.random().toString();
+	//set initial character
+	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" style="position: absolute; top: 0; left: 0;">' + variableToSend[0] + '</div>';
+	//document.getElementById("staging2").innerHTML = variableToSend;
 	var socket = io.connect("/");
 	socket.on("connect", function(){
 		console.log("excelente!");
-		socket.emit("sendVar", variableToSend);
+		socket.emit("firstPlace", variableToSend);
+		socket.on('firstPlaceAvatar', function(element){
+			
+			/*var avatarTexture = PIXI.Texture(new PIXI.BaseTexture(element));
+			var avatarSprite = PIXI.Sprite(avatarTexture);
+			container.addChild(avatarSprite);*/
+		});
 	});
+	var posX = 0;
+	var posY = 0;
+	$(document).keydown(function(e) {
+		switch(e.which) {
+			case 37: // left
+			moveLeft();
+			break;
+
+			case 38: // up
+			moveUp();
+			break;
+
+			case 39: // right
+			moveRight();
+			break;
+
+			case 40: // down
+			moveDown();
+			break;
+
+			default: return; // exit this handler for other keys
+		}
+		e.preventDefault(); // prevent the default action (scroll / move caret)
+	});
+	function moveUp() {
+		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
+		document.getElementById(userId).style.top = withAdditionTop;
+	}
+	function moveDown() {
+		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";	
+		document.getElementById(userId).style.top = withAdditionBottom;
+	}
+	function moveLeft() {
+		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
+		document.getElementById(userId).innerHTML = window.localStorage.getItem("avatarClothed_left");
+		document.getElementById(userId).style.left = withAdditionLeft;
+	}
+	function moveRight() {
+		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
+		document.getElementById(userId).style.left = withAdditionRight;
+		document.getElementById(userId).innerHTML = window.localStorage.getItem("avatarClothed_right");
+	}
 </script>
 </body>
 </html>

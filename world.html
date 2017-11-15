@@ -66,7 +66,7 @@
 	//set user id
 	var userId = Math.random().toString();
 	//set initial character
-	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" style="position: absolute; top: 0; left: 0;">' + variableToSend[0] + '</div>';
+	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" class="avatarCharacter" style="position: absolute; top: 0; left: 0;">' + variableToSend[0] + '</div>';
 	//document.getElementById("staging2").innerHTML = variableToSend;
 	var socket = io.connect("/");
 	socket.on("connect", function(){

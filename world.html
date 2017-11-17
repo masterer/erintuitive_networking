@@ -66,19 +66,8 @@
 	//set user id
 	var userId = Math.random().toString();
 	//set initial character
-	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" class="avatarCharacter" style="position: absolute; top: 0; left: 0;">' + variableToSend[0] + '</div>';
+	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" style="position: absolute; top: 0; left: 0;">' + variableToSend[0] + '</div>';
 	//document.getElementById("staging2").innerHTML = variableToSend;
-	var socket = io.connect("/");
-	socket.on("connect", function(){
-		console.log("excelente!");
-		socket.emit("firstPlace", variableToSend);
-		socket.on('firstPlaceAvatar', function(element){
-			
-			/*var avatarTexture = PIXI.Texture(new PIXI.BaseTexture(element));
-			var avatarSprite = PIXI.Sprite(avatarTexture);
-			container.addChild(avatarSprite);*/
-		});
-	});
 	var posX = 0;
 	var posY = 0;
 	$(document).keydown(function(e) {
@@ -105,6 +94,7 @@
 	});
 	function moveUp() {
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
+		console.log(withAdditionTop);
 		document.getElementById(userId).style.top = withAdditionTop;
 	}
 	function moveDown() {
@@ -121,6 +111,22 @@
 		document.getElementById(userId).style.left = withAdditionRight;
 		document.getElementById(userId).innerHTML = window.localStorage.getItem("avatarClothed_right");
 	}
+		var socket = io.connect("/");
+	socket.on("connect", function(){
+		console.log("excelente!");
+		socket.on('firstPlaceAvatar', function(element){
+			var elementId = element.getAttribute("id");
+			if (document.querySelector('#' + elementId) === null){
+				document.getElementById("staging2").innerHTML += element;
+			}
+			else {
+				document.getElementById(elementId).innerHTML = element.innerHTML;
+			}
+		});
+	});
+	setInterval(function(){
+		socket.emit("firstPlace", document.getElementById(userId));
+	}, 30);
 </script>
 </body>
 </html>

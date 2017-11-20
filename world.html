@@ -102,7 +102,6 @@
 	});
 	function moveUp() {
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
-		console.log(withAdditionTop);
 		document.getElementById(userId).style.top = withAdditionTop;
 	}
 	function moveDown() {
@@ -121,7 +120,6 @@
 	}
 	setInterval(function(){
 		socket.on("connect", function(){
-			console.log("excelente!");
 			socket.on('firstPlaceAvatar', function(element, id, left, top, facingRight){
 				if(userId != id){
 					if( players.indexOf(id) == -1 ){

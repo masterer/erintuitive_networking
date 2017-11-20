@@ -7,9 +7,10 @@ var domtoimage = require('dom-to-image');
 var bodyParser = require('body-parser');
 
 /////////////Tell Socket.io to accept connections
+//var allClients = [];
 io.on('connection', function(socket){
   //A new user has connected!
-  console.log("Hello user!")//This will output on the server side
+  //allClients.push(socket);
   var players = [];
   socket.on("id", function(id){
 	  players.push(id);
@@ -17,7 +18,11 @@ io.on('connection', function(socket){
   socket.emit("players", players);
   socket.on('firstPlace', function(elem, inner, id, left, top, facingRight){
 	  io.emit('firstPlaceAvatar', elem, inner, id, left, top, facingRight);
-  });
+  });  
+  /*socket.on('disconnect', function(){
+	  var i = allClients.indexOf(socket);
+	  allClients.splice(i, 1);
+  });*/
 });
 
 

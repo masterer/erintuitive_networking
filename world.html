@@ -61,15 +61,23 @@
 			count = 0;
 		}
 	});
-	//get avatar
-	var variableToSend = [window.localStorage.getItem("avatarClothed_right"), userId, 0, 0, false, false];
 	//set user id
-	var userId = Math.random().toString();
-	//set initial character
-	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" style="position: absolute; top: 0; left: 0;">' + variableToSend[0] + '</div>';
-	//document.getElementById("staging2").innerHTML = variableToSend;
+	//var userId = "local" + Math.random().toString();
+	var d = new Date();
+	var userId = d.getTime();
 	var posX = 0;
 	var posY = 0;
+	var right = window.localStorage.getItem("avatarClothed_right");
+	var left = window.localStorage.getItem("avatarClothed_left");
+	var players = [userId];
+	var socket = io.connect("/");
+	socket.emit("id", userId);
+	socket.on("players", function(players2){
+		players = players2;
+	});
+	for (i=0; i<players.length; i++){
+	document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;">' + right + '</div>';
+	}
 	$(document).keydown(function(e) {
 		switch(e.which) {
 			case 37: // left
@@ -103,29 +111,32 @@
 	}
 	function moveLeft() {
 		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
-		document.getElementById(userId).innerHTML = window.localStorage.getItem("avatarClothed_left");
+		document.getElementById(userId).innerHTML = left;
 		document.getElementById(userId).style.left = withAdditionLeft;
 	}
 	function moveRight() {
 		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
 		document.getElementById(userId).style.left = withAdditionRight;
-		document.getElementById(userId).innerHTML = window.localStorage.getItem("avatarClothed_right");
+		document.getElementById(userId).innerHTML = right;
 	}
-		var socket = io.connect("/");
-	socket.on("connect", function(){
-		console.log("excelente!");
-		socket.on('firstPlaceAvatar', function(element){
-			var elementId = element.getAttribute("id");
-			if (document.querySelector('#' + elementId) === null){
-				document.getElementById("staging2").innerHTML += element;
-			}
-			else {
-				document.getElementById(elementId).innerHTML = element.innerHTML;
-			}
-		});
-	});
 	setInterval(function(){
-		socket.emit("firstPlace", document.getElementById(userId));
+		socket.on("connect", function(){
+			console.log("excelente!");
+			socket.on('firstPlaceAvatar', function(element, id, left, top, facingRight){
+				if(userId != id){
+					if( players.indexOf(id) == -1 ){
+						document.getElementById("staging2").innerHTML += '<div id="' + id + '" class="count_it" style="position: absolute; top: ' + top + '; ' + left + ';">' + element + '</div>';
+						players.push(id);
+					}
+					else {
+						document.getElementById(id).style.left = left;
+						document.getElementById(id).style.top = top;
+						document.getElementById(id).innerHTML = element;
+					}
+				}
+			});
+		});
+		socket.emit("firstPlace", document.getElementById(userId).innerHTML, userId, document.getElementById(userId).style.left, document.getElementById(userId).style.top, true);
 	}, 30);
 </script>
 </body>

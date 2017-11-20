@@ -10,8 +10,13 @@ var bodyParser = require('body-parser');
 io.on('connection', function(socket){
   //A new user has connected!
   console.log("Hello user!")//This will output on the server side
-  socket.on('firstPlace', function(msg){
-	  io.emit('firstPlaceAvatar', msg[0]);
+  var players = [];
+  socket.on("id", function(id){
+	  players.push(id);
+  });
+  socket.emit("players", players);
+  socket.on('firstPlace', function(elem, inner, id, left, top, facingRight){
+	  io.emit('firstPlaceAvatar', elem, inner, id, left, top, facingRight);
   });
 });
 

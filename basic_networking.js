@@ -12,15 +12,10 @@ io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
   var players = [];
-  var playersBody = [];
   socket.on("id", function(id){
 	  players.push(id);
   });
-  socket.on("idBody", function(body){
-	  playersBody.push(body);
-  });
   socket.emit("players", players);
-  socket.emit("playersBody", playersBody);
   socket.on('firstPlace', function(elem, inner, id, left, top, facingRight){
 	  io.emit('firstPlaceAvatar', elem, inner, id, left, top, facingRight);
   });  

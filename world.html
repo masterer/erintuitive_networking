@@ -7,6 +7,7 @@
 	<script src="/assets/js/pixi.min.js"></script>
 	<script src="/assets/js/pixi.dom.js"></script>
 	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/dom-to-image.min.js"></script>
 </head>
 <body bgcolor="purple">
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
@@ -76,7 +77,14 @@
 		players = players2;
 	});
 	for (i=0; i<players.length; i++){
-	document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;">' + right + '</div>';
+		document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;">' + right + '</div>';
+		domtoimage.toPng(document.getElementById(players[i])).then(function (dataUrl) {
+			var img = new Image();
+			img.src = dataUrl;
+			document.getElementById("staging2").appendChild(img);
+		}).catch(function (error){
+			console.error('oops');
+		});
 	}
 	$(document).keydown(function(e) {
 		switch(e.which) {

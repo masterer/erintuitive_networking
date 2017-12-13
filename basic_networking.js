@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+require('es6');
+
 var domtoimage = require('dom-to-image');
 var bodyParser = require('body-parser');
 
@@ -32,7 +34,7 @@ io.on('connection', function(socket){
 app.get('/', (req, res) => {
 	res.sendFile('/human2.html', { root: __dirname });
 });
-app.get('/clothed', (req, res) => {
+app.get('/clothes', (req, res) => {
 	res.sendFile('/humanClothes.html', { root: __dirname });
 });
 //just use a different route

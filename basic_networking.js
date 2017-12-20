@@ -1,7 +1,8 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const fs = require('fs');
 
 require('es6');
 
@@ -20,7 +21,15 @@ io.on('connection', function(socket){
   socket.emit("players", players);
   socket.on('firstPlace', function(elem, inner, id, left, top, facingRight){
 	  io.emit('firstPlaceAvatar', elem, inner, id, left, top, facingRight);
-  });  
+  });
+  /////// Clothing Items //////////////////
+  socket.on("pet", (itemName) => {
+    fs.readFile(itemName, function(data) {
+      socket.emit("petBack", itemName, data);
+    });
+  });
+  ///////////////////////////////////////// 
+ 
   /*socket.on('disconnect', function(){
 	  var i = allClients.indexOf(socket);
 	  allClients.splice(i, 1);

@@ -56,7 +56,7 @@
 			</td>
 			<td id="result" style="border-style: dashed; border-width: 6px;">
 				
-				<div id="relativeContainer" style="position: relative;" width="86px" height="380px">
+				<div id="relativeContainer" style="position: relative;" height="380px">
 				<div id="shirtStuff"></div>
 				</div>
 			</td>
@@ -103,6 +103,8 @@
 		}
 	</style>
 	<script>
+		var currentPet = '';
+		var currentCape = '';
 		//avatar vars global
 		var name = ``;
 		var avatar = ``;
@@ -158,20 +160,28 @@
 	}
 	function randomizePets() {
 		$("#relativeContainer .pets").remove();
-		$("#relativeContainer").append(pet()[0]);
-		$("#relativeContainer .pets").css({'position':'absolute', 'top':'-6px', 'left':'8px', 'margin-top':'0', 'z-index':'31'});
-		if($("#relativeContainer .pets")[0].getAttribute("src")!=="/assets/svg/human/humanClothes/pets/pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="/assets/svg/human/humanClothes/pets/female_pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="/assets/svg/human/humanClothes/pets/pet8.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="/assets/svg/human/humanClothes/pets/pet3.svg"){
-			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
-		}
-		if($("#relativeContainer .pets")[0].getAttribute("src")=="/assets/svg/human/humanClothes/pets/pet15.svg"){
-			$("#relativeContainer .pets").css({'top':'-5px'});
-		}
-		else if($("#relativeContainer .pets")[0].getAttribute("src")=="/assets/svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="/assets/svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="/assets/svg/human/humanClothes/pets/pet18.svg"){
-			$("#relativeContainer .pets").css({'top':'-25px'});
-		}
-		else if($("#relativeContainer .pets")[0].getAttribute("src")=="/assets/svg/human/humanClothes/pets/pet3.svg"){
-			$("#relativeContainer .pets").css({'top':'-15px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
-		}
+		currentPet = pet();
+		console.log(currentPet);
+		var fullPetPath =  "/assets/js/pythonDir/pets/" + currentPet;
+		$.getScript(fullPetPath, function( data, textStatus, jqxhr ) {
+			$("#relativeContainer .pets").css({'position':'absolute', 'top':'-6px', 'left':'8px', 'margin-top':'0', 'z-index':'31'});
+			if(currentPet == "pet19.svg.js" && currentPet != "female_pet19.svg.js" && currentPet != "pet8.svg.js" && currentPet !=="pet3.svg.js"){
+				$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
+			}
+			if(currentPet == "pet15.svg.js"){
+				$("#relativeContainer .pets").css({'top':'-5px'});
+			}
+			else if(currentPet == "pet16.svg.js" || currentPet == "pet17.svg.js" || currentPet == "pet18.svg.js"){
+				$("#relativeContainer .pets").css({'top':'-25px'});
+			}
+			else if(currentPet == "pet15.svg.js" || currentPet == "pet10.svg.js" || currentPet == "pet4.svg.js" || currentPet == "pet11.svg.js" || currentPet == "pet17.svg.js" || currentPet == "pet7.svg.js" || currentPet == "pet1.svg.js" || currentPet == "pet13.svg.js" || currentPet == "pet14.svg.js" || currentPet == "pet9.svg.js" || currentPet == "pet6.svg.js" || currentPet == "pet18.svg.js" || currentPet == "pet2.svg.js" || currentPet == "pet16.svg.js" || currentPet == "pet12.svg.js" || currentPet == "pet5.svg.js"){
+				$("#relativeContainer .pets").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+			}
+			$("#pet17").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+			$("#pet15").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+			$("#pet18").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+			$("#pet16").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+		});
 	}
 	function randomizeCapes() {
 		$("#relativeContainer .capes").remove();
@@ -344,12 +354,12 @@
 		});
 	}
 	function pet(){
-		for(let i=0; i<pets.length; i++){
+		for(var i=0; i<pets.length; i++){
 			if($(".woman")[0] && pets[i] == 'pet19.svg.js' || $(".man")[0] && pets[i] == 'female_pet19.svg.js'){
 				pets.splice(i, 1);
 			}
 		}
-		shuffle(pets);
+		pets = shuffle(pets);
 		return pets[0];
 	}
 	function cape(){
@@ -362,11 +372,7 @@
 		return shuffle(tails)[0];
 	}
 	function glasses(){
-		var glasses = [``];
-		for(i=1; i<=6; i++){
-			glasses.push(`<img class="glasses" src="/assets/svg/human/humanClothes/glasses/glasses`+i.toString()+`.svg" alt="glasses">`);
-		}
-		return shuffle(glasses);
+		return shuffle(glasses)[0];
 	}
 	function accessories(){
 		var accessories = [``];

@@ -105,6 +105,11 @@
 	<script>
 		var currentPet = '';
 		var currentCape = '';
+		var currentNecklace = '';
+		var currentMaleShoes = '';
+		var currentFemaleShoes = '';
+		var currentFemaleHairpiece = '';
+		var currentMaleHairpiece = '';
 		//avatar vars global
 		var name = ``;
 		var avatar = ``;
@@ -185,27 +190,47 @@
 	}
 	function randomizeCapes() {
 		$("#relativeContainer .capes").remove();
-		$("#relativeContainer").append(cape()[0]);
-		$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'45px', 'margin-top':'0', 'z-index':'-42', '-webkit-transform':'scale(2.1)', '-ms-transform':'scale(2.1)', 'transform':'scale(2.1)'});
+		currentCape = cape();
+		console.log(currentCape);
+		var fullCapePath =  "/assets/js/pythonDir/capes/" + currentCape;
+		console.log(fullCapePath);
+		$.getScript(fullCapePath, function( data, textStatus, jqxhr ) {
+			$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'45px', 'margin-top':'0', 'z-index':'-42', '-webkit-transform':'scale(2.1)', '-ms-transform':'scale(2.1)', 'transform':'scale(2.1)'});
+		});
 	}
 	function randomizeNecklaces() {
 		$("#relativeContainer .necklaces").remove();
-		$("#relativeContainer").append(necklace()[0]);
-		$("#relativeContainer .necklaces").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		currentNecklace = necklace();
+		console.log(currentNecklace);
+		var fullNecklacePath =  "/assets/js/pythonDir/necklaces/" + currentNecklace;
+		console.log(fullNecklacePath);
+		$.getScript(fullNecklacePath, function( data, textStatus, jqxhr ) {
+			$("#relativeContainer .necklaces").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		});
 	}
 	function randomizeShoes() {
 		if($(".man")[0]){
 			relativeContainer.innerHTML = previousClothes;
-			$("#relativeContainer").append(maleShoes()[0]);
-			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			if($(".shoes")[0].getAttribute("src")=="/assets/svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes")[0].getAttribute("src")=="/assets/svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes")[0].getAttribute("src")=="/assets/svg/human/humanClothes/shoes/shoes13.svg"){
-				$("#relativeContainer .shoes").css({'top':'6px'});
-			}
+			currentMaleShoes = maleShoes();
+			console.log(currentMaleShoes);
+			var fullMaleShoesPath =  "/assets/js/pythonDir/shoes/" + currentMaleShoes;
+			console.log(fullMaleShoesPath);
+			$.getScript(fullMaleShoesPath, function( data, textStatus, jqxhr ) {
+				$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+				if(currentMaleShoes == "/assets/svg/human/humanClothes/shoes/shoes11.svg" || currentMaleShoes == "/assets/svg/human/humanClothes/shoes/shoes12.svg" || currentMaleShoes == "/assets/svg/human/humanClothes/shoes/shoes13.svg"){
+					$("#relativeContainer .shoes").css({'top':'6px'});
+				}
+			});
 		}
 		else if($(".woman")[0]){
 			relativeContainer.innerHTML = previousClothes; 
-			$("#relativeContainer").append(femaleShoes()[0]);
-			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			currentFemaleShoes = femaleShoes();
+			console.log(currentFemaleShoes);
+			var fullFemaleShoesPath =  "/assets/js/pythonDir/female_shoes/" + currentFemaleShoes;
+			console.log(fullFemaleShoesPath);
+			$.getScript(fullFemaleShoesPath, function( data, textStatus, jqxhr ) {
+				$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			});
 		}
 	}
 	function backOptions(){
@@ -375,55 +400,74 @@
 		return shuffle(glasses)[0];
 	}
 	function accessories(){
-		var accessories = [``];
-		for(i=1; i<=8; i++){
-			accessories.push(`<img class="accessories" id="accessory`+i.toString()+`" src="/assets/svg/human/humanClothes/accessories/accessory`+i.toString()+`.svg" alt="accessories">`);
-		}
-		return shuffle(accessories);
+		return shuffle(accessories)[0];
 	}
 	function wings(){
-		var wings = [``];
-		for(i=1; i<=12; i++){
-			wings.push(`<img class="wings" src="/assets/svg/human/humanClothes/wings/wings`+i.toString()+`.svg" alt="wings">`);
-		}
-		return shuffle(wings);
+		return shuffle(wings)[0];
 	}
 	function maleShoes(){
-		var maleShoes = [];
-		for (i=1; i<=13; i++){
-			maleShoes.push(`<img class="shoes" src="/assets/svg/human/humanClothes/shoes/shoes`+i.toString()+`.svg" alt="shoes">`);
-		}
-		maleShoes.push(``);
-		return shuffle(maleShoes);
+		return shuffle(shoes)[0];
 	}
 	function femaleShoes(){
-		var femaleShoes = [];
-		for (i=1; i<=16; i++){
-			femaleShoes.push(`<img class="shoes" src="/assets/svg/human/humanClothes/female_shoes/female_shoes`+i.toString()+`.svg" alt="shoes">`);
-		}
-		femaleShoes.push(``);
-		return shuffle(femaleShoes);
+		return shuffle(female_shoes)[0];
 	}
 	function maleHairPieces(){
-		var maleHairPieces = [``, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -40px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -78px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -40px; left: -7px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: -15px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -60px; left: 2px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -67px; left: -9px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/neutralHairPiece8.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>`, /*only male hairpieces*/ `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/maleHairPiece1.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/male_hairPieces/maleHairPiece2.svg" style="position: absolute; z-index: 41; top: -18px; left: 0;"/>`];
-		return shuffle(maleHairPieces);
+		return shuffle(male_hairPieces)[0];
 	}
 	function femaleHairPieces(){
-		var femaleHairPieces = [``, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/female_hairPiece1.svg" style="position: absolute; z-index: 41; top: -14px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/female_hairPiece2.svg" style="position: absolute; z-index: 41; top: -14px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/female_hairPiece3.svg" style="position: absolute; z-index: 41; top: 15px; left: 0px; -ms-transform: scale(1.18, 1.3); -webkit-transform: scale(1.18, 1.3); transform: scale(1.18, 1.3);"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/female_hairPiece6.svg" style="position: absolute; z-index: 41; top: -27px; left: -22px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -40px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -78px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -37px; left: -7px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: -15px; left: 0;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -60px; left: 2px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -67px; left: -9px;"/>`, `<img class="hairPieces" src="/assets/svg/human/humanClothes/female_hairPieces/neutralHairPiece8.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>`];
-		return shuffle(femaleHairPieces);
+		return shuffle(female_hairPieces)[0];
 	}
 	function randomizeHairPieces(){
 		$(".hairPieces").remove();
 		if($(".man")[0]){
-			$("#relativeContainer").append(maleHairPieces()[0]);
+			currentMaleHairpiece = maleHairPieces();
+			console.log(currentMaleHairpiece);
+			var fullMaleHairPiecePath =  "/assets/js/pythonDir/male_hairPieces/" + currentMaleHairpiece;
+			console.log(fullMaleHairPiecePath);
+			$.getScript(fullMaleHairPiecePath, function( data, textStatus, jqxhr ) {
+				$("#relativeContainer .hairPieces").css({'position':'absolute', 'top':'-32px', 'left':'0', 'margin-top':'0', 'z-index':'40'});
+				$("#relativeContainer #neutralHairPiece7").css({'top':'-73px', 'left':'-8px'});
+				$("#relativeContainer #neutralHairPiece1").css({'top':'-84px', 'left':'-8px'});
+				$("#relativeContainer #neutralHairPiece6").css({'top':'-56px', 'left':'2px'});
+				$("#relativeContainer #neutralHairPiece5").css({'top':'-19px'});
+				$("#relativeContainer #neutralHairPiece4").css({'top':'-40px', 'left':'-7px'});
+				if(currentMaleHairpiece == "maleHairPiece2.svg.js"){
+					$("#relativeContainer .hairPieces").css({'top':'-20px'});
+				}
+				else if(currentMaleHairpiece == "neutralHairPiece3.svg.js"){
+					$("#relativeContainer .hairPieces").css({'top':'-65px'});
+				}
+			});
 		}
 		else if($(".woman")[0]){
-			$("#relativeContainer").append(femaleHairPieces()[0]);
+			currentFemaleHairpiece = femaleHairPieces();
+			console.log(currentFemaleHairpiece);
+			var fullFemaleHairPiecePath =  "/assets/js/pythonDir/female_hairPieces/" + currentFemaleHairpiece;
+			console.log(fullFemaleHairPiecePath);
+			$.getScript(fullFemaleHairPiecePath, function( data, textStatus, jqxhr ) {
+				$("#relativeContainer .hairPieces").css({'position':'absolute', 'top':'-32px', 'left':'0', 'margin-top':'0', 'z-index':'40'});			
+				$("#relativeContainer #neutralHairPiece7").css({'top':'-73px', 'left':'-8px'});
+				$("#relativeContainer #neutralHairPiece1").css({'top':'-84px', 'left':'-8px'});
+				$("#relativeContainer #neutralHairPiece6").css({'top':'-66px', 'left':'2px'});
+				$("#relativeContainer #neutralHairPiece5").css({'top':'-19px'});
+				$("#relativeContainer #neutralHairPiece4").css({'top':'-40px', 'left':'-7px'});
+				if(currentFemaleHairpiece == "neutralHairPiece3.svg.js"){
+					$("#relativeContainer .hairPieces").css({'top':'-69px'});
+				}
+				else if(currentFemaleHairpiece == "female_hairPiece6.svg.js"){
+					$("#relativeContainer .hairPieces").css({'left':'-23px'});
+				}
+				else if(currentFemaleHairpiece == "female_hairPiece3.svg.js"){
+					$("#relativeContainer .hairPieces").css({'left':'-2px', 'top':'-30px'});
+				}
+				else if(currentFemaleHairpiece == "female_hairPiece1.svg.js"){
+					$("#relativeContainer .hairPieces").css({'top':'-25px'});
+				}
+				else if(currentFemaleHairpiece == "female_hairPiece2.svg.js"){
+					$("#relativeContainer .hairPieces").css({'top':'-25px'});
+				}
+			});
 		}
-		$("#neutralHairPiece7").css({'top':'-28px', 'left':'-20px'});
-		$("#neutralHairPiece6").css({'top':'-26px', 'left':'2px'});
-		$("#neutralHairPiece5").css({'top':'3px'});
-		$("#neutralHairPiece4").css({'top':'-7px', 'left':'-7px'});;
 	}
 	function randomizeGlasses(){
 		$(".glasses").remove();

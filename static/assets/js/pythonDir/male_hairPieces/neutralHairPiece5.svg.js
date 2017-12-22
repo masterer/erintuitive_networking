@@ -1,4 +1,4 @@
-var item = `<svg class="hairPieces" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg id="neutralHairPiece5" class="hairPieces" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="lines" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <filter style="color-interpolation-filters:sRGB" id="filter5207">
@@ -41,3 +41,4 @@ var item = `<svg class="hairPieces" width="86" height="380" viewBox="202.715 584
     <g id="layer2" style="display:inline;opacity:0.17699998" transform="translate(54.167994,1618.7877)"/>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

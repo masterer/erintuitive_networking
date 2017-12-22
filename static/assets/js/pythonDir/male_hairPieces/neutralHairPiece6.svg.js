@@ -1,4 +1,4 @@
-var item = `<svg class="hairPieces" width="86" height="380" viewBox="202.71499633789062 584.406982421875 105 380.0480041503906" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg id="neutralHairPiece6" class="hairPieces" width="86" height="380" viewBox="202.71499633789062 584.406982421875 105 380.0480041503906" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="lines" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <linearGradient id="linearGradient3834" y2="453.08" gradientUnits="userSpaceOnUse" x2="-485" gradientTransform="matrix(.85616 0 0 .85619 572.56 608.04)" y1="378.79" x1="-530">
@@ -47,3 +47,4 @@ var item = `<svg class="hairPieces" width="86" height="380" viewBox="202.7149963
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

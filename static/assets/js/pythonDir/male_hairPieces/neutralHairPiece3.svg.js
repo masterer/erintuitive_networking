@@ -31,3 +31,4 @@ var item = `<svg class="hairPieces" width="86" height="380" viewBox="202.715 584
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

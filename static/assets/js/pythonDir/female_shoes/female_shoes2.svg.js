@@ -164,3 +164,4 @@ var item = `<svg class="shoes" width="86" height="380" viewBox="202.715 584.407 
     <path style="stroke: rgb(0, 0, 0); stroke-opacity: 0; fill: rgb(8, 8, 8);" d="M 232.465 952.202 C 233.633 957.155 236.074 959.245 240.392 961.796 C 242.153 962.837 244.969 959.93 248.84 953.077 C 250.386 950.339 247.945 952.749 241.518 960.308"/>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

@@ -1,8 +1,8 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <g transform="matrix(1.243725, 0, 0, 1.263683, 248.215042, 705.026917)">
     <title>Thumbs up smiley</title>
     <circle r="19" stroke="black" cy="0" cx="0" stroke-width="2" fill="#efff00"/>
@@ -15,3 +15,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

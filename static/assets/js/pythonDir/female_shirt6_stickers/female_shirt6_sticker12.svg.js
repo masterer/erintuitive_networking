@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes"/>
     <style id="style6" type="text/css">
@@ -60,3 +60,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     <path id="path55" class="fil5 str5" style="stroke-linejoin: bevel; stroke: rgb(194, 193, 193); stroke-width: 0.51163; fill: url(#gradient-3);" d="M 239.045 656.601 C 242.263 659.182 254.674 660.187 254.868 656.071 L 257.464 655.32 C 259.096 656.063 257.939 657.389 255.203 658.589 C 256.16 658.271 257.073 657.75 257.923 656.927 C 259.261 659.977 256.624 662.428 247.585 662.608 C 242.08 662.652 237.926 661.445 234.731 659.363 C 234.054 658.914 233.689 658.654 233.942 658.054 C 234.202 657.432 235.162 657.194 236.145 657.1 C 236.752 657.721 237.785 658.263 238.878 658.676 C 236.915 657.874 235.809 657.027 235.78 656.027 L 239.045 656.601 Z"/>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

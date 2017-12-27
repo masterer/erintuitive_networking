@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern patternUnits="userSpaceOnUse" width="120" height="100.00132" patternTransform="translate(369.49011,573.19694)" id="pattern10362">
       <g transform="translate(-369.49011,-473.19681)" id="g10230">
         <rect y="473.19696" x="369.49011" height="100" width="120" id="rect10232" style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;marker:none;enable-background:accumulate"/>
@@ -1664,6 +1664,7 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     <pattern id="pattern-15" patternTransform="matrix(3.6927867,0,0,3.6927867,434.6914,627.93285)" xlink:href="#pattern15440"/>
     <pattern id="pattern-16" patternTransform="matrix(6.6767084,-0.69883809,0.69883809,6.6767084,630.07095,637.08349)" xlink:href="#pattern50986"/>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <polygon id="e3_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern55752-0);" points="243.197 661.307 233.575 703.92 246.633 741.035 247.321 741.035 261.067 704.607 251.444 661.307" class="ties"/>
 </svg>`;
+$("#relativeContainer").append(item);

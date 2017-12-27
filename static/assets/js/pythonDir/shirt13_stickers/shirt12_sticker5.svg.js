@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
       <g transform="matrix(0.174585, 0, 0, 0.135009, -1.226851, 24.519238)">
         <g id="layer2" transform="translate(-23.417 -5.1129)">
@@ -77,7 +77,8 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
       <stop id="stop3737" style="stop-color:rgb(71, 68, 66);stop-opacity:0" offset="1"/>
     </linearGradient>
   </defs>
-  <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern-0-0);" points="238.386 653.06 204.02 670.242 201.958 701.858 211.581 701.858 212.268 688.112 208.832 792.583 278.937 793.957 280.312 765.778 280.312 697.734 289.246 699.109 291.308 676.428 288.559 675.741 259.005 654.434" class="shirt"/>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern-0-0);" points="238.386 653.06 204.02 670.242 201.958 701.858 211.581 701.858 212.268 688.112 208.832 792.583 278.937 793.957 280.312 765.778 280.312 697.734 289.246 699.109 291.308 676.428 288.559 675.741 259.005 654.434" class="shirtOverlay"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <text x="229.513" y="683.682" style="white-space: pre; fill: rgb(51, 51, 51); font-family: sans-serif; font-size: 24px;" transform="matrix(1, 0, 0, 1.111434, -0.609051, -77.441841)">HI!</text>
 </svg>`;
+$("#relativeContainer").append(item);

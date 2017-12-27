@@ -1,4 +1,4 @@
-var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="bottomOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <rect id="svgEditorBackground" x="202.71499633789062" y="584.406982421875" width="86.59329986572266" height="380.0480041503906" style="fill: none; stroke: none;" class="clothes"/>
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes"/>
@@ -84,3 +84,4 @@ var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 242.303 959.583 C 242.303 953.544 249.793 949.174 251.439 943.138 C 255.389 928.655 248.125 916.464 250.83 902.941 C 251.957 897.304 255.093 890.197 255.093 885.278" style="fill: rgb(49, 49, 49); stroke: rgb(220, 199, 199);"/>
   <path d="M 256.921 962.019 C 267.828 962.019 265.246 944.351 267.274 938.266 C 272.957 921.218 272.312 904.233 267.274 887.105 C 266.42 884.2 265.841 875.318 263.62 873.097" style="fill: rgb(49, 49, 49); stroke: rgb(220, 199, 199);"/>
 </svg>`;
+$("#relativeContainer").append(item);

@@ -1,9 +1,9 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
-  <polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
+  <polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirtOverlay"/>
   <g transform="matrix(0.335607, 0, 0, 0.343379, 214.983276, 685.585571)">
     <g id="layer1" transform="translate(-146.5 -151.81)">
       <g id="g3081">
@@ -15,3 +15,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

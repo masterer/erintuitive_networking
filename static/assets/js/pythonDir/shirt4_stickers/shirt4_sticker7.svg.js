@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <style id="style2989" type="text/css">
     .str0 {stroke:black;stroke-width:0.0762001}
     .fil0 {fill:black}
@@ -68,7 +68,7 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
       <stop id="stop4717" style="stop-color:#ffe900" offset="1"/>
     </radialGradient>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <g transform="matrix(0.058804, 0, 0, 0.060322, 213.586044, 667.046082)">
     <title id="title4674">Jack O' Lantern: Fred</title>
     <g id="layer1" transform="translate(0 -52.362)">
@@ -92,3 +92,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

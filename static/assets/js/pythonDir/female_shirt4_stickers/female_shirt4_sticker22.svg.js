@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <linearGradient id="gradient-651" gradientUnits="userSpaceOnUse" x1="245.022" y1="730.134" x2="245.022" y2="737.207" gradientTransform="matrix(0.994581, 0, 0.04468, 0.600626, -31.67, 290.809974)">
@@ -268,3 +268,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 232.46 730.116 C 237.061 730.116 245.132 732.451 249.73 731.391 C 252.572 730.736 254.595 730.877 257.92 729.351 C 258.166 729.238 257.591 734.638 257.791 734.706 C 260.179 735.518 255.95 736.066 250.244 736.289 C 241.845 736.619 230.244 736.243 231.839 734.961 C 231.859 734.944 231.429 731.646 231.932 729.606" style="stroke: rgb(0, 0, 0); fill: url(#gradient-651);" transform="matrix(0.999987, 0.005089, -0.005089, 0.999987, 3.73278, -1.237718)"/>
   <polygon style="stroke-opacity: 0; stroke: rgb(0, 0, 0); fill: url(#gradient-653); fill-opacity: 0.72;" points="234.355 732.652 229.241 745.044 235.634 739.05 239.726 750.081 239.725 739.623 243.05 738.764 243.306 749.062 246.886 737.906 251.233 749.921 251.745 739.05 256.092 745.63 254.302 736.671 264.788 741.308 254.814 732.276 246.118 736.293 240.237 733.225 236.657 737.121"/>
 </svg>`;
+$("#relativeContainer").append(item);

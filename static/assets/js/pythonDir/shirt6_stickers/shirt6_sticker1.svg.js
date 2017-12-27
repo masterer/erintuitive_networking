@@ -1,8 +1,8 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <g transform="matrix(0.122333, 0, 0, 0.121106, 213.422699, 676.128174)">
     <g id="layer1" transform="translate(0 -540.36)">
       <path id="path2985" d="m470 255.5c0 99.69-76.78 180.5-171.5 180.5s-171.5-80.81-171.5-180.5 76.78-180.5 171.5-180.5 171.5 80.81 171.5 180.5z" fill-rule="evenodd" transform="matrix(1.4461 0 0 1.374 -175.65 445.31)" stroke="#000" stroke-width="11.351" fill="#40ff40"/>
@@ -14,3 +14,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

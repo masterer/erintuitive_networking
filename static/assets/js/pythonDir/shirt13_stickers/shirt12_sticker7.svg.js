@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100"/>
     <linearGradient id="linearGradient5857" gradientUnits="userSpaceOnUse" gradientTransform="matrix(450.65 0 0 450.65 708.74 136.38)">
       <stop id="stop126329" style="stop-color:#ffffff" offset="0"/>
@@ -18,7 +18,7 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
       <feGaussianBlur id="feGaussianBlur6707" stdDeviation="5.8118586"/>
     </filter>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <g transform="matrix(0.101569, 0, 0, 0.101569, 216.651764, 670.441711)">
     <g id="layer1" transform="translate(-707.9 -10.269)">
       <path id="path5888" style="filter:url(#filter6705);fill:#231f20" d="m1138.8 10.269c-105.5 41.31-209.26 86.949-313.87 130.44-36.72 15.36-73.54 30.5-110.18 46.06l42.5 456.31c0.52 5.52 5.35 9.55 10.78 9.03l458.27-43.53c5.4-0.51 9.4-5.39 8.9-10.91l-36.7-385.87c-1.2-7.79-12.5-12.22-19.4-10.75-131.2 14.28-262.53 26.77-393.85 39.5 126.86-52.42 253.75-104.83 380.55-157.25l-27-73.031z"/>
@@ -35,3 +35,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

@@ -1,4 +1,4 @@
-var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="bottomOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes"/>
   </defs>
@@ -7,3 +7,4 @@ var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 210.958 791.124 C 210.958 790.707 211.556 791.443 212.512 791.124 C 214.195 790.563 216.77 790.459 218.504 790.459 C 221.552 790.459 224.212 789.37 226.937 788.461 C 230.575 787.249 235.495 788.642 239.366 787.352 C 247.165 784.752 257.129 787.189 265.332 784.91 C 269.236 783.826 274.443 781.814 277.094 784.466" style="stroke: rgb(0, 0, 0); fill: rgb(216, 216, 216);"/>
   <path d="M 208.517 801.777 C 208.517 802.286 215.035 801.661 215.619 801.555 C 221.273 800.527 226.695 799.114 232.486 799.114 C 233.008 799.114 236.867 798.613 237.368 799.114 C 238.88 800.625 247.088 800.3 249.131 800.446 C 258.03 801.081 265.24 801.111 273.543 801.111 C 273.665 801.111 280.867 801.746 280.867 800.668" style="stroke: rgb(0, 0, 0); fill: rgb(216, 216, 216);"/>
 </svg>`;
+$("#relativeContainer").append(item);

@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
       <ellipse transform="matrix(-0.447214, 0.894427, -0.894427, -0.447214, 72.37711, 9.45984)" cx="33.654" cy="36.859" rx="15.409" ry="15.409" style="fill: url(#gradient-5);"/>
       <ellipse transform="matrix(-0.077888, 0.996962, -0.996962, -0.077888, 134.270763, -6.184481)" cx="68.269" cy="70.192" rx="20.575" ry="20.575" style="fill: url(#gradient-6);"/>
@@ -46,3 +46,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 234.386 727.534 C 237.772 727.534 258.139 717.015 258.139 716.571" style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-7);"/>
   <path d="M 232.559 709.872 C 241.555 709.872 250.645 734.234 256.311 734.234" style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-8);"/>
 </svg>`;
+$("#relativeContainer").append(item);

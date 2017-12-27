@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
   </defs>
@@ -12,3 +12,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 215.534 768.94 C 215.534 772.588 220.888 775.059 225.019 775.059 C 226.067 775.059 230.183 774.409 230.832 775.059 C 231.087 775.314 235.064 776.946 235.115 776.894 C 235.439 776.57 235.07 774.186 235.727 773.529 C 238.86 770.396 245.492 777.519 247.965 776.282 C 250.147 775.192 250.264 773.678 251.943 771.999 C 252.071 771.871 257.069 773.942 258.062 774.141 C 261.293 774.787 261.23 773.726 263.263 771.693" style="stroke: rgb(0, 0, 0); fill: rgb(255, 208, 226);"/>
   <path d="M 242.764 703.465 C 243.187 703.465 247.048 700.053 247.048 702.853" style="stroke: rgb(0, 0, 0); fill: rgb(255, 208, 226);"/>
 </svg>`;
+$("#relativeContainer").append(item);

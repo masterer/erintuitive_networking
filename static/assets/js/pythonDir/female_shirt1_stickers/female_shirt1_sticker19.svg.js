@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <radialGradient id="gradient-0" gradientUnits="userSpaceOnUse" cx="75.113" cy="535.828" r="154.283">
@@ -33,3 +33,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 228.702 730.643 C 228.702 732.922 233.654 726.848 236.051 727.867 C 241.052 729.992 251.154 732.378 257.282 732.378" style="stroke: rgb(0, 0, 0); fill: rgb(216, 216, 216); fill-opacity: 0;"/>
   <path d="M 239.318 792.395 C 235.215 792.395 239.738 784.17 240.543 780.147 C 242.921 768.255 248.687 761.753 241.767 754.833" style="stroke: rgb(0, 0, 0); fill: rgb(216, 216, 216);"/>
 </svg>`;
+$("#relativeContainer").append(item);

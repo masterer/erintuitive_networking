@@ -1,4 +1,4 @@
-var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="bottomOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 999.461181640625 999.9999766349792">
@@ -178,3 +178,4 @@ var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 
   <rect id="rect-2" x="203.411" y="583.672" width="86.593" height="115.809" style="fill: none; stroke: none;"/>
   <rect id="rect-3" x="-403.292" y="498.82" width="1300" height="550" style="fill: none; stroke: none;"/>
 </svg>`;
+$("#relativeContainer").append(item);

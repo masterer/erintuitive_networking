@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
       <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
     </pattern>
@@ -18,7 +18,7 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     <pattern id="pattern-0-7" patternTransform="matrix(1, 0, 0, 1, 267.018982, 664.242004)" xlink:href="#pattern-0"/>
     <pattern id="pattern-0-8" patternTransform="matrix(1, 0, 0, 1, 402.413513, 550.033997)" xlink:href="#pattern-0"/>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <rect style="fill: rgb(216, 216, 216);" transform="matrix(1.000011, 0, 0, 1, 167.386105, 532.028564)" x="348.377" y="263.11" width="5.481" height="3.654"/>
   <rect style="fill: rgb(216, 216, 216);" transform="matrix(NaN, NaN, NaN, NaN, NaN, NaN)"/>
   <rect style="fill: rgb(216, 216, 216);" transform="matrix(NaN, NaN, NaN, NaN, NaN, NaN)"/>
@@ -34,3 +34,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <rect style="stroke-opacity: 0; fill: rgb(187, 203, 135); stroke: url(#pattern-0-8);" x="398.168" y="551.871" width="28.491" height="16.326" transform="matrix(0.908732, 0.417381, 0.220659, 1.201779, -262.485897, -161.824931)"/>
   <polygon style="stroke-opacity: 0; fill: rgb(187, 203, 135); stroke: url(#pattern-6);" points="213.475 714.449 228.527 719.93 230.195 731.739 210.401 728.786" transform="matrix(0.992845, -0.11941, 0.11941, 0.992845, -84.768409, 31.479493)"/>
 </svg>`;
+$("#relativeContainer").append(item);

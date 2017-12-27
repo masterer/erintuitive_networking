@@ -1,6 +1,6 @@
-<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <linearGradient id="linearGradient3655" y2="466.21" gradientUnits="userSpaceOnUse" x2="139.4" gradientTransform="matrix(1.2932 0 0 1.2925 68.767 -154.54)" y1="392.88" x1="129.3">
       <stop id="stop3651" style="stop-color:#808000" offset="0"/>
       <stop id="stop3653" style="stop-color:#606000" offset="1"/>

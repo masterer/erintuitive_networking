@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
@@ -212,3 +212,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <rect id="rect-1" x="-403.988" y="499.579" width="1300" height="550" style="fill: none; stroke: none;" class="clothes"/>
   <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-0);" points="229.599 663.838 208.825 689.501 214.324 704.165 227.155 707.831 230.822 697.444 237.543 691.334 247.93 692.556 249.763 693.167 255.873 690.723 261.372 690.112 265.038 693.778 266.26 697.444 265.038 701.721 280.313 697.444 282.757 685.224 279.702 677.28 263.205 663.227"/>
 </svg>`;
+$("#relativeContainer").append(item);

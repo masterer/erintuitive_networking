@@ -205,6 +205,7 @@
 		<input type="hidden" name="clothing" value="humanClothes.html"/>
 		<input id="skip" value="Skip to clothing" name="clothingSubmit" type="submit"/>
 	</form>
+	<button id="skip2" onclick="skipOption()">Done previously, skip!</button>
 	<!-- <button id="space" onclick="skipSpace()">Skip and go inworld</button> -->
 	<style>
 		body {
@@ -306,10 +307,7 @@
 			window.location.replace("spaceScene.php");
 		}
 		function skipOption() {
-			//window.location.replace("humanClothes.html");
-			/*var io = require('socket.io-client');
-			var socket = io.connect('http://erintuitive.herokuapp.com', {reconnect: true});
-			socket.emit('redirect', 'humanClothes.html');*/
+			window.location.replace("world");
 		}
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){

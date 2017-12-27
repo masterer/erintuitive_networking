@@ -1,4 +1,4 @@
-var item = `<svg class="pants" width="86" height="380" viewBox="202.71499633789062 584.406982421875 86.58999633789062 380.0480041503906" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="bottomOverlay" width="86" height="380" viewBox="202.71499633789062 584.406982421875 86.58999633789062 380.0480041503906" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="lines" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <filter id="filter5389">

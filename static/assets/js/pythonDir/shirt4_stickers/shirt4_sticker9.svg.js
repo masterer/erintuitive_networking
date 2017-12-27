@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
       <g transform="matrix(0.065451, 0.009674, 0, 0.091719, -1.921862, -2.472852)">
         <g id="layer1" transform="translate(868.42 -177.86)">
@@ -260,6 +260,7 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     <pattern id="pattern-0-85" patternTransform="matrix(1, 0, 0, 1, -590, 6486.399902)" xlink:href="#pattern-0"/>
     <pattern id="pattern-0-86" patternTransform="matrix(1, 0, 0, 1, -3686, 5070.399902)" xlink:href="#pattern-0"/>
   </defs>
-  <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern-0-0);" points="238.386 653.06 204.02 670.242 199.896 735.536 212.955 734.849 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 272.751 734.161 281.686 736.223 291.308 736.224 288.473 671.617 259.005 654.434" class="shirt" transform=""/>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none; fill: url(#pattern-0-0);" points="238.386 653.06 204.02 670.242 199.896 735.536 212.955 734.849 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 272.751 734.161 281.686 736.223 291.308 736.224 288.473 671.617 259.005 654.434" class="shirtOverlay" transform=""/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
 </svg>`;
+$("#relativeContainer").append(item);

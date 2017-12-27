@@ -1,6 +1,6 @@
-<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
       <g transform="matrix(0.139142, 0, 0, 0.085407, -0.252465, -0.641026)">
         <path d="m0 0v1184h720v-760h-1c-0.98 3.42-2.42 6.67-3.68 10-0.84 2.2-9.04 21.38-11.39 10.94-0.85-3.76 2.25-8.61 3.65-11.94 3.83-9.16 3.34-29.52 12.42-34v-9c-4.66-2.38-4.66-5.62 0-8v-12c-6.78-3.42-5-11.43-5-18 0-10.73 0.53-38-10-44-2.09 7.23-7.06 13.6-12.29 18.94-1.92 1.95-7.14 5.03-7.67 0-0.41-3.83 4.42-7.17 6.39-9.94 2.52-3.56 3.03-7.78 3.57-12h-3l1-6c-10.03 1.35-19.14 5.97-29 7.9-2.8 0.55-7.55-0.87-5.25-4.63 4.88-7.97 20.93-5.04 27.25-12.27h11c-0.94-10.01 6.59-8.38 11.41-1.74 2.04 2.81 1.45 6.56 2.56 9.74 2.77 7.98 7.32 14.31 8.03 23h1v-321h-720z" style="fill: rgb(100, 241, 61);"/>

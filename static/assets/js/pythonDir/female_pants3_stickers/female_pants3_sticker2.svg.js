@@ -1,4 +1,4 @@
-var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="bottomOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <filter id="filter4321" width="1.5346" y="-.16850" x="-.26728" height="1.337" color-interpolation-filters="sRGB">
@@ -216,3 +216,4 @@ var item = `<svg class="pants" width="86" height="380" viewBox="202.715 584.407 
     <path stroke="#F3EDE9" stroke-width="0.0938" d="M -1225.653 1744.639 C -1224.134 1743.169 -1222.581 1741.72 -1221.226 1738.569 C -1219.223 1734.169 -1217.03 1730.949 -1215.231 1725.299 C -1213.811 1720.959 -1212.138 1718.029 -1210.765 1713.47 C -1209.852 1710.519 -1208.788 1708.379 -1207.81 1705.779 C -1206.142 1701.429 -1204.074 1698.889 -1202.809 1692.559 C -1204.066 1693.999 -1205.358 1694.919 -1206.628 1696.139 C -1207.515 1696.859 -1208.14 1699.989 -1209.071 1700.119 C -1210.768 1700.489 -1212.091 1705.369 -1213.782 1705.899 C -1215.155 1706.329 -1216.086 1710.6 -1217.302 1712.519 C -1218.557 1714.549 -1219.71 1717.35 -1220.97 1719.339 C -1222.416 1721.519 -1223.389 1726.789 -1223.917 1732.199 C -1224.366 1736.589 -1225.038 1740.569 -1225.653 1744.639 Z" style="fill: rgb(91, 13, 61);"/>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

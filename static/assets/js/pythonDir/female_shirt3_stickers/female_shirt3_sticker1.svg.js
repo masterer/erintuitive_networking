@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <radialGradient id="gradient-14" gradientUnits="userSpaceOnUse" cx="118" cy="274" r="3.551">
@@ -38,3 +38,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <path transform="matrix(-0.599998, 0.799984, -0.799999, -0.599998, 550.220432, 753.301194)" d="M 136 273 m -3.045 0 a 3.045 3.045 0 1 0 6.09 0 a 3.045 3.045 0 1 0 -6.09 0 Z M 136 273 m -1.827 0 a 1.827 1.827 0 0 1 3.654 0 a 1.827 1.827 0 0 1 -3.654 0 Z" style="fill: url(#gradient-19);" bx:shape="ring 136 273 1.827 1.827 3.045 3.045 1@a8c991f5"/>
   <path transform="matrix(-0.196118, 0.980577, -0.980577, -0.196122, 587.353625, 668.37147)" d="M 127 324 m -3.106 0 a 3.106 3.106 0 1 0 6.212 0 a 3.106 3.106 0 1 0 -6.212 0 Z M 127 324 m -1.863 0 a 1.863 1.863 0 0 1 3.726 0 a 1.863 1.863 0 0 1 -3.726 0 Z" style="fill: url(#gradient-20);" bx:shape="ring 127 324 1.863 1.863 3.106 3.106 1@281f0c3e"/>
 </svg>`;
+$("#relativeContainer").append(item);

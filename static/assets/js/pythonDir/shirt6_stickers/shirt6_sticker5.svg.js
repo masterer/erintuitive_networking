@@ -1,6 +1,6 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/>
+    <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirtOverlay"/>
     <radialGradient id="radialGradient18806" gradientUnits="userSpaceOnUse" cx="149.1" cy="346.57" r="26.541" gradientTransform="matrix(1.3266 -.050924 .021593 .56251 -56.177 159.21)">
       <stop id="stop8490-9" stop-color="#6b4d31" offset="0"/>
       <stop id="stop8492-5" stop-opacity="0" stop-color="#6b4d31" offset="1"/>
@@ -215,7 +215,7 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
       <stop id="stop12186-0" style="stop-color:#642800" offset="1"/>
     </linearGradient>
   </defs>
-  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/>
+  <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirtOverlay"/>
   <g transform="matrix(0.14904, 0, 0, 0.147723, 214.485825, 678.117676)" style="stroke-width: 0.335434; vector-effect: non-scaling-stroke;">
     <g id="layer1" transform="matrix(.91675 .39947 -.39947 .91675 -18.513 -470.98)">
       <g id="g7276" style="opacity:.43621;stroke:url(#radialGradient18806)" transform="translate(227.05 337.13)">
@@ -2125,3 +2125,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
     </g>
   </g>
 </svg>`;
+$("#relativeContainer").append(item);

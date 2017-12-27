@@ -1,4 +1,4 @@
-var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+var item = `<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs id="svgEditorDefs">
     <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
     <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
@@ -64,3 +64,4 @@ var item = `<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 
   <path d="M 222.814 661.756 C 223.882 660.688 220.987 664.354 220.987 666.02 C 220.987 669.161 221.714 671.992 220.377 677.592 C 219.867 679.73 220.314 685.033 218.55 686.728 C 209.175 695.735 212.422 697.044 220.987 705.608 C 223.621 708.243 233.45 701.019 234.995 702.563 C 241.006 708.574 249.586 718.423 259.357 708.653 C 262.987 705.023 262.711 695.864 273.365 687.946" style="fill: url(#pattern-0-0); stroke: url(#pattern-0-1);"/>
   <path d="M 229.18 733.625 C 229.18 739.775 219.742 762.711 214.47 767.731 C 213.781 768.388 210.633 781.13 210.633 781.13 C 210.633 781.13 223.189 774.716 224.064 772.604 C 230.974 755.915 245.241 761.954 255.403 752.506 C 260.094 748.145 253.342 745.194 261.16 739.715 C 263.376 738.162 257.87 730.579 253.484 730.579" style="fill: url(#pattern-0-2); stroke: rgb(0, 0, 0);"/>
 </svg>`;
+$("#relativeContainer").append(item);

@@ -14,7 +14,7 @@
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 <div id="staging2" style="position: absolute; left: 7px; top: 0;"></div>
-<canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+<canvas id="myCanvas" width="220" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 <style>
 	body {
 		overflow: hidden;
@@ -59,6 +59,8 @@
 
 	var personContainer = new PIXI.Container();
 	app.stage.addChild(personContainer);
+	personContainer.y = 0;
+	personContainer.x = 0;
 	
 	var count = 0;
 	
@@ -97,13 +99,17 @@
 	});*/
 
 	for (i=0; i<players.length; i++){
-		document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 25px;">' + right + '</div>';
+		document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + right + '</div>';
 		domtoimage.toPng(document.getElementById(players[i])).then(function (dataUrl) {
 			var img = new Image();
 			img.src = dataUrl;
 			img.onload = function() {
 				document.getElementById("staging2").appendChild(img);
 				ctx.drawImage(img, 0, 0);
+				var pixiTextureAvatar = PIXI.Texture.fromCanvas(document.getElementById("myCanvas"));
+				var pixiAvatar = PIXI.Sprite(pixiTextureAvatar);
+				personContainer.addChild(pixiAvatar);
+				pixiAvatar.x = 300;
 			}
 		}).catch(function (error){
 			console.error(error);

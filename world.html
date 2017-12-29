@@ -8,17 +8,23 @@
 	<script src="/assets/js/pixi.dom.js"></script>
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/dom-to-image.min.js"></script>
+	<script src="/assets/js/blob-util.min.js"></script>
 </head>
 <body bgcolor="purple">
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 <div id="staging2" style="position: absolute; left: 7px; top: 0;"></div>
+<canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+<!-- <img style="position: absolute; top: 0; left: 0;" id="test" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAOEBAQEA8QEhUWEBUWDxAQDxAWFhIQFhYYFhUWFRYYHSggGBonHxgVITIiJSkrLi8uGh8zODMsNygtLisBCgoKDg0OGhAQGi8lICUtKys3Ky4tKy8tKy01Ky81Ky8tLS0tLS0tLzUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAAAgEDBAUHBv/EADsQAAICAQIDBQYGAQIFBQAAAAABAhEDBCESMUEFBiJRYRNxgZGhsQcyQsHR8FIU4SNygrLxFiQzQ2L/xAAaAQACAwEBAAAAAAAAAAAAAAAAAgEDBAUG/8QALBEAAgIBAwIGAgAHAAAAAAAAAAECEQMEEiExQQUiMlFh8HGBExQVIzNCsf/aAAwDAQACEQMRAD8A4aAAAAAAAAAAAAAAAAAEgBAE0FATRAE0ABRAE0FAFEATQAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgBBIE0BKRFE0TRNEWOokUFDUFEWNtFoKHoKCw2iUFD0RQWG0WiKHoigsjaJQDURRIrQoE0BItEAAAQAAAAAAAAAAAAAAAAAASAATQIaiB0iEiaHlBxbT6MiiLLNpFE0MkSkRY6iLRNDUTRFjqIlBQ9BRFk7RKCh6CgsNpXRFFlEUTYriV0RRZQrRNlbiJRFDtCtDCNCkDMgkraIAAAgAAAAAAAAAAAAfHC35BRfixcSk106enURPfcTcX7KSK0jYYNIvDxXuk1Fc2n5fwY/tOkUvkvubDSTUpR4vzJr3OvPyK8knRowY42Nquzm8i4ZJ8U6js/NL6bGJqc7lxR5pTfC2ldWe37N7LepcJQy44yjK3cvJ77Jf2za/8AouDk1llh35T8UZenTmYP5yMHUux0ZaVu9nc5WkPGDdtJuubS5L18jp0/w7UkorJicb8M4vxNvz2+j8jddldw1o4ThPPBuTtxpr03a59dq6smXiOOuClaRppNnFqGo7t2d3Sw6fePsnJu5JOXDNcqca5enL0Nb2r3C0nFxRWLGv1RUsi4X5J9VzEXicL5THWm+Tjjg1zTXlaIo67qe7ryQeP/AIWWDVVHIk4+TTnTv5nldZ3FzYrcnUf0yrZvom1aX1LIa/HL1cDS0rT8rs8ao2TkxOPNe43Gt0uTSRVR4G5Ne0uLclXRr8q+prHkfAoetmmOTdyuhXLEo8PqY9CtFtCtFllDiVtCtFrQrQ1lTiVtCtFjQrQxVKJWyGO0KySpoUgZijFbAAACAAAAAGxq2hSzFV+JOvQhjR6lkZuPJtPzFjLfff1LNTnU+FJNJXSfr/UVIRdC9vnh8GSoKL232+Rbj8O/V8l+5VCXWl6mbOFJJbNpb+Sr+CqT9zZjS7G37M1SSjxS4W5U7db15/LY6J3bzSy45QnvwK4vrw3VfVHKdJCLavaMeb25efvOldyc7ftkm+CGHZvlNtx3XpRydbjSVo6uGT2nolKprH5/lb25q+SK+2e1JaXHGahGXg4pcSulbTr3evQjJn4nGdXVcCj9vQO8rvFGTjSan4X5TdL7/Q56XKL5xtpM1mLvxBxucYJr9Sin8kmQu+UKTyqDUuVxcbXL0+VHK8mpkripbW1xLm109yMe35s6f9Pj7mb+LHtE6/7bDqJOOmnFPm4N36+F9Ro59Tpr8PEuqt0/gcs7N1ssU4yUmqfOzsXYmtjrdNx34o7T9/R/H+TLnwvF8ovjlTXK4NfqewsPaWJuEOCdbwWyk1ycPJ+hzbtDsCWF5FKM04q004tPel799jq+ncYJLHJqXFxNXye3L0NB+IMXBRzwVe0/Muimvzbe+n8Q0+acJbV0ZE8cb83Q5Y0K0WNCtHds5riVtCtFjQrQyZTKJW0K0WNCNDIokitoVljEYyKZIRkMZkMYpaFAAJEAAAAJRKIQyIGRKGRCGQrLooeDo2OPVQa8W23+Lb+9M1yHRXOKZqxScehmuSybKXDXJTdKXu6JnSPwuwt4szluuCVLzVpfdM5Yjq/4X6rwPw7KDjPyaSu1620c/XqsXHub9O2233o22m2lKKezey+Kr6tfUbvjkePQPIua3XopNqP1orzNe2co0lvsvNU/4MrvRmx49LwZfyPHLj899opeu5yl6l+TpZbuP3scTolIyNZp/ZzlFSUls4yV7xklJP02aKkjv3asxqFEJHSvw4mmsuN3Use9ejX7Wc5xwto6J3FwuEM+TyxNL/mk0kYda1sothE2mTJCGW7k4qPh4f8AJXSfw5mT21o8Wq0sbtNynwSb2jOSW9LoqX1KMGl44xfC1c97W9U6MrtbNDDDHgfTilka/S5Klb80t69xze6rqasiTaRxfUYnCcoyVNSakvKSdNFTRs+35KWpzNdZfWld+t2a5o9BCVpM5s4U2ipoVosaFZYjPJFTQrLGIxkZ5IrYrHYjHRnkhGKx2KxkUSQpBLIGKmAAAAShkKhkQx4jIdCoZCsviOh0Ih0IzREdHVPw3gljSXLgnxevP+YnLcUqafkzrX4fJLAnyvHkd+vFe7+BzfEX/bX5OlpVxJ/Bn4ZSzTafJTt0luk9rNd+JDvTYnf/ANrXy46+7N/pNO4bqpcX5XvyH1mhxamHsslUnadcn/W/mcuEtsk/Y3ZZJ9Dh9G50fYntIx3dyezXKvT+ToeDupo8MpS42234fAmor035mdotHpotqEZ5JXvxPq/cuXxNmTWt+lFcUuvU8Ho+6OSTSx+N3vGnaXn6o91pOzP9NjjhpN3eThf55ckvOkvuzf4dLUJOTjijVyaW78k+bZq+0u0YYo3ijxyS/NJOrfWubf8AdzJkyzn6ghPc6ivv5M7RuGCLcord3jj1lLr71vz9DkXeDt7P/qM6hkpe1mq4YvlJ7q1szYd7e8mZ53hjlko42lNwlvLIq476OnarkqPJ6zN7TJOdVxSb4burfKzZpdO15pImqt3yzGlvu/i2IyxiM6KKZIRiMsYjHRmmitiMdiMdGaaEYjHYrHRmkIxGOxWOjPIRkDMUYqYAAAQMhkIhkQx4joZCoZCsviOh0Ih0IzTEsidJ/C/MpxzpvdRba9KVf9rOao9z+FkH7XUyV7Yar1dv9jFrYp4n+v8Apt08nuo6Fo9TBQ4ZdG6+Zh9sdsR08sNwvju96aitrXx+xgZ87WSmltyrqT3m0ccuFZuPhahOSTT/AEx4qb6LajjqKtWdScEnfuehjkhPDxRqSlTUqV8O97eafMxY4KTkp0v/ANbe48V3L7wOM5Yskk4S/RPrJ7eF/pf993tp9nRklkx7ptJx5OF+aDJB45bWVwaXVlGu7Sm4cMI8PJz5N8PRpeTbX0PN95NXqlCU8eRRjFpvhiuKnzfE7aaflVI3+CdZ1KTSStNNc09nGvIr7ydl1pc8sT9onsuG7gn/AJe5dScbUJLgtW2PHucok27b382/MRmy0vZ8pSdrZfcO0NFDE+G5OdJ8K5K+Vs6yyRuiHB1Zq2LRdLE6G9gox45XXSizciiUGYchGWZHbbK2i1GOYjEY7Qkh0ZpiMRjMVjozSEYrGYrHRnkKxRmKMUsAAAIJQyFQyIY8RkOhEMhWXRLEOitDoRmiLHR138KdGo4VOl445JSb9JKMfh4TkSOo/hPGfDmlxeHh4VF77pOT+/1+eDxD/F+0bsHf8Hpsmmi5Tbrh3VVzdqmY/eKEcenhGSuMoTi/+VuP7fYzMtqHElzn9m2/2Nb3rnx4cCbpXNuvNcPI4y9SOm23X3sclacW0e8/DvvHGE46XNylJqM23unXgflTVr5Hj+19Msck4ytSjsuqrbf+TCxzcWmm007TTpprk0ztTxxyw5KHxwdr7U0Xs5OS8avZ7r5+pjafUvC01LZvk/LqpGk7td+OOMY6mDk4KpShSWSPJcUX+rny2PUZIYMuKWTFPHwyacXK7TV8Sa5cXL0+hyJwlB7ZF0Z8VJGn7Y7KhTzY4+F34Yr8kn0fkjS9r9kxeNTppt1Jxat1FUuXLf6G90mu4JSS/LyafX33zLu09Ks2OMsdtK7gt2n09/QIScGXpuPEjxktDj9nHhxwTupXFNvfm5Pc8/2+nHLwNvwwjcP8JOKbXv8AM9tPT8ON8UZKlJtOuaWy/vmeN7W00pzc2/E23L1fO9jfp53K2xM8W4cGnZmQwxfhXmt/P4fsPHRKCUp723UV1S835WXYeBSUpSguqV0a5TvoY4wr1Gs1dpuLW6ZizMztHIpzcoqve7v1fkYLL8fQw535mKxGMxWWowyYrEYzFY6KJCsglkDFTAAACCUShRkAyGQyEQyFZbFliHRWjJ0OFZJxg5xhb/PN1Fe8SXCs0Q5dCxO39yNHj0+Gc4qVywxlwfpukrS83t8jwPdLsfTLMp6vNp4wim4qefF4p9PDe69/+x0PD2tppR4IajT7ySf/AB8LuNq90/t6HH12RzqMeh1NPBKLvuQu1sfHLE29+GOyuKl+1Ns1ne/Msejg5c050uvF4Ev76FWbCsedy9pha4m4uOfE+dtWuK0avv8AZlmwYeDJBuMnxxWSN7p7891yMmPGnkiux0MlKNx+8HhtRmc5OUnbf929BExZKiLO2lwYN3Jl6LVvFK1vfNeZ7Tup20pPgjTv8+DI3TXnCX9a9UeBsbHkcXcW0+jTp/MpzYI5F8lscrXB219hrI5ZITqFbpK5cX+Mk6qijKvYQXA7afPhptrd+vJ/M8d3Q7859NJQyy9pB0nxpNr/AKub+L/36Hl9nngs2GSfVrrG/v7/AEORlxyxyqRbDK26l0+9TU5MHt4pRXDJ+KUZRfi6rh+J5rtDsyTknw8MblxykucVuqfT4/U9LrpvFCNVF+1UoNO6Ti7+0f6idPqY53KDS42vOlk6fPbl1CMnHlF25r8HOu1cVygo1yS8PKvT5mm1+Fxk9nUapnt+8HZc4Sco404pWo7rhX6l6ftueT16cou+XRLknfRerOlp8l1RnzpSTZqXur57/H/cx5MficX7vQnJJSV0k7p118n9zoLg5M5WihislissRkkxWTixucowXOUkl726RDNvpdItPj/1Ga02+HFj5OUmvE/ck9/LiXmEpbV8iRjufwafJDh6p+73tfsIZvaOfFk4JQhwOmpxV8O1U15Xvt6ephDRba5KZpJ8AAAMKBKIAAHRKFRKILEx0OmVpjJisuiyxSHhka6sqTGTEaLoyN32f2nkl4ZTcttr3fl/Bk62fHGm3e3wSZ56E2nabT80zIWqlw1bdu239jPLD5rRux6jy1IMmwtlfFZNltCbyywsSwsiht5djy10v9n6HqO7PeyWnnGNOuV8S2+HU8jZFleTBHIqkNHM4ncdLqtP2lGoyipurheza6wb5P0+553tLR5MMt00t6f96nPezu1sunlcJteZ77sXvnj1EVi1dvlWVfm/6l+pfX3nMyaaeLlco1YdSuhuNJrsefA8eeSUltCcle3Kn6Hn+1Ow3icpRhxQkm/D4k41b4X1e31R6HVdheBZMElkxyVxcfX9zBjnzYG4r8v6oyVqXwZRF07izRtUuYs5hrITyScvZ00qahF1t5+vvMGSa5p/E6zLTabU3fFin0Ttwb+6+pr9R3PU07ywd8vz/wAHShroriSo5uXRyfKfJzMeGCTfJ/I6Vo+48OGpTxyd2nFTbrqt0jJl3e0mGDeWbtNUopJtPzW/7Dy8Qh2RQtBJ9WeN7E7EU1HLwuozftXN7Lhp7V6P5lPe/JHJKHs9owhwpN83duXvb/Y3/bHbEHj9liSjHh2cafXnK6t8/wCo8JrJT4mpNv6f+B9PuyT3yK9Vtx49iX7MYAA6BywAAAAAAACSUKSgJTHRKYiGTFLEx0xkytMZMii1SHTGTK0ybFosUiyybK7JsiixSLLCxLCwonePZFi2RYUG8ayY5GuTK7IsKFcz03Y3fLU6SLhjyNJ9Oa+pu9N+IcpKs+LHl9WuGXzj/Bz1shsolo8UuaGWqnE6bj756STX/t0vV5P3oun30UWoQxY4tulabq9lz2OVNlkNVONVJ7NNK+TXIqfh8Ow618v9ke67Q745ZqLjOt/GoJKn60arP2lOfFkcnw+SdVL+GajJkhkk8sVSf/yQX6ZPf5X1MmONyiotUmpdfRUQsEIdi1Z5y6MxFlTb3SXRJ716swtXJyk21W+y9Og2R80tl/eZROVm6EadnOyztUxAAC0ygAAAAAAAAAAAEk2KSBKY1kpi2TZFDpj2TYlhZFDqRZYWJZNkUOpD2FiWFkUTuHsixbCyaI3DWRYtkWFEOQ1kWRZFk0I5BZDYWQSI2W6bJwy5X6WbnXZ+JxSkklTlutr6fD9zRQlTT8nZHEVzx7nZbjzuEXEv1MlKUmpbXyd/MxwAsSoplK3YAAEigAAAAAAAAAAAAAAAATZAAA1hYpIDWNYWLYWRRO4ewsWwsKJ3DWRZFkWFBuGsiyLCwoiybIsgCRbAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAJAgAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA//Z"> -->
 <style>
 	body {
 		overflow: hidden;
 	}
 </style>
 <script>
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext('2d');
+
 	var app = new PIXI.Application();
 	document.getElementById("staging").appendChild(app.view);
 	app.stage.interactive = true;
@@ -51,6 +57,9 @@
 	displacementFilter.scale.x = 25;
 	displacementFilter.scale.y = -350;
 	displacementFilter.rotation = 20;
+
+	var personContainer = new PIXI.Container();
+	app.stage.addChild(personContainer);
 	
 	var count = 0;
 	
@@ -76,16 +85,49 @@
 	socket.on("players", function(players2){
 		players = players2;
 	});
+
+	//make Blob
+	/*var myData = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><foreignObject width="100%" height="100%">' + right + '</foreignObject></svg>';
+	var mySVG  = new Blob([myData], {type: 'image/svg+xml'});
+	console.log(mySVG);
+	blobUtil.blobToBase64String(mySVG).then(function(base64String){
+		document.getElementById("test").setAttribute("src", base64String);
+		ctx.drawImage(document.getElementById("test"), 0, 0);
+	}).catch(function(err) {
+		console.error(err);
+	});*/
+
 	for (i=0; i<players.length; i++){
-		document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;">' + right + '</div>';
+		document.getElementById("staging2").innerHTML = '<div id="' + players[i] + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 25px;">' + right + '</div>';
 		domtoimage.toPng(document.getElementById(players[i])).then(function (dataUrl) {
 			var img = new Image();
 			img.src = dataUrl;
-			document.getElementById("staging2").appendChild(img);
+			img.onload = function() {
+				document.getElementById("staging2").appendChild(img);
+				ctx.drawImage(img, 0, 0);
+			}
 		}).catch(function (error){
-			console.error('oops');
+			console.error(error);
 		});
 	}
+	/////////////
+	
+	var canvas = document.getElementById('myCanvas');
+	var ctx = canvas.getContext('2d');
+	var data = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
+		'<foreignObject width="100%" height="100%">${right}</foreignObject></svg>`;
+	var DOMURL = window.URL || window.webkitURL || window;
+	var img = new Image();
+	var svg = new Blob([data], {type: 'image/svg+xml'});
+	var url = DOMURL.createObjectURL(svg);
+	img.onload = function() {
+		document.getElementById("test").setAttribute("src", url);
+		var thePerson = PIXI.Texture.fromImage(webkitURL);
+		var SpriteThePerson = new PIXI.Sprite(thePerson);
+		personContainer.addChild(SpriteThePerson);
+	}
+	/////////////
+
 	$(document).keydown(function(e) {
 		switch(e.which) {
 			case 37: // left
@@ -141,7 +183,7 @@
 					}
 				}
 			});
-			socket.emit("firstPlace", document.getElementById(userId).innerHTML, userId, document.getElementById(userId).style.left, document.getElementById(userId).style.top, true);
+			//socket.emit("firstPlace", document.getElementById(userId).innerHTML, userId, document.getElementById(userId).style.left, document.getElementById(userId).style.top, true);
 		}, 30);
 	});
 </script>

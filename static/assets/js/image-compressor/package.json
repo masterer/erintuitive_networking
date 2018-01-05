@@ -1,0 +1,52 @@
+{
+  "_from": "image-compressor",
+  "_id": "image-compressor@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-FvSRTd2REBBw+QyO1KehBLH9UzE=",
+  "_location": "/image-compressor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "image-compressor",
+    "name": "image-compressor",
+    "escapedName": "image-compressor",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/image-compressor/-/image-compressor-1.2.0.tgz",
+  "_shasum": "16f4914ddd91101070f90c8ed4a7a104b1fd5331",
+  "_spec": "image-compressor",
+  "_where": "C:\\Users\\Erin\\Documents\\basic-networking-master",
+  "author": {
+    "name": "Oleh Kastornov"
+  },
+  "bugs": {
+    "url": "https://github.com/powerbot15/image-compressor/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Frontend javascript module for resizing and compressing images",
+  "homepage": "https://github.com/powerbot15/image-compressor#readme",
+  "keywords": [
+    "image resize",
+    "image-compressor",
+    "compress image"
+  ],
+  "license": "MIT",
+  "main": "image-compressor.js",
+  "name": "image-compressor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powerbot15/image-compressor.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.2.0"
+}

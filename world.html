@@ -80,51 +80,74 @@
 	var posY = 0;
 	var right = window.localStorage.getItem("avatarClothed_right");
 	var left = window.localStorage.getItem("avatarClothed_left");
-	var players = [userId];
+	var players = [];
+	var playersId = [];
 	var socket = io.connect("/");
 	
+	var arrayCharLocal = [];
+
 	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + right + '</div>';
+	var compressorSettings = {
+		mimeType : 'image/png',
+		mode: 'strict',
+		quality: 0.2
+	}
 	domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
 		var img = new Image();
 		img.src = dataUrl;
 		img.onload = function() {
 			document.getElementById("staging2").appendChild(img);
 			ctx.drawImage(img, 0, 0);
-			console.log(document.getElementById("myCanvas").toDataURL());
-			var pixiTextureAvatar = new PIXI.Texture.fromCanvas(document.getElementById("myCanvas"));
-			var pixiAvatar = new PIXI.Sprite(pixiTextureAvatar);
-			personContainer.addChild(pixiAvatar);
-			$("#myCanvas").remove();
-			$("#staging2").remove();
-			//pixiAvatar.x = 300;
-			//document.getElementById(userId).remove();
+			var char = document.getElementById("myCanvas").toDataURL();
+			console.log(char);
+			arrayCharLocal.push(char);		
+			document.getElementById("staging2").innerHTML = '<div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + left + '</div>';
+			domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
+				var img = new Image();
+				img.src = dataUrl;
+				img.onload = function() {
+					document.getElementById("staging2").appendChild(img);
+					ctx.drawImage(img, 0, 0);
+					var char2 = document.getElementById("myCanvas").toDataURL();
+					console.log(char2);
+					arrayCharLocal.push(char);
+					if(arrayCharLocal.length == 2){
+						console.log(arrayCharLocal);
+						socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], 0, 0, true);
+					}
+					var pixiTextureAvatar = new PIXI.Texture.fromImage(char);
+					var pixiAvatar = new PIXI.Sprite(pixiTextureAvatar);
+					personContainer.addChild(pixiAvatar);
+					$("#myCanvas").remove();
+					$("#staging2").remove();
+				}
+			}).catch(function (error){
+				console.error(error);
+			});
 		}
 	}).catch(function (error){
 		console.error(error);
 	});
-
-	socket.emit("id", userId);
+	
 	socket.on("players", function(players2){
 		players = players2;
 	});
+	socket.on("playersId", function(players3){
+		playersId = players3;
+	});
+	for(i=0; i<players.length; i++) {
+		if(players[i][5] == true){
+			var pixiTextureAvatar = new PIXI.Texture.fromImage(players[i][1]);
+		}
+		else if(players[i][5] == false){
+			var pixiTextureAvatar = new PIXI.Texture.fromImage(players[i][2]);
+		}
+		playerNew = new PIXI.Sprite(pixiTextureAvatar);
+		personContainer.addChild(playerNew);
+		playerNew.x = players[i][3];
+		playerNew.y = players[i][4];
+	}
 
-	/////////////
-	
-	/*var canvas = document.getElementById('myCanvas');
-	var ctx = canvas.getContext('2d');
-	var data = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
-		'<foreignObject width="100%" height="100%">${right}</foreignObject></svg>`;
-	var DOMURL = window.URL || window.webkitURL || window;
-	var img = new Image();
-	var svg = new Blob([data], {type: 'image/svg+xml'});
-	var url = DOMURL.createObjectURL(svg);
-	img.onload = function() {
-		document.getElementById("test").setAttribute("src", url);
-		var thePerson = PIXI.Texture.fromImage(webkitURL);
-		var SpriteThePerson = new PIXI.Sprite(thePerson);
-		personContainer.addChild(SpriteThePerson);
-	}*/
-	/////////////
 
 	$(document).keydown(function(e) {
 		switch(e.which) {

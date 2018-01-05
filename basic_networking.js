@@ -15,21 +15,16 @@ io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
   var players = [];
-  socket.on("id", function(id){
-	  players.push(id);
+  var playersId = [];
+  socket.on("id", function(id, char, char2, x, y, facingRight){
+    players.push([id, char, char2, x, y, facingRight]);  
+    socket.emit("players", players);
+    playersId.push([id, x, y, facingRight]);
+    socket.emit("playersId", playersId);
   });
-  socket.emit("players", players);
   socket.on('firstPlace', function(elem, inner, id, left, top, facingRight){
 	  io.emit('firstPlaceAvatar', elem, inner, id, left, top, facingRight);
   });
-  /////// Clothing Items //////////////////
-  socket.on("pet", (itemName) => {
-    fs.readFile(itemName, function(data) {
-      socket.emit("petBack", itemName, data);
-    });
-  });
-  ///////////////////////////////////////// 
- 
   /*socket.on('disconnect', function(){
 	  var i = allClients.indexOf(socket);
 	  allClients.splice(i, 1);

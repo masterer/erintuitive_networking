@@ -15,6 +15,7 @@
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 <div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
 <canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+<div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
 <style>
 	body {
 		overflow: hidden;
@@ -80,8 +81,7 @@
 	var posY = 0;
 	var right = window.localStorage.getItem("avatarClothed_right");
 	var left = window.localStorage.getItem("avatarClothed_left");
-	var players = [];
-	var playersId = [];
+	var players = {};
 	var socket = io.connect("/");
 	
 	var arrayCharLocal = [];
@@ -110,14 +110,11 @@
 					ctx.drawImage(img, 0, 0);
 					var char2 = document.getElementById("myCanvas").toDataURL();
 					console.log(char2);
-					arrayCharLocal.push(char);
+					arrayCharLocal.push(char2);
 					if(arrayCharLocal.length == 2){
-						console.log(arrayCharLocal);
+						console.log("Charlocal:" + arrayCharLocal);
 						socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], 0, 0, true);
 					}
-					var pixiTextureAvatar = new PIXI.Texture.fromImage(char);
-					var pixiAvatar = new PIXI.Sprite(pixiTextureAvatar);
-					personContainer.addChild(pixiAvatar);
 					$("#myCanvas").remove();
 					$("#staging2").remove();
 				}
@@ -128,26 +125,6 @@
 	}).catch(function (error){
 		console.error(error);
 	});
-	
-	socket.on("players", function(players2){
-		players = players2;
-	});
-	socket.on("playersId", function(players3){
-		playersId = players3;
-	});
-	for(i=0; i<players.length; i++) {
-		if(players[i][5] == true){
-			var pixiTextureAvatar = new PIXI.Texture.fromImage(players[i][1]);
-		}
-		else if(players[i][5] == false){
-			var pixiTextureAvatar = new PIXI.Texture.fromImage(players[i][2]);
-		}
-		playerNew = new PIXI.Sprite(pixiTextureAvatar);
-		personContainer.addChild(playerNew);
-		playerNew.x = players[i][3];
-		playerNew.y = players[i][4];
-	}
-
 
 	$(document).keydown(function(e) {
 		switch(e.which) {
@@ -173,39 +150,56 @@
 	});
 	function moveUp() {
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
-		document.getElementById(userId).style.top = withAdditionTop;
+		console.log(withAdditionTop);
+		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionTop, true);
+		previousMove = "upMove";
 	}
 	function moveDown() {
 		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";	
-		document.getElementById(userId).style.top = withAdditionBottom;
+		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionBottom, false);
+		previousMove = "downMove";
 	}
 	function moveLeft() {
 		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
-		document.getElementById(userId).innerHTML = left;
-		document.getElementById(userId).style.left = withAdditionLeft;
+		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], withAdditionLeft, document.getElementById(userId).style.top, false);
+		previousMove = "leftMove";
 	}
 	function moveRight() {
 		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
-		document.getElementById(userId).style.left = withAdditionRight;
-		document.getElementById(userId).innerHTML = right;
+		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], withAdditionRight, document.getElementById(userId).style.top, true);
+		previousMove = "rightMove";
 	}
-	socket.on("connect", function(){
-		setInterval(function(){
-			socket.on('firstPlaceAvatar', function(element, id, left, top, facingRight){
-				if(userId != id){
-					if( players.indexOf(id) == -1 ){
-						document.getElementById("staging2").innerHTML += '<div id="' + id + '" class="count_it" style="position: absolute; top: ' + top + '; ' + left + ';">' + element + '</div>';
-						players.push(id);
-					}
-					else {
-						document.getElementById(id).style.left = left;
-						document.getElementById(id).style.top = top;
-						document.getElementById(id).innerHTML = element;
-					}
+	socket.on('players', function(player2){
+		var oldPlayers = players;
+		players = player2;
+		console.log(players);
+		for(player in players) {
+			console.log(players[player][0]);
+			console.log(players[player][1]);
+			if(!(player in oldPlayers)){
+				if(players[player][4] == true){
+					document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][1] + '"/>';
 				}
-			});
-			//socket.emit("firstPlace", document.getElementById(userId).innerHTML, userId, document.getElementById(userId).style.left, document.getElementById(userId).style.top, true);
-		}, 30);
+				else if(players[i][5] == false){
+					document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][0] + '"/>';
+				}
+			}
+			else {
+				if(players[player][4] == true){
+					document.getElementById(player).setAttribute("src", players[player][0]);
+				}
+				else if(players[player][4] == false){
+					document.getElementById(player).setAttribute("src", players[player][1]);
+				}
+				document.getElementById(player).style.top = players[player][3];
+				document.getElementById(player).style.left = players[player][2];
+			}
+		}
+		for(oldPlayer in oldPlayers){
+			if(!(oldPlayer in players)){
+
+			}
+		}
 	});
 </script>
 </body>

@@ -14,21 +14,11 @@ var bodyParser = require('body-parser');
 io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
-  var players = [];
-  var playersId = [];
+  var players = {};
   socket.on("id", function(id, char, char2, x, y, facingRight){
-    players.push([id, char, char2, x, y, facingRight]);  
+    players[`${id}`] = [char, char2, x, y, facingRight];  
     socket.emit("players", players);
-    playersId.push([id, x, y, facingRight]);
-    socket.emit("playersId", playersId);
   });
-  socket.on('firstPlace', function(elem, inner, id, left, top, facingRight){
-	  io.emit('firstPlaceAvatar', elem, inner, id, left, top, facingRight);
-  });
-  /*socket.on('disconnect', function(){
-	  var i = allClients.indexOf(socket);
-	  allClients.splice(i, 1);
-  });*/
 });
 
 

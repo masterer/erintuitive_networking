@@ -25,7 +25,7 @@ io.on('connection', function(socket){
 
 
 ///////////////Start the server and post redirect
-app.post('/*', (req, res) => {
+app.post('/', (req, res) => {
   res.redirect('/');
 });
 app.get('/', (req, res) => {

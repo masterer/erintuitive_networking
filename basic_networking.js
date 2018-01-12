@@ -24,7 +24,10 @@ io.on('connection', function(socket){
 
 
 
-///////////////Start the server and such
+///////////////Start the server and post redirect
+app.post('/*', (req, res) => {
+  res.redirect('/');
+});
 app.get('/', (req, res) => {
 	res.sendFile('/human2.html', { root: __dirname });
 });

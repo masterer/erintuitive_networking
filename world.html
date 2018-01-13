@@ -98,6 +98,7 @@
 		img.onload = function() {
 			document.getElementById("staging2").appendChild(img);
 			ctx.drawImage(img, 0, 0);
+
 			var char = document.getElementById("myCanvas").toDataURL();
 			//console.log(char);
 			arrayCharLocal.push(char);		
@@ -155,7 +156,7 @@
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
 		//console.log(withAdditionTop);
 		var direct = false
-		if (previousMove == rightMove) {
+		if (previousMove == moveRight) {
 			direct = true;
 		}
 		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionTop, direct);
@@ -164,7 +165,7 @@
 	function moveDown() {
 		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
 		var direct = false
-		if (previousMove == rightMove) {
+		if (previousMove == moveRight) {
 			direct = true;
 		}
 		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionBottom, direct);

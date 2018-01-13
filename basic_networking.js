@@ -1,3 +1,5 @@
+import { setInterval } from 'timers';
+
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
@@ -12,14 +14,28 @@ var bodyParser = require('body-parser');
 /////////////Tell Socket.io to accept connections
 //var allClients = [];
 var players = {};
+var afk = {};
 io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
   socket.on("id", function(id, char, char2, x, y, facingRight){
-    players[`${id}`] = [char, char2, x, y, facingRight];  
+    players[`${id}`] = [char, char2, x, y, facingRight];
+    afk[`${id}`] = [0, 0];  
     socket.emit("players", players);
   });
 });
+setInterval(function(){
+  for(var element in afk){
+    element[0] += 1;
+    element[1] += 1;
+  };
+  if(element[0] == 16) {
+    //afk
+  }
+  if(element[1] == 120) {
+    //log user out
+  }
+}, 5000);
 
 
 

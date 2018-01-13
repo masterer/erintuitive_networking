@@ -1,10 +1,9 @@
-import { setInterval } from 'timers';
-
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const fs = require('fs');
+const SetInterval = require('set-interval');
 
 require('es6');
 
@@ -24,7 +23,8 @@ io.on('connection', function(socket){
     socket.emit("players", players);
   });
 });
-setInterval(function(){
+
+SetInterval.start(function(){
   for(var element in afk){
     element[0] += 1;
     element[1] += 1;
@@ -36,7 +36,6 @@ setInterval(function(){
     //log user out
   }
 }, 5000);
-
 
 
 

@@ -26,12 +26,12 @@ io.on('connection', function(socket){
 
 SetInterval.start(function(){
   for(var element in afk){
-    element[0] += 1;
-    element[1] += 1;
-    if(element[0] == 16) {
+    afk[element][0] += 1;
+    afk[element][1] += 1;
+    if(afk[element][0] == 16) {
       //afk
     }
-    if(element[1] == 120) {
+    if(afk[element][1] == 120) {
       //log user out
     }
   };

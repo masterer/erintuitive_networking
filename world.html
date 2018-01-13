@@ -108,6 +108,7 @@
 				img.onload = function() {
 					document.getElementById("staging2").appendChild(img);
 					ctx.clearRect(0, 0, 440, 370);
+					//add text too
 					ctx.drawImage(img, 0, 0);
 					var char2 = document.getElementById("myCanvas").toDataURL();
 					//console.log(char2);
@@ -149,16 +150,24 @@
 		}
 		e.preventDefault(); // prevent the default action (scroll / move caret)
 	});
-	
+	var previousMove;
 	function moveUp() {
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
 		//console.log(withAdditionTop);
-		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionTop, true);
+		var direct = false
+		if (previousMove == rightMove) {
+			direct = true;
+		}
+		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionTop, direct);
 		previousMove = "upMove";
 	}
 	function moveDown() {
-		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";	
-		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionBottom, false);
+		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
+		var direct = false
+		if (previousMove == rightMove) {
+			direct = true;
+		}
+		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionBottom, direct);
 		previousMove = "downMove";
 	}
 	function moveLeft() {

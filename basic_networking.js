@@ -11,10 +11,10 @@ var bodyParser = require('body-parser');
 
 /////////////Tell Socket.io to accept connections
 //var allClients = [];
+var players = {};
 io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
-  var players = {};
   socket.on("id", function(id, char, char2, x, y, facingRight){
     players[`${id}`] = [char, char2, x, y, facingRight];  
     socket.emit("players", players);

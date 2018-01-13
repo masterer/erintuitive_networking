@@ -3,7 +3,7 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const fs = require('fs');
-const SetInterval = require('set-interval');
+//const SetInterval = require('set-interval');
 
 require('es6');
 

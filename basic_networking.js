@@ -23,7 +23,7 @@ io.on('connection', function(socket){
     socket.emit("players", players);
   });
 });
-
+/*
 SetInterval.start(function(){
   for(var element in afk){
     afk[element][0] += 1;
@@ -35,7 +35,7 @@ SetInterval.start(function(){
       //log user out
     }
   };
-}, 5000);
+}, 5000);*/
 
 
 

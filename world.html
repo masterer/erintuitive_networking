@@ -14,7 +14,7 @@
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 <div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
-<canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+<canvas id="myCanvas" width="140" height="310" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 <div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
 <style>
 	body {
@@ -108,7 +108,7 @@
 				img.src = dataUrl;
 				img.onload = function() {
 					document.getElementById("staging2").appendChild(img);
-					ctx.clearRect(0, 0, 440, 370);
+					ctx.clearRect(0, 0, 140, 310);
 					//add text too
 					ctx.drawImage(img, 0, 0);
 					var char2 = document.getElementById("myCanvas").toDataURL();
@@ -151,11 +151,16 @@
 		}
 		e.preventDefault(); // prevent the default action (scroll / move caret)
 	});
+	/*setInterval(function(){
+		for (player in players){
+			socket.emit("id", player, players[player][0], players[player][1], players[player][2], players[player][3]);
+		}
+	}, 300);*/
 	var previousMove;
 	function moveUp() {
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
 		//console.log(withAdditionTop);
-		var direct = false
+		var direct = false;
 		if (previousMove == moveRight) {
 			direct = true;
 		}
@@ -164,7 +169,7 @@
 	}
 	function moveDown() {
 		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
-		var direct = false
+		var direct = false;
 		if (previousMove == moveRight) {
 			direct = true;
 		}
@@ -200,6 +205,7 @@
 			document.getElementById(player).style.left = players[player][2];
 		}
 	});
+	
 </script>
 </body>
 </html>

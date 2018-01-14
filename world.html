@@ -92,7 +92,7 @@
 		mode: 'strict',
 		quality: 0.2
 	}
-	domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
+	/*domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
 		var img = new Image();
 		img.src = dataUrl;
 		img.onload = function() {
@@ -127,7 +127,8 @@
 		}
 	}).catch(function (error){
 		//console.error(error);
-	});
+	});*/
+	socket.emit("id", userId, right, left, 0, 0, true);
 
 	$(document).keydown(function(e) {
 		switch(e.which) {

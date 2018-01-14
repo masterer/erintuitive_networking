@@ -188,10 +188,9 @@
 	}
 	socket.on('players', function(player2){
 		players = player2;
-		//console.log(players);
 		for(player in players) {
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][1] + '"/>'
+				document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][0] + '"/>';
 			}
 		//console.log(players[player][0]);
 		//console.log(players[player][1]);

@@ -9,12 +9,16 @@
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/dom-to-image.min.js"></script>
 	<script src="/assets/js/blob-util.min.js"></script>
+	<script type="text/javascript" src="/assets/js/LZWEncoder.js"></script>
+	<script type="text/javascript" src="/assets/js/NeuQuant.js"></script>
+	<script type="text/javascript" src="/assets/js/GIFEncoder.js"></script>
+	<script type="text/javascript" src="/assets/js/b64.js"></script>
 </head>
 <body bgcolor="purple">
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 <div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
-<canvas id="myCanvas" width="140" height="310" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+<canvas id="myCanvas" width="190" height="310" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 <div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
 <style>
 	body {
@@ -92,7 +96,7 @@
 		mode: 'strict',
 		quality: 0.2
 	}
-	/*domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
+	domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
 		var img = new Image();
 		img.src = dataUrl;
 		img.onload = function() {
@@ -108,7 +112,7 @@
 				img.src = dataUrl;
 				img.onload = function() {
 					document.getElementById("staging2").appendChild(img);
-					ctx.clearRect(0, 0, 140, 310);
+					ctx.clearRect(0, 0, 190, 310);
 					//add text too
 					ctx.drawImage(img, 0, 0);
 					var char2 = document.getElementById("myCanvas").toDataURL();
@@ -127,8 +131,7 @@
 		}
 	}).catch(function (error){
 		//console.error(error);
-	});*/
-	socket.emit("id", userId, right, left, 0, 0, true);
+	});
 
 	$(document).keydown(function(e) {
 		switch(e.which) {

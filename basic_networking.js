@@ -20,6 +20,7 @@ io.on('connection', function(socket){
   socket.on("id", function(id, char, char2, x, y, facingRight){
     players[`${id}`] = [char, char2, x, y, facingRight];
     afk[`${id}`] = [0, 0]; 
+    //socket.emit("players", players);
   });
   socket.on("timeInterval", function(){
     socket.emit("players", players);

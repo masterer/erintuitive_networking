@@ -243,8 +243,41 @@
 			else if(players[player][4] == false){
 				document.getElementById(player).setAttribute("src", players[player][1]);
 			}
-			document.getElementById(player).style.top = players[player][3];
+			/*var oldX = parseInt(document.getElementById(player).style.left.replace("px", ""));
+			var oldY = parseInt(document.getElementById(player).style.top.replace("px", ""));
+			//console.log(players[player][2]);
+			var newX = players[player][2];
+			var newY = players[player][3];
+			if(newX > oldX) {
+				for (var i=oldX; i<=newX; i++){
+					setTimeout(function(){
+						document.getElementById(player).style.left = i.toString() + "px";
+					}, 33);
+				}
+			}
+			else {
+				for (var i=oldX; i>=newX; i--){
+					setTimeout(function(){
+						document.getElementById(player).style.left = i.toString() + "px";
+					}, 33);
+				}
+			}
+			if(newY > oldY) {
+				for (var i=oldY; i<=newY; i++){
+					setTimeout(function(){
+						document.getElementById(player).style.top = i.toString() + "px";
+					}, 33);
+				}
+			}
+			else {
+				for (var i=oldY; i>=newY; i--){
+					setTimeout(function(){
+						document.getElementById(player).style.top = i.toString() + "px";
+					}, 33);
+				}
+			}*/
 			document.getElementById(player).style.left = players[player][2];
+			document.getElementById(player).style.top = players[player][3];
 		}
 	});
 </script>

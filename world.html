@@ -153,7 +153,7 @@
 	var previousMove;
 	var direct = true;
 	function moveUp() {
-		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
+		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 1).toString() + "px";
 		//console.log(withAdditionTop);
 		direct = false;
 		if (previousMove == moveRight) {
@@ -168,7 +168,7 @@
 		previousMove = "upMove";
 	}
 	function moveDown() {
-		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
+		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 1).toString() + "px";
 		direct = false;
 		if (previousMove == moveRight) {
 			direct = true;
@@ -182,7 +182,7 @@
 		previousMove = "downMove";
 	}
 	function moveLeft() {
-		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
+		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 1).toString() + "px";
 		document.getElementById(userId).style.left = withAdditionLeft;
 		direct = false;
 		if(arrayCharLocal.length == 2){
@@ -193,7 +193,7 @@
 		previousMove = "leftMove";
 	}
 	function moveRight() {
-		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
+		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 1).toString() + "px";
 		document.getElementById(userId).style.left = withAdditionRight;
 		direct = true;
 		if(arrayCharLocal.length == 2){
@@ -203,6 +203,9 @@
 		}
 		previousMove = "rightMove";
 	}
+	setInterval(function(){
+		socket.emit("timeInterval");
+	}, 90);
 	socket.on('players', function(player2){
 		players = player2;
 		console.log("success");

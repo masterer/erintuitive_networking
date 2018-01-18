@@ -150,10 +150,32 @@
 		}
 		e.preventDefault(); // prevent the default action (scroll / move caret)
 	});
+	$(document).keypress(function(e) {
+		switch(e.which) {
+			case 37: // left
+			moveLeft();
+			break;
+
+			case 38: // up
+			moveUp();
+			break;
+
+			case 39: // right
+			moveRight();
+			break;
+
+			case 40: // down
+			moveDown();
+			break;
+
+			default: return; // exit this handler for other keys
+		}
+		e.preventDefault(); // prevent the default action (scroll / move caret)
+	});
 	var previousMove;
 	var direct = true;
 	function moveUp() {
-		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 1).toString() + "px";
+		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
 		//console.log(withAdditionTop);
 		direct = false;
 		if (previousMove == moveRight) {
@@ -162,13 +184,13 @@
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 90);
+			}, 40);
 		}
 		document.getElementById(userId).style.top = withAdditionTop;
 		previousMove = "upMove";
 	}
 	function moveDown() {
-		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 1).toString() + "px";
+		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
 		direct = false;
 		if (previousMove == moveRight) {
 			direct = true;
@@ -176,39 +198,38 @@
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 90);
+			}, 100);
 		}
 		document.getElementById(userId).style.top = withAdditionBottom;
 		previousMove = "downMove";
 	}
 	function moveLeft() {
-		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 1).toString() + "px";
+		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
 		document.getElementById(userId).style.left = withAdditionLeft;
 		direct = false;
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 90);
+			}, 100);
 		}
 		previousMove = "leftMove";
 	}
 	function moveRight() {
-		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 1).toString() + "px";
+		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
 		document.getElementById(userId).style.left = withAdditionRight;
 		direct = true;
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 90);
+			}, 100);
 		}
 		previousMove = "rightMove";
 	}
 	setInterval(function(){
 		socket.emit("timeInterval");
-	}, 90);
+	}, 130);
 	socket.on('players', function(player2){
 		players = player2;
-		console.log("success");
 		//console.log(players);
 		for(player in players) {
 			if(document.getElementById(player) == null){

@@ -9,16 +9,12 @@
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/dom-to-image.min.js"></script>
 	<script src="/assets/js/blob-util.min.js"></script>
-	<script type="text/javascript" src="/assets/js/LZWEncoder.js"></script>
-	<script type="text/javascript" src="/assets/js/NeuQuant.js"></script>
-	<script type="text/javascript" src="/assets/js/GIFEncoder.js"></script>
-	<script type="text/javascript" src="/assets/js/b64.js"></script>
 </head>
 <body bgcolor="purple">
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 <div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
-<canvas id="myCanvas" width="190" height="310" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+<canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 <div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
 <style>
 	body {
@@ -101,7 +97,7 @@
 		img.src = dataUrl;
 		img.onload = function() {
 			document.getElementById("staging2").appendChild(img);
-			ctx.drawImage(img, 0, 0);
+			ctx.drawImage(img, 0, 0, 80, 80 * img.height / img.width);
 
 			var char = document.getElementById("myCanvas").toDataURL();
 			//console.log(char);
@@ -112,9 +108,8 @@
 				img.src = dataUrl;
 				img.onload = function() {
 					document.getElementById("staging2").appendChild(img);
-					ctx.clearRect(0, 0, 190, 310);
-					//add text too
-					ctx.drawImage(img, 0, 0);
+					ctx.clearRect(0, 0, 80, 80 * img.height / img.width);					//add text too
+					ctx.drawImage(img, 0, 0, 80, 80 * img.height / img.width);
 					var char2 = document.getElementById("myCanvas").toDataURL();
 					//console.log(char2);
 					arrayCharLocal.push(char2);
@@ -155,46 +150,42 @@
 		}
 		e.preventDefault(); // prevent the default action (scroll / move caret)
 	});
-	/*setInterval(function(){
-		for (player in players){
-			socket.emit("id", player, players[player][0], players[player][1], players[player][2], players[player][3]);
-		}
-	}, 300);*/
 	var previousMove;
 	function moveUp() {
 		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
 		//console.log(withAdditionTop);
-		var direct = false;
+		var direct = false
 		if (previousMove == moveRight) {
 			direct = true;
 		}
-		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionTop, direct);
+		document.getElementById(userId).style.top = withAdditionTop;
 		previousMove = "upMove";
 	}
 	function moveDown() {
 		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
-		var direct = false;
+		var direct = false
 		if (previousMove == moveRight) {
 			direct = true;
 		}
-		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, withAdditionBottom, direct);
+		document.getElementById(userId).style.top = withAdditionBottom;
 		previousMove = "downMove";
 	}
 	function moveLeft() {
 		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
-		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], withAdditionLeft, document.getElementById(userId).style.top, false);
+		document.getElementById(userId).style.left = withAdditionLeft;
 		previousMove = "leftMove";
 	}
 	function moveRight() {
 		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
-		socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], withAdditionRight, document.getElementById(userId).style.top, true);
+		document.getElementById(userId).style.left = withAdditionRight;
 		previousMove = "rightMove";
 	}
 	socket.on('players', function(player2){
 		players = player2;
+		//console.log(players);
 		for(player in players) {
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][0] + '"/>';
+				document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][1] + '"/>'
 			}
 		//console.log(players[player][0]);
 		//console.log(players[player][1]);
@@ -208,7 +199,6 @@
 			document.getElementById(player).style.left = players[player][2];
 		}
 	});
-	
 </script>
 </body>
 </html>

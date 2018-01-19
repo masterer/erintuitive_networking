@@ -115,6 +115,7 @@
 					arrayCharLocal.push(char2);
 					if(arrayCharLocal.length == 2){
 						//console.log("Charlocal:" + arrayCharLocal);
+						document.getElementById("playersDiv").innerHTML += '<img class="' + userId + '" id="' + userId + '" style="position: absolute; top: 0; left: 0;" alt="player" src="' + char + '"/>';
 						socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], 0, 0, true);
 					}
 					$("#myCanvas").remove();
@@ -162,6 +163,7 @@
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
+				socket.emit("id2");
 			}, 40);
 		}
 		document.getElementById(userId).style.top = withAdditionTop;
@@ -176,6 +178,7 @@
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
+				socket.emit("id2");
 			}, 40);
 		}
 		document.getElementById(userId).style.top = withAdditionBottom;
@@ -188,6 +191,7 @@
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
+				socket.emit("id2");
 			}, 40);
 		}
 		previousMove = "leftMove";
@@ -199,13 +203,17 @@
 		if(arrayCharLocal.length == 2){
 			setTimeout(function(){
 				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
+				socket.emit("id2");
 			}, 40);
 		}
 		previousMove = "rightMove";
 	}
-	setInterval(function(){
+	/*setInterval(function(){
 		socket.emit("timeInterval");
-	}, 150);
+	}, 50);*/
+	socket.on("id2", function(){
+		socket.emit("id3");
+	});
 	socket.on('players', function(player2){
 		players = player2;
 		//console.log(players);

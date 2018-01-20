@@ -22,41 +22,35 @@
 	}
 </style>
 <script>
-	//Facebook stuff
-	//var userId = '';
+	var userId = '';
 	window.fbAsyncInit = function() {
 		FB.init({
-		  appId            : '817064305070781',
-		  autoLogAppEvents : true,
-		  xfbml            : true,
-		  version          : 'v2.9'
+		appId            : '817064305070781',
+		autoLogAppEvents : true,
+		xfbml            : true,
+		version          : 'v2.11'
 		});
-		FB.AppEvents.logPageView();
-		FB.getLoginStatus(function(response){
-			if (response.status === 'connected'){
-				getMe();
-			}
-			else if (response.status === 'not_authorized'){
-				document.getElementById("itemPreview").innerHTML = "test";
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				FB.api('/me', function(response) {
+					userId = response.id;
+				});
 			}
 			else {
-				
+				FB.login();
 			}
 		});
 	};
+
 	(function(d, s, id){
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) {return;}
 		js = d.createElement(s); js.id = id;
-		js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=817064305070781";
+		js.src = "https://connect.facebook.net/en_US/sdk.js";
 		fjs.parentNode.insertBefore(js, fjs);
-		//test
 	}(document, 'script', 'facebook-jssdk'));
-	function getMe() {
-		FB.api('/me', function(response) {
-			//userId = response.id;
-		});
-	}
+	
+	
 	//begin PIXI code
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext('2d');

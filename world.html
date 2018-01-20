@@ -75,8 +75,8 @@
 	});
 	//set user id
 	//var userId = "local" + Math.random().toString();
-	var d = new Date();
-	var userId = d.getTime();
+	//var d = new Date();
+	//var userId = d.getTime();
 	var posX = 0;
 	var posY = 0;
 	var right = window.localStorage.getItem("avatarClothed_right");
@@ -86,176 +86,58 @@
 	
 	var arrayCharLocal = [];
 
-	document.getElementById("staging2").innerHTML = '<div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + right + '</div>';
-	var compressorSettings = {
-		mimeType : 'image/png',
-		mode: 'strict',
-		quality: 0.2
-	}
-	domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
-		var img = new Image();
-		img.src = dataUrl;
-		img.onload = function() {
-			document.getElementById("staging2").appendChild(img);
-			ctx.drawImage(img, 0, 0, 80, 80 * img.height / img.width);
-
-			var char = document.getElementById("myCanvas").toDataURL();
-			//console.log(char);
-			arrayCharLocal.push(char);		
-			document.getElementById("staging2").innerHTML = '<div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + left + '</div>';
-			domtoimage.toPng(document.getElementById(userId)).then(function (dataUrl) {
-				var img = new Image();
-				img.src = dataUrl;
-				img.onload = function() {
-					document.getElementById("staging2").appendChild(img);
-					ctx.clearRect(0, 0, 80, 80 * img.height / img.width);					//add text too
-					ctx.drawImage(img, 0, 0, 80, 80 * img.height / img.width);
-					var char2 = document.getElementById("myCanvas").toDataURL();
-					//console.log(char2);
-					arrayCharLocal.push(char2);
-					if(arrayCharLocal.length == 2){
-						//console.log("Charlocal:" + arrayCharLocal);
-						socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], 0, 0, true);
-					}
-					$("#myCanvas").remove();
-					$("#staging2").remove();
-				}
-			}).catch(function (error){
-				//console.error(error);
-			});
+	socket.emit("newPlayer");
+	socket.on("howManyPlayersResponse", function(howMany){
+		console.log(howMany);
+		if(howMany == 0){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + right + '</div>';
 		}
-	}).catch(function (error){
-		//console.error(error);
+		else if (howMany == 1){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 10px; left: 75px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 2){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 100px; left: 15px;"><div style="margin-left: 45px;">' + right + '</div>';
+		}
+		else if (howMany == 3){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 10px; left: 75px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 4){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 310px; left: 85px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 5){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 7px; left: 345px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 6){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 200px; left: 200px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 7){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 260px; left: 75px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 8){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 390px; left: 195px;"><div style="margin-left: 45px;">' + left + '</div>';
+		}
+		else if (howMany == 9){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 310px; left: 305px;"><div style="margin-left: 45px;">' + right + '</div>';
+		}
+		else if (howMany == 10){
+			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 10px; left: 259px;"><div style="margin-left: 39px;">' + left + '</div>';
+		}
+		else {
+
+		}
 	});
-
-	$(document).keydown(function(e) {
-		switch(e.which) {
-			case 37: // left
-			moveLeft();
-			break;
-
-			case 38: // up
-			moveUp();
-			break;
-
-			case 39: // right
-			moveRight();
-			break;
-
-			case 40: // down
-			moveDown();
-			break;
-
-			default: return; // exit this handler for other keys
-		}
-		e.preventDefault(); // prevent the default action (scroll / move caret)
-	});
-	var previousMove;
-	var direct = true;
-	function moveUp() {
-		var withAdditionTop = (parseInt(document.getElementById(userId).style.top.replace("px", "")) - 3).toString() + "px";
-		//console.log(withAdditionTop);
-		direct = false;
-		if (previousMove == moveRight) {
-			direct = true;
-		}
-		if(arrayCharLocal.length == 2){
-			setTimeout(function(){
-				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 40);
-		}
-		document.getElementById(userId).style.top = withAdditionTop;
-		previousMove = "upMove";
-	}
-	function moveDown() {
-		var withAdditionBottom = (parseInt(document.getElementById(userId).style.top.replace("px", "")) + 3).toString() + "px";
-		direct = false;
-		if (previousMove == moveRight) {
-			direct = true;
-		}
-		if(arrayCharLocal.length == 2){
-			setTimeout(function(){
-				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 40);
-		}
-		document.getElementById(userId).style.top = withAdditionBottom;
-		previousMove = "downMove";
-	}
-	function moveLeft() {
-		var withAdditionLeft = (parseInt(document.getElementById(userId).style.left.replace("px", "")) - 3).toString() + "px";
-		document.getElementById(userId).style.left = withAdditionLeft;
-		direct = false;
-		if(arrayCharLocal.length == 2){
-			setTimeout(function(){
-				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 40);
-		}
-		previousMove = "leftMove";
-	}
-	function moveRight() {
-		var withAdditionRight = (parseInt(document.getElementById(userId).style.left.replace("px", "")) + 3).toString() + "px";
-		document.getElementById(userId).style.left = withAdditionRight;
-		direct = true;
-		if(arrayCharLocal.length == 2){
-			setTimeout(function(){
-				socket.emit("id", userId, arrayCharLocal[0], arrayCharLocal[1], document.getElementById(userId).style.left, document.getElementById(userId).style.top, direct);
-			}, 40);
-		}
-		previousMove = "rightMove";
-	}
 	setInterval(function(){
-		socket.emit("timeInterval");
-	}, 150);
-	socket.on('players', function(player2){
-		players = player2;
-		//console.log(players);
-		for(player in players) {
+		var id = userId;
+		var char = document.getElementById(userId).innerHTML;
+		var x = document.getElementById(userId).style.left;
+		var y = document.getElementById(userId).style.top;
+		socket.emit("updatePlayers", id, char, x, y);
+	}, 1200);
+	socket.on("updatePlayersResponse", function(players){
+		for(player in players){
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<img class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player" src="' + players[player][1] + '"/>'
+				document.getElementById("playersDiv").innerHTML += '<div id="' + player + '" class="count_it" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';"><div style="margin-left: 39px;">' + players[player][0] + '</div>';
 			}
-		//console.log(players[player][0]);
-		//console.log(players[player][1]);
-			if(players[player][4] == true){
-				document.getElementById(player).setAttribute("src", players[player][0]);
-			}
-			else if(players[player][4] == false){
-				document.getElementById(player).setAttribute("src", players[player][1]);
-			}
-			/*var oldX = parseInt(document.getElementById(player).style.left.replace("px", ""));
-			var oldY = parseInt(document.getElementById(player).style.top.replace("px", ""));
-			//console.log(players[player][2]);
-			var newX = players[player][2];
-			var newY = players[player][3];
-			if(newX > oldX) {
-				for (var i=oldX; i<=newX; i++){
-					setTimeout(function(){
-						document.getElementById(player).style.left = i.toString() + "px";
-					}, 33);
-				}
-			}
-			else {
-				for (var i=oldX; i>=newX; i--){
-					setTimeout(function(){
-						document.getElementById(player).style.left = i.toString() + "px";
-					}, 33);
-				}
-			}
-			if(newY > oldY) {
-				for (var i=oldY; i<=newY; i++){
-					setTimeout(function(){
-						document.getElementById(player).style.top = i.toString() + "px";
-					}, 33);
-				}
-			}
-			else {
-				for (var i=oldY; i>=newY; i--){
-					setTimeout(function(){
-						document.getElementById(player).style.top = i.toString() + "px";
-					}, 33);
-				}
-			}*/
-			document.getElementById(player).style.left = players[player][2];
-			document.getElementById(player).style.top = players[player][3];
 		}
 	});
 </script>

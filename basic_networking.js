@@ -14,16 +14,21 @@ var bodyParser = require('body-parser');
 //var allClients = [];
 var players = {};
 var afk = {};
+var howMany = 0;
 io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
-  socket.on("id", function(id, char, char2, x, y, facingRight){
-    players[`${id}`] = [char, char2, x, y, facingRight];
-    afk[`${id}`] = [0, 0]; 
-    //socket.emit("players", players);
+  socket.on("newPlayer", function(){
+    howMany++;
+    socket.emit("howManyPlayersResponse", howMany);
   });
-  socket.on("timeInterval", function(){
-    socket.emit("players", players);
+  socket.on("updatePlayers", function(id, char, x, y){
+    players[`${id}`] = [char, x, y];
+    socket.emit("updatePlayersResponse", players);
+  });
+  socket.on("timePassing", function(id){
+    afk[`${id}`] = 0; 
+    //socket.emit("players", players);
   });
 });
 /*

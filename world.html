@@ -165,11 +165,13 @@
 		}
 	});
 	setInterval(function(){
-		var id = userId;
-		var char = document.getElementById(userId).innerHTML;
-		var x = document.getElementById(userId).style.left;
-		var y = document.getElementById(userId).style.top;
-		socket.emit("updatePlayers", id, char, x, y);
+		if(document.getElementById(userId) != null){
+			var id = userId;
+			var char = document.getElementById(userId).innerHTML;
+			var x = document.getElementById(userId).style.left;
+			var y = document.getElementById(userId).style.top;
+			socket.emit("updatePlayers", id, char, x, y);
+		}
 	}, 1200);
 	socket.on("updatePlayersResponse", function(players){
 		for(player in players){

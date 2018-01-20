@@ -23,7 +23,7 @@
 </style>
 <script>
 	//Facebook stuff
-	var userId = '';
+	//var userId = '';
 	window.fbAsyncInit = function() {
 		FB.init({
 		  appId            : '817064305070781',
@@ -54,7 +54,7 @@
 	}(document, 'script', 'facebook-jssdk'));
 	function getMe() {
 		FB.api('/me', function(response) {
-			userId = response.id;
+			//userId = response.id;
 		});
 	}
 	//begin PIXI code
@@ -111,8 +111,8 @@
 	});
 	//set user id
 	//var userId = "local" + Math.random().toString();
-	//var d = new Date();
-	//var userId = d.getTime();
+	var d = new Date();
+	var userId = d.getTime();
 
 	var posX = 0;
 	var posY = 0;

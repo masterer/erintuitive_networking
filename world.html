@@ -176,7 +176,7 @@
 	});
 	function updateMyPlayers(){
 		var id = userId;
-		var char = document.getElementById(userId);
+		var char = document.getElementById(userId).innerHTML;
 		var x = document.getElementById(userId).style.left;
 		var y = document.getElementById(userId).style.top;
 		socket.emit("updatePlayers", id, char, x, y);

@@ -34,7 +34,6 @@
 		FB.AppEvents.logPageView();
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
-				$("#blockage").remove();
 				getMe();
 			}
 			else if (response.status === 'not_authorized'){
@@ -129,55 +128,55 @@
 		console.log(howMany);
 		if(howMany == 0){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + right + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 1){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 10px; left: 75px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 2){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 100px; left: 15px;"><div style="margin-left: 45px;">' + right + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 3){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 10px; left: 75px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 4){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 310px; left: 85px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 5){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 7px; left: 345px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 6){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 200px; left: 200px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 7){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 260px; left: 75px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 8){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 390px; left: 195px;"><div style="margin-left: 45px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 9){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 310px; left: 305px;"><div style="margin-left: 45px;">' + right + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else if (howMany == 10){
 			document.getElementById("playersDiv").innerHTML += '<div id="' + userId + '" class="count_it" style="position: absolute; top: 10px; left: 259px;"><div style="margin-left: 39px;">' + left + '</div>';
-			setInterval(updateThePlayers, 1600);
+			setInterval(updateMyPlayers, 1600);
 		}
 		else {
 
 		}
 	});
-	function updateThePlayers(){
+	function updateMyPlayers(){
 		var id = userId;
-		var char = document.getElementById(userId).innerHTML;
+		var char = document.getElementById(userId);
 		var x = document.getElementById(userId).style.left;
 		var y = document.getElementById(userId).style.top;
 		socket.emit("updatePlayers", id, char, x, y);

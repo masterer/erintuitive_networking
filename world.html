@@ -176,9 +176,9 @@
 	});
 	function updateMyPlayers(){
 		var id = userId;
-		var char = $("span")[0];
-		var x = $("span")[0].css("left");
-		var y = $("span")[0].css("top");
+		var char = document.getElementById(userId);
+		var x = document.getElementById(userId).style.left;
+		var y = document.getElementById(userId).style.top;
 		socket.emit("updatePlayers", id, char, x, y);
 	}
 	socket.on("updatePlayersResponse", function(players){

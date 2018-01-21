@@ -18,37 +18,37 @@ var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
-  socket.on("id", function(id, char){
+  socket.on("id", function(id, char, name){
     numPlayers++
     if(numPlayers == 1){
-      players[`${id}`] = [char, '120px', '0px'];
+      players[`${id}`] = [char, '420px', '0px', name];
     }
     else if(numPlayers == 2){
-      players[`${id}`] = [char, '73px', '0px'];
+      players[`${id}`] = [char, '73px', '0px', name];
     }
     else if(numPlayers == 3){
-      players[`${id}`] = [char, '43px', '10px'];
+      players[`${id}`] = [char, '143px', '10px', name];
     }
     else if(numPlayers == 4){
-      players[`${id}`] = [char, '85px', '310px'];
+      players[`${id}`] = [char, '85px', '310px', name];
     }
     else if(numPlayers == 5){
-      players[`${id}`] = [char, '200px', '200px'];
+      players[`${id}`] = [char, '200px', '200px', name];
     }
     else if(numPlayers == 6){
-      players[`${id}`] = [char, '345px', '7px'];
+      players[`${id}`] = [char, '345px', '7px', name];
     }
     else if(numPlayers == 7){
-      players[`${id}`] = [char, '55px', '260px'];
+      players[`${id}`] = [char, '55px', '260px', name];
     }
     else if(numPlayers == 8){
-      players[`${id}`] = [char, '195px', '390px'];
+      players[`${id}`] = [char, '195px', '390px', name];
     }
     else if(numPlayers == 9){
-      players[`${id}`] = [char, '305px', '310px'];
+      players[`${id}`] = [char, '305px', '310px', name];
     }
     else if(numPlayers == 10){
-      players[`${id}`] = [char, '259px', '10px'];
+      players[`${id}`] = [char, '259px', '10px', name];
     }
     afk[`${id}`] = [0, 0]; 
     //socket.emit("players", players);

@@ -81,10 +81,11 @@
 	var posY = 0;
 	var right = window.localStorage.getItem("avatarClothed_right");
 	var left = window.localStorage.getItem("avatarClothed_left");
+	var name = window.localStorage.getItem("name");
 	var players = {};
 	var socket = io.connect("/");
 
-	socket.emit("id", userId, right);
+	socket.emit("id", userId, right, name);
 	setInterval(function(){	
 		socket.emit("timeInterval");
 	}, 1000);
@@ -93,7 +94,7 @@
 		console.log(players);
 		for(player in players) {
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.65); -ms-transform: scale(0.65); transform: scale(0.65);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div></div>';
+				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font></div></div></div>';
 			}
 		}
 	});

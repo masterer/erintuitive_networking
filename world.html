@@ -22,36 +22,6 @@
 	}
 </style>
 <script>
-	var userId = '';
-	window.fbAsyncInit = function() {
-		FB.init({
-		appId            : '817064305070781',
-		autoLogAppEvents : true,
-		xfbml            : true,
-		version          : 'v2.11'
-		});
-		FB.getLoginStatus(function(response) {
-			if (response.status === 'connected') {
-				FB.api('/me', function(response) {
-					userId = response.id;
-				});
-			}
-			else {
-				FB.login();
-			}
-		});
-	};
-
-	(function(d, s, id){
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.id = id;
-		js.src = "https://connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	
-	
-	//begin PIXI code
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext('2d');
 
@@ -107,78 +77,23 @@
 	//var userId = "local" + Math.random().toString();
 	var d = new Date();
 	var userId = d.getTime();
-
 	var posX = 0;
 	var posY = 0;
 	var right = window.localStorage.getItem("avatarClothed_right");
 	var left = window.localStorage.getItem("avatarClothed_left");
 	var players = {};
 	var socket = io.connect("/");
-	
-	var arrayCharLocal = [];
 
-	socket.emit("newPlayer");
-	socket.on("howManyPlayersResponse", function(howMany){
-		console.log(howMany);
-		if(howMany == 0){
-			document.getElementById("playersDiv").innerHTML += '<span><div id="' + userId + '" class="count_it" style="position: absolute; top: 0; left: 0;"><div style="margin-left: 45px;">' + right + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 1){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 10px; left: 75px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 2){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 100px; left: 15px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + right + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 3){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 10px; left: 75px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 4){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 310px; left: 85px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 5){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 7px; left: 345px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 6){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 200px; left: 200px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 7){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 260px; left: 75px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it" >' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 8){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 390px; left: 195px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it">' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 9){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 310px; left: 305px;"><div style="margin-left: 45px;"><div id="' + userId + '" class="count_it">' + right + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else if (howMany == 10){
-			document.getElementById("playersDiv").innerHTML += '<span style="position: absolute; top: 10px; left: 259px;"><div style="margin-left: 39px;"><div id="' + userId + '" class="count_it">' + left + '</div></span>';
-			setInterval(updateMyPlayers, 1600);
-		}
-		else {
-
-		}
-	});
-	function updateMyPlayers(){
-		var id = userId;
-		var char = document.getElementById(userId).innerHTML;
-		var x = document.getElementById(userId).style.left;
-		var y = document.getElementById(userId).style.top;
-		socket.emit("updatePlayers", id, char, x, y);
-	}
-	socket.on("updatePlayersResponse", function(players){
-		for(player in players){
+	socket.emit("id", userId, right);
+	setInterval(function(){	
+		socket.emit("timeInterval");
+	}, 1000);
+	socket.on('players', function(player2){
+		players = player2;
+		console.log(players);
+		for(player in players) {
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<div id="' + player + '" class="count_it" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';"><div style="margin-left: 39px;">' + players[player][0] + '</div>';
+				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.65); -ms-transform: scale(0.65); transform: scale(0.65);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div></div>';
 			}
 		}
 	});

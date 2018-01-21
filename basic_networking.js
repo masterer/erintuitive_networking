@@ -14,21 +14,47 @@ var bodyParser = require('body-parser');
 //var allClients = [];
 var players = {};
 var afk = {};
-var howMany = 0;
+var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
   //allClients.push(socket);
-  socket.on("newPlayer", function(){
-    howMany++;
-    socket.emit("howManyPlayersResponse", howMany);
-  });
-  socket.on("updatePlayers", function(id, char, x, y){
-    players[`${id}`] = [char, x, y];
-    socket.emit("updatePlayersResponse", players);
-  });
-  socket.on("timePassing", function(id){
-    afk[`${id}`] = 0; 
+  socket.on("id", function(id, char){
+    numPlayers++
+    if(numPlayers == 1){
+      players[`${id}`] = [char, '120px', '0px'];
+    }
+    else if(numPlayers == 2){
+      players[`${id}`] = [char, '73px', '0px'];
+    }
+    else if(numPlayers == 3){
+      players[`${id}`] = [char, '43px', '10px'];
+    }
+    else if(numPlayers == 4){
+      players[`${id}`] = [char, '85px', '310px'];
+    }
+    else if(numPlayers == 5){
+      players[`${id}`] = [char, '200px', '200px'];
+    }
+    else if(numPlayers == 6){
+      players[`${id}`] = [char, '345px', '7px'];
+    }
+    else if(numPlayers == 7){
+      players[`${id}`] = [char, '55px', '260px'];
+    }
+    else if(numPlayers == 8){
+      players[`${id}`] = [char, '195px', '390px'];
+    }
+    else if(numPlayers == 9){
+      players[`${id}`] = [char, '305px', '310px'];
+    }
+    else if(numPlayers == 10){
+      players[`${id}`] = [char, '259px', '10px'];
+    }
+    afk[`${id}`] = [0, 0]; 
     //socket.emit("players", players);
+  });
+  socket.on("timeInterval", function(){
+    socket.emit("players", players);
   });
 });
 /*

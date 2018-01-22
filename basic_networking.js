@@ -27,10 +27,10 @@ io.on('connection', function(socket){
       players[`${id}`] = [char, '73px', '0px', name];
     }
     else if(numPlayers == 3){
-      players[`${id}`] = [char, '143px', '10px', name];
+      players[`${id}`] = [char, '143px', '30px', name];
     }
     else if(numPlayers == 4){
-      players[`${id}`] = [char, '85px', '310px', name];
+      players[`${id}`] = [char, '85px', '200px', name];
     }
     else if(numPlayers == 5){
       players[`${id}`] = [char, '200px', '200px', name];
@@ -39,13 +39,13 @@ io.on('connection', function(socket){
       players[`${id}`] = [char, '345px', '7px', name];
     }
     else if(numPlayers == 7){
-      players[`${id}`] = [char, '55px', '260px', name];
+      players[`${id}`] = [char, '0px', '230px', name];
     }
     else if(numPlayers == 8){
-      players[`${id}`] = [char, '195px', '390px', name];
+      players[`${id}`] = [char, '195px', '90px', name];
     }
     else if(numPlayers == 9){
-      players[`${id}`] = [char, '305px', '310px', name];
+      players[`${id}`] = [char, '305px', '210px', name];
     }
     else if(numPlayers == 10){
       players[`${id}`] = [char, '259px', '10px', name];
@@ -55,6 +55,9 @@ io.on('connection', function(socket){
   });
   socket.on("timeInterval", function(){
     socket.emit("players", players);
+  });
+  socket.on("blinkInterval", function(id){
+    socket.emit("blinkResponse", id);
   });
 });
 /*
@@ -101,8 +104,7 @@ app.post("/world", function(req, res){
 });
 
 //app listen to port
-var port = process.env.PORT || 8081;
-//If you're running locally, you can now open localhost:8080 in a web browser and see it running!
+var port = process.env.PORT || 8082;
 http.listen(port, function(){
-  console.log('listening on *:8081');
+  console.log('listening');
 });

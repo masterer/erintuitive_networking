@@ -87,8 +87,18 @@
 
 	socket.emit("id", userId, right, name);
 	setInterval(function(){	
+		socket.emit("blinkInterval", userId);
+	}, 3000);
+	setInterval(function(){	
 		socket.emit("timeInterval");
 	}, 1000);
+	socket.on("blinkResponse", function(id){
+		var blink = document.getElementById(id).querySelectorAll(".blink")[0];
+		blink.style.visibility = "visible";
+		setTimeout(function(){
+			blink.style.visibility = "hidden";
+		}, 100);
+	});
 	socket.on('players', function(player2){
 		players = player2;
 		console.log(players);

@@ -23,7 +23,7 @@ io.on('connection', function(socket){
     socket.emit("whoIsIt");
   });
   socket.on("msg", function(value, name){
-    socket.emit("msgReturn", value, name);
+    io.emit("msgReturn", value, name);
   });
   socket.on("here", function(id){
     
@@ -61,13 +61,13 @@ io.on('connection', function(socket){
       players[`${id}`] = [char, '259px', '10px', name, numPlayers];
     }
     afk[`${id}`] = [0, 0]; 
-    //socket.emit("players", players);
+    io.emit("players", players);
   });
-  socket.on("timeInterval", function(){
-    socket.emit("players", players);
-  });
+  /*socket.on("timeInterval", function(){
+    io.emit("players", players);
+  });*/
   socket.on("blinkInterval", function(id){
-    socket.emit("blinkResponse", id);
+    io.emit("blinkResponse", id);
   });
 });
 /*

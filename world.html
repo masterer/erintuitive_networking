@@ -111,6 +111,13 @@
 		socket.emit("msg", $("#m").val(), name);
 		$("#m").val('');
 	}
+	/*setInterval(function(){
+		var myHTML = $("#messages").html();
+		socket.emit("updateChat", myHTML);
+	}, 300);
+	socket.on("updateChat", function(myHTML){
+		$("#messages").html(myHTML);
+	});*/
 	socket.on("msgReturn", function(value, name2){
 		$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
 		var chatWindow = document.getElementById("messages");
@@ -125,9 +132,9 @@
 	setInterval(function(){	
 		socket.emit("blinkInterval", userId);
 	}, 3000);
-	setInterval(function(){	
+	/*setInterval(function(){	
 		socket.emit("timeInterval");
-	}, 1000);
+	}, 1000);*/
 	socket.on("blinkResponse", function(id){
 		var blink = document.getElementById(id).querySelectorAll(".blink")[0];
 		blink.style.visibility = "visible";

@@ -17,16 +17,8 @@ var afk = {};
 var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
-  //allClients.push(socket);
-  socket.on('disconnect', function(){
-    players = {};
-    socket.emit("whoIsIt");
-  });
   socket.on("msg", function(value, name){
     io.emit("msgReturn", value, name);
-  });
-  socket.on("here", function(id){
-    
   });
   socket.on("id", function(id, char, name){
     numPlayers++

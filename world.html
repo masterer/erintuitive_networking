@@ -16,12 +16,35 @@
 <div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
 <canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 <div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
+<!-- message form -->
+<div id="form">
+	<ul id="messages"></ul>
+</div>
+<input id="m" autocomplete="off" /><button id="n">Send</button>
 <style>
 	body {
 		overflow: hidden;
 	}
+	#form {background: #FFF; border: solid 3px; padding: 4px; position: fixed; top: 0px; left: 445px; width: 250px; height: 430px; opacity: 0.8;}
+	#m {position: fixed; left: 445px; top: 420px; border: solid 2px;}
+	#n {position: fixed; left: 615px; top: 420px; border: solid 2px;}
+	#messages {list-style-type: none; margin: 0; padding: 0; overflow: scroll; height: 430px;}
+	#messages li {padding: 5px 10px; }
+	#messages li:nth-child(odd) { background: #ddd; }
 </style>
 <script>
+	var name = window.localStorage.getItem("name");
+	$("#m").focus(function(){
+		$(document).keydown(function(e){
+			switch(e.which) {
+				case 13:
+				submit();
+			}
+		});
+		$("#n").click(function(){
+			submit();
+		})
+	});
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext('2d');
 
@@ -81,10 +104,23 @@
 	var posY = 0;
 	var right = window.localStorage.getItem("avatarClothed_right");
 	var left = window.localStorage.getItem("avatarClothed_left");
-	var name = window.localStorage.getItem("name");
 	var players = {};
 	var socket = io.connect("/");
 
+	function submit() {
+		socket.emit("msg", $("#m").val(), name);
+		$("#m").val('');
+	}
+	socket.on("msgReturn", function(value, name2){
+		$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
+		var chatWindow = document.getElementById("messages");
+		chatWindow.scrollTop = chatWindow.scrollHeight;
+	});
+	socket.on("whoIsIt", function(){
+		for (player in players){
+			socket.emit("here", player);
+		}
+	});
 	socket.emit("id", userId, right, name);
 	setInterval(function(){	
 		socket.emit("blinkInterval", userId);
@@ -101,7 +137,6 @@
 	});
 	socket.on('players', function(player2){
 		players = player2;
-		console.log(players);
 		for(player in players) {
 			if(document.getElementById(player) == null){
 				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font></div></div></div>';

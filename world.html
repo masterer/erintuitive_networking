@@ -35,7 +35,7 @@
 <script>
 	var name = window.localStorage.getItem("name");
 	$("#m").focus(function(){
-		$(document).keydown(function(e){
+		$(document).keyup(function(e){
 			switch(e.which) {
 				case 13:
 				submit();

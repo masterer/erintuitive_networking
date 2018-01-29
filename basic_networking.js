@@ -17,8 +17,13 @@ var afk = {};
 var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
-  socket.on("msg", function(value, name){
+  socket.on("msg", function(value, name, id){
     io.emit("msgReturn", value, name);
+    afk[`${id}`] = 0;
+  });
+  socket.on("afk", function(id){
+    afk[`${id}`] += 1;
+    io.emit("afkReturn", id, afk);
   });
   socket.on("id", function(id, char, name){
     numPlayers++
@@ -52,12 +57,9 @@ io.on('connection', function(socket){
     else if(numPlayers == 10){
       players[`${id}`] = [char, '259px', '10px', name, numPlayers];
     }
-    afk[`${id}`] = [0, 0]; 
+    afk[`${id}`] = 0; 
     io.emit("players", players);
   });
-  /*socket.on("timeInterval", function(){
-    io.emit("players", players);
-  });*/
   socket.on("blinkInterval", function(id){
     io.emit("blinkResponse", id);
   });

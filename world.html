@@ -108,33 +108,38 @@
 	var socket = io.connect("/");
 
 	function submit() {
-		socket.emit("msg", $("#m").val(), name);
+		socket.emit("msg", $("#m").val(), name, userId);
 		$("#m").val('');
 	}
-	/*setInterval(function(){
-		var myHTML = $("#messages").html();
-		socket.emit("updateChat", myHTML);
-	}, 300);
-	socket.on("updateChat", function(myHTML){
-		$("#messages").html(myHTML);
-	});*/
 	socket.on("msgReturn", function(value, name2){
 		$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
 		var chatWindow = document.getElementById("messages");
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	});
-	socket.on("whoIsIt", function(){
-		for (player in players){
-			socket.emit("here", player);
-		}
-	});
 	socket.emit("id", userId, right, name);
 	setInterval(function(){	
 		socket.emit("blinkInterval", userId);
 	}, 3000);
-	/*setInterval(function(){	
-		socket.emit("timeInterval");
-	}, 1000);*/
+	setInterval(function(){
+		socket.emit("afk", userId);
+	}, 1000);
+	socket.on("afkReturn", function(id, afk){
+		if(document.getElementById(userId) != null){
+			var elemName = userId + "afk";
+			var elem = document.getElementById(elemName);
+			if(id == userId){
+				if(afk[`${id}`] <= 180) {
+					elem.style.visibility = "hidden";
+				}
+				else if(afk[`${id}`] > 180){
+					elem.style.visibility = "visible";
+				}
+				else if(afk[`${id}`] > 600){
+
+				}
+			}
+		}
+	});
 	socket.on("blinkResponse", function(id){
 		var blink = document.getElementById(id).querySelectorAll(".blink")[0];
 		blink.style.visibility = "visible";
@@ -146,7 +151,7 @@
 		players = player2;
 		for(player in players) {
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font></div></div></div>';
+				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font><br><div id="' + userId + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
 			}
 		}
 	});

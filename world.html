@@ -128,7 +128,7 @@
 			var elemName = userId + "afk";
 			var elem = document.getElementById(elemName);
 			if(id == userId){
-				if(afk[`${id}`] <= 180) {
+				if(afk[`${id}`] <= 80) {
 					elem.style.visibility = "hidden";
 				}
 				else if(afk[`${id}`] > 180){
@@ -141,11 +141,13 @@
 		}
 	});
 	socket.on("blinkResponse", function(id){
-		var blink = document.getElementById(id).querySelectorAll(".blink")[0];
-		blink.style.visibility = "visible";
-		setTimeout(function(){
-			blink.style.visibility = "hidden";
-		}, 100);
+		if(document.getElementById(id) != null){
+			var blink = document.getElementById(id).querySelectorAll(".blink")[0];
+			blink.style.visibility = "visible";
+			setTimeout(function(){
+				blink.style.visibility = "hidden";
+			}, 100);
+		}
 	});
 	socket.on('players', function(player2){
 		players = player2;

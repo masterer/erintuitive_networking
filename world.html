@@ -112,7 +112,9 @@
 		$("#m").val('');
 	}
 	socket.on("msgReturn", function(value, name2){
-		$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
+		if(value != "" && value != null){
+			$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
+		}
 		var chatWindow = document.getElementById("messages");
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	});

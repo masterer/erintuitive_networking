@@ -125,17 +125,18 @@
 	}, 1000);
 	socket.on("afkReturn", function(id, afk){
 		if(document.getElementById(userId) != null){
+			var element = document.getElementById(userId);
 			var elemName = userId + "afk";
 			var elem = document.getElementById(elemName);
 			if(id == userId){
 				if(afk[`${id}`] <= 80) {
 					elem.style.visibility = "hidden";
 				}
-				else if(afk[`${id}`] > 180){
+				else if(afk[`${id}`] > 80){
 					elem.style.visibility = "visible";
 				}
 				else if(afk[`${id}`] > 600){
-
+					element.parentNode.removeChild(element);
 				}
 			}
 		}

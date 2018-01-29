@@ -25,6 +25,9 @@ io.on('connection', function(socket){
     afk[`${id}`] += 1;
     io.emit("afkReturn", id, afk);
   });
+  socket.on("removePlayer", function(id){
+    io.emit("removePlayerReturn", id);
+  });
   socket.on("id", function(id, char, name){
     numPlayers++
     if(numPlayers == 1){

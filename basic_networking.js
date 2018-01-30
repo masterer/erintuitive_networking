@@ -14,6 +14,8 @@ var bodyParser = require('body-parser');
 //var allClients = [];
 var players = {};
 var afk = {};
+var totalPositions = [['420px', '0px'], ['73px', '0px'], ['143px', '30px'], ['85px', '200px'], ['200px', '200px'], ['345px', '7px'], ['0px', '230px'], ['195px', '90px'], ['305px', '210px'], ['259px,', '10px']];
+var availablePositions = totalPositions;
 var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
@@ -25,40 +27,20 @@ io.on('connection', function(socket){
     afk[`${id}`] += 1;
     io.emit("afkReturn", id, afk);
   });
-  socket.on("removePlayer", function(id){
+  socket.on("removePlayer", function(id, x, y){
+    availablePositions += [x, y];
     io.emit("removePlayerReturn", id);
   });
   socket.on("id", function(id, char, name){
     numPlayers++
-    if(numPlayers == 1){
-      players[`${id}`] = [char, '420px', '0px', name, numPlayers];
+    var posIndex = Math.floor(Math.random() * availablePositions.length);
+    var posItem = availablePositions[posIndex];
+    availablePositions.splice(posIndex, 1);
+    if(numPlayers <= 10){
+      players[`${id}`] = [char, posItem[0], posItem[1], name, numPlayers];
     }
-    else if(numPlayers == 2){
-      players[`${id}`] = [char, '73px', '0px', name, numPlayers];
-    }
-    else if(numPlayers == 3){
-      players[`${id}`] = [char, '143px', '30px', name, numPlayers];
-    }
-    else if(numPlayers == 4){
-      players[`${id}`] = [char, '85px', '200px', name, numPlayers];
-    }
-    else if(numPlayers == 5){
-      players[`${id}`] = [char, '200px', '200px', name, numPlayers];
-    }
-    else if(numPlayers == 6){
-      players[`${id}`] = [char, '345px', '7px', name, numPlayers];
-    }
-    else if(numPlayers == 7){
-      players[`${id}`] = [char, '0px', '230px', name, numPlayers];
-    }
-    else if(numPlayers == 8){
-      players[`${id}`] = [char, '195px', '90px', name, numPlayers];
-    }
-    else if(numPlayers == 9){
-      players[`${id}`] = [char, '305px', '210px', name, numPlayers];
-    }
-    else if(numPlayers == 10){
-      players[`${id}`] = [char, '259px', '10px', name, numPlayers];
+    else {
+      socket.emit("roomFull");
     }
     afk[`${id}`] = 0; 
     io.emit("players", players);
@@ -67,21 +49,6 @@ io.on('connection', function(socket){
     io.emit("blinkResponse", id);
   });
 });
-/*
-SetInterval.start(function(){
-  for(var element in afk){
-    afk[element][0] += 1;
-    afk[element][1] += 1;
-    if(afk[element][0] == 16) {
-      //afk
-    }
-    if(afk[element][1] == 120) {
-      //log user out
-    }
-  };
-}, 5000);*/
-
-
 
 ///////////////Start the server and post redirect
 app.post('/', (req, res) => {

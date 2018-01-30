@@ -143,7 +143,7 @@
 					elem.style.visibility = "visible";
 				}
 				if(afk[`${id}`] > 60){
-					socket.emit("removePlayer", id);
+					socket.emit("removePlayer", id, element.style.left, element.style.top);
 					alert("You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room.");
 
 				}

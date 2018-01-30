@@ -16,6 +16,10 @@
 <div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
 <canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 <div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
+<div id="menuSuggestions" height="730">
+	<font color="purple">You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room."</font><br>
+	<!-- include menu sugggestions here as images -->
+</div>
 <!-- message form -->
 <div id="form">
 	<ul id="messages"></ul>
@@ -24,6 +28,13 @@
 <style>
 	body {
 		overflow: hidden;
+	}
+	#menuSuggestions {
+		visibility: hidden;
+		position: fixed; top: 40px; left: 40px;
+		display: block;
+		margin: auto;
+		width: 70%;
 	}
 	#form {background: #FFF; border: solid 3px; padding: 4px; position: fixed; top: 0px; left: 445px; width: 250px; height: 430px; opacity: 0.8;}
 	#m {position: fixed; left: 445px; top: 420px; border: solid 2px;}
@@ -144,8 +155,6 @@
 				}
 				if(afk[`${id}`] > 60){
 					socket.emit("removePlayer", id, element.style.left, element.style.top);
-					alert("You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room.");
-
 				}
 			}
 		}

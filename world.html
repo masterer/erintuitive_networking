@@ -127,7 +127,8 @@
 	}, 1000);
 	socket.on("removePlayerReturn", function(id){
 		var element = document.getElementById(id);
-		element.parentNode.removeChild(element);
+		var element2 = element.parentNode;
+		element2.parentNode.removeChild(element2);
 	});
 	socket.on("afkReturn", function(id, afk){
 		if(document.getElementById(userId) != null){
@@ -141,7 +142,7 @@
 				else if(afk[`${id}`] > 8){
 					elem.style.visibility = "visible";
 				}
-				else if(afk[`${id}`] > 60){
+				if(afk[`${id}`] > 60){
 					socket.emit("removePlayer", id);
 					alert("You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room.");
 

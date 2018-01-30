@@ -15,7 +15,6 @@ var bodyParser = require('body-parser');
 var players = {};
 var afk = {};
 var totalPositions = [['420px', '0px'], ['73px', '0px'], ['143px', '30px'], ['85px', '200px'], ['200px', '200px'], ['345px', '7px'], ['0px', '230px'], ['195px', '90px'], ['305px', '210px'], ['259px,', '10px']];
-var availablePositions = totalPositions;
 var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
@@ -28,14 +27,17 @@ io.on('connection', function(socket){
     io.emit("afkReturn", id, afk);
   });
   socket.on("removePlayer", function(id, x, y){
-    availablePositions += [x, y];
+    totalPositions.push([x, y]);
+    console.log(totalPositions.length);
     io.emit("removePlayerReturn", id);
+    numPlayers--
   });
   socket.on("id", function(id, char, name){
     numPlayers++
-    var posIndex = Math.floor(Math.random() * availablePositions.length);
-    var posItem = availablePositions[posIndex];
-    availablePositions.splice(posIndex, 1);
+    var posIndex = Math.floor(Math.random() * totalPositions.length);
+    var posItem = totalPositions[posIndex];
+    totalPositions.splice(posIndex, 1);
+    console.log(totalPositions.length);
     if(numPlayers <= 10){
       players[`${id}`] = [char, posItem[0], posItem[1], name, numPlayers];
     }

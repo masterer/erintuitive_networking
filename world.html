@@ -163,8 +163,8 @@
 				}
 				if(afk[`${id}`] > 12){
 					socket.emit("removePlayer", id, element.style.left, element.style.top);
-					$("#inworld").slideUp("fast");
-					$("#menuSuggestions").css({'visibility': 'visible'}).slideDown("fast");
+					$("#inworld").hide();
+					$("#menuSuggestions").css({'visibility': 'visible'});
 					$("body").css({'background-color': '#FECCFF'});
 				}
 			}

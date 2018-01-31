@@ -11,21 +11,21 @@
 	<script src="/assets/js/blob-util.min.js"></script>
 </head>
 <body bgcolor="purple">
-<img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 <div id="inworld">
+	<img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 	<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 	<div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
 	<canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
 	<div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
-	<div id="menuSuggestions" height="730">
-		<font color="purple">You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room."</font><br>
-		<!-- include menu sugggestions here as images -->
-	</div>
 	<!-- message form -->
 	<div id="form">
 		<ul id="messages"></ul>
 	</div>
 	<input id="m" autocomplete="off" /><button id="n">Send</button>
+</div>
+<div id="menuSuggestions" height="730">
+	<font color="purple">You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room."</font><br>
+	<!-- include menu sugggestions here as images -->
 </div>
 <style>
 	body {
@@ -165,6 +165,7 @@
 					socket.emit("removePlayer", id, element.style.left, element.style.top);
 					$("#inworld").remove();
 					$("#menuSuggestions").css({'visibility': 'visible'});
+					$("body").css({'background-color': '#FECCFF'});
 				}
 			}
 		}

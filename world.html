@@ -12,22 +12,28 @@
 </head>
 <body bgcolor="purple">
 <img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
-<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
-<div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
-<canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
-<div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
-<div id="menuSuggestions" height="730">
-	<font color="purple">You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room."</font><br>
-	<!-- include menu sugggestions here as images -->
+<div id="inworld">
+	<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
+	<div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
+	<canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+	<div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
+	<div id="menuSuggestions" height="730">
+		<font color="purple">You have been logged out of chat due to messaging inactivity. You can still play a minigame or rejoin the room."</font><br>
+		<!-- include menu sugggestions here as images -->
+	</div>
+	<!-- message form -->
+	<div id="form">
+		<ul id="messages"></ul>
+	</div>
+	<input id="m" autocomplete="off" /><button id="n">Send</button>
 </div>
-<!-- message form -->
-<div id="form">
-	<ul id="messages"></ul>
-</div>
-<input id="m" autocomplete="off" /><button id="n">Send</button>
 <style>
 	body {
 		overflow: hidden;
+	}
+	@font-face {
+		font-family: rubik;
+		src: url('/assets/fonts/rubik/Rubik-Medium.ttf');
 	}
 	#menuSuggestions {
 		visibility: hidden;
@@ -35,6 +41,8 @@
 		display: block;
 		margin: auto;
 		width: 70%;
+		font-family: rubik, sans-serif;
+		font-size: 19px;
 	}
 	#form {background: #FFF; border: solid 3px; padding: 4px; position: fixed; top: 0px; left: 445px; width: 250px; height: 430px; opacity: 0.8;}
 	#m {position: fixed; left: 445px; top: 420px; border: solid 2px;}
@@ -155,6 +163,7 @@
 				}
 				if(afk[`${id}`] > 12){
 					socket.emit("removePlayer", id, element.style.left, element.style.top);
+					$("#inworld").remove();
 					$("#menuSuggestions").css({'visibility': 'visible'});
 				}
 			}

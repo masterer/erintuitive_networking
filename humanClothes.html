@@ -700,8 +700,21 @@
 	}
 	</script>
 	<style>
+		@font-face {
+			font-family: rubik;
+			src: url('/assets/fonts/rubik/Rubik-Medium.ttf');
+		}
 		body {
 			background-color: #FFBB22;
+		}
+		body, button {
+			font-family: rubik, sans-serif;
+			font-size: 19px;
+		}
+		button {
+			background-color: #3FC;
+			border-radius: 3px;
+			border-color: #FFF;
 		}
 		#avatarOptions {
 			position: relative;
@@ -709,8 +722,17 @@
 		}
 		#buttons {
 			position: fixed;
-			top: 464px;
-			left: 8%;
+			top: 458px;
+			left: 150px;
+		}
+		#next, #back {
+			position: fixed;
+		}
+		#next {
+			left: 500px;
+		}
+		#back {
+			left: 440px;
 		}
 		#itemPreview {
 			vertical-align: text-top;

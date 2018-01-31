@@ -155,6 +155,7 @@
 				}
 				if(afk[`${id}`] > 60){
 					socket.emit("removePlayer", id, element.style.left, element.style.top);
+					$("#menuSuggestions").css({'visibility': 'visible'});
 				}
 			}
 		}

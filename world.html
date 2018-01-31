@@ -153,7 +153,7 @@
 				else if(afk[`${id}`] > 8){
 					elem.style.visibility = "visible";
 				}
-				if(afk[`${id}`] > 60){
+				if(afk[`${id}`] > 12){
 					socket.emit("removePlayer", id, element.style.left, element.style.top);
 					$("#menuSuggestions").css({'visibility': 'visible'});
 				}

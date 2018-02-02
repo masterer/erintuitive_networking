@@ -27,8 +27,8 @@
 	<font color="purple">You have been logged out of chat due to messaging inactivity.<br/>You can still play a minigame or rejoin the room."</font><br>
 	<!-- include menu sugggestions here as images -->
 </div>
-<div id="girlBody" style="position: fixed; left: 350px; visibility: hidden;"></div>
-<div id="girlArms" style="position: fixed; left: 350px; visibility: hidden;"></div>
+<div id="girlBody" style="position: absolute; left: -38px; top: 0; visibility: hidden;"></div>
+<div id="girlArms" style="position: absolute; left: -38px; top: 0; visibility: hidden;"></div>
 <style>
 	body {
 		overflow: hidden;
@@ -140,7 +140,7 @@
 		socket.emit("msg", $("#m").val(), name, userId);
 		$("#m").val('');
 	}
-
+	var motionTime = false;
 	socket.on("msgReturn", function(value, name2){
 		if(value != "" && value != null){
 			$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
@@ -177,6 +177,8 @@
 					//$("#inworld").hide();
 					$("#girlArms, #girlBody").css({'visibility': 'visible'});
 					$("#menuSuggestions").css({'visibility': 'visible'});
+					$("#m, #n").css({'visibility': 'hidden'});
+					motionTime = true;
 					//("body").css({'background-color': '#FECCFF'});
 					
 				}
@@ -189,14 +191,30 @@
 		displacementSprite.y = count * 10;
 		blurFilter.blur = count * -0.3;
 		var degrees = 0;
+		var toAdd = 0;
 		if (count == -4.5){
 			count = 0;
 		}
 		if(count < -2.8 && count > -4.5){
-			var degrees = -(count * 4 + 3).toString() + "deg";
+			degrees = -(count * 4 + 3).toString() + "deg";
 		}
 		else {		
-			var degrees = (count * 4).toString() + "deg";
+			degrees = (count * 4).toString() + "deg";
+		}
+		if(count > -2){
+			toAdd++;
+		}
+		else {
+			toAdd = 0;	
+		}
+		//motion
+		var girlArmMotion = (toAdd + parseInt($("#girlArms").css('left').replace("px", ""))).toString() + "px";
+		$("#girlArms").css({'left': girlArmMotion});
+		var girlBodyMotion = (toAdd + parseInt($("#girlBody").css('left').replace("px", ""))).toString() + "px";
+		$("#girlBody").css({'left': girlArmMotion});
+		if(motionTime == true){
+			var formMotion = (toAdd + parseInt($("#form").css('left').replace("px", ""))).toString() + "px";
+			$("#form").css({'left': formMotion});
 		}
 		//skew
 		console.log(degrees);

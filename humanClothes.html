@@ -137,6 +137,12 @@
 			}
 			return result;
 		}
+		/*$("button").on("click", function(){
+			$(this).animate({boxShadow: '-220px 80px 40px 20px #Off'});
+			$("#relativeContainer").animate({boxShadow: 'inset 0 0 90px 60px #0ff'});
+			$(this).animate({boxShadow: 'none'});
+			$("#relativeContainer").animate({boxShadow: 'none'});
+		});*/
 		var num = 0;
 		var count1 = 0;
 		var count2 = 0;
@@ -719,6 +725,9 @@
 			border-radius: 3px;
 			border-color: #FFF;
 		}
+		button:focus, input:focus {
+			background-color: cyan;
+		}
 		#avatarOptions {
 			position: relative;
 			float: left;
@@ -754,8 +763,7 @@
 			position: relative;
 			margin-top: -310px;
 		}
-		#chooseSkin {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            			top: 360px;
+		#chooseSkin {                                              top: 360px;
 		}
 		#relativeContainer button {
 			margin:0;

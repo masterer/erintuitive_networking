@@ -224,7 +224,6 @@
 			$("#form").css({'left': formMotion});
 		}
 		//skew
-		console.log(degrees);
 		$("#girlPushBody").css({'-ms-transform': 'skewX(' + degrees + ')', '-webkit-transform': 'skewX(' + degrees + ')', 'transform': 'skewX(' + degrees + ')'});
 	});
 	socket.on("blinkResponse", function(id){
@@ -240,7 +239,7 @@
 		players = player2;
 		for(player in players) {
 			if(document.getElementById(player) == null){
-				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font><br><div id="' + userId + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
+				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: relative; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
 			}
 		}
 	});

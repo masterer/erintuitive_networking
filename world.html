@@ -9,6 +9,7 @@
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/dom-to-image.min.js"></script>
 	<script src="/assets/js/blob-util.min.js"></script>
+	<script src="/assets/js/TweenMax.min.js"></script>
 </head>
 <body bgcolor="purple">
 <div id="inworld">
@@ -155,10 +156,6 @@
 		var chatWindow = document.getElementById("messages");
 		chatWindow.scrollTop = chatWindow.scrollHeight;
 	});
-	socket.emit("id", userId, right, name);
-	setInterval(function(){	
-		socket.emit("blinkInterval", userId);
-	}, 3000);
 	setInterval(function(){
 		socket.emit("afk", userId);
 	}, 1000);
@@ -180,7 +177,7 @@
 					elem.style.visibility = "visible";
 				}
 				if(afk[`${id}`] > 12){
-					socket.emit("removePlayer", id, element.style.left, element.style.top);
+					socket.emit("removePlayer", id);
 					//$("#inworld").hide();
 					$("#girlArms, #girlBody, #speech").css({'visibility': 'visible'});
 					$("#menuSuggestions").css({'visibility': 'visible'});
@@ -192,6 +189,7 @@
 			}
 		}
 	});
+	fireContainer.addChild(SpriteSVG);
 	var arms = 0;
 	app.ticker.add(function(delta) {
 		count -= 0.1;
@@ -235,11 +233,20 @@
 			}, 100);
 		}
 	});
+	socket.emit("id", userId, right, name, "0px", "0px");
+	//here
+	
 	socket.on('players', function(player2){
 		players = player2;
 		for(player in players) {
 			if(document.getElementById(player) == null){
 				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][2] + '; left: ' + players[player][1] + ';" alt="player">' + players[player][0] + '</div><div style="position: relative; left: ' + (parseInt(players[player][1].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][2].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][3] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
+			}
+			else {
+				var x = parseInt(players[player][1].replace("px", ""));
+				var y = parseInt(players[player][2].replace("px", ""));
+				var playerParent = document.getElementById(player).parentElement;
+				TweenMax.to(playerParent, 2, {left: x, top: y});
 			}
 		}
 	});

@@ -26,20 +26,14 @@ io.on('connection', function(socket){
     afk[`${id}`] += 1;
     io.emit("afkReturn", id, afk);
   });
-  socket.on("removePlayer", function(id, x, y){
-    totalPositions.push([x, y]);
-    console.log(totalPositions.length);
+  socket.on("removePlayer", function(id){
     io.emit("removePlayerReturn", id);
     numPlayers--
   });
-  socket.on("id", function(id, char, name){
+  socket.on("id", function(id, char, name, x, y){
     numPlayers++
-    var posIndex = Math.floor(Math.random() * totalPositions.length);
-    var posItem = totalPositions[posIndex];
-    totalPositions.splice(posIndex, 1);
-    console.log(totalPositions.length);
-    if(numPlayers <= 10){
-      players[`${id}`] = [char, posItem[0], posItem[1], name, numPlayers];
+    if(numPlayers <= 25){
+      players[`${id}`] = [char, x, y, name, numPlayers];
     }
     else {
       socket.emit("roomFull");

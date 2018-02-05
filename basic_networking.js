@@ -14,7 +14,7 @@ var bodyParser = require('body-parser');
 //var allClients = [];
 var players = {};
 var afk = {};
-var totalPositions = [['420px', '0px'], ['73px', '0px'], ['143px', '30px'], ['85px', '200px'], ['200px', '200px'], ['345px', '7px'], ['0px', '230px'], ['195px', '90px'], ['305px', '210px'], ['259px,', '10px']];
+//var totalPositions = [['420px', '0px'], ['73px', '0px'], ['143px', '30px'], ['85px', '200px'], ['200px', '200px'], ['345px', '7px'], ['0px', '230px'], ['195px', '90px'], ['305px', '210px'], ['259px,', '10px']];
 var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
@@ -31,10 +31,10 @@ io.on('connection', function(socket){
     delete players[id];
     numPlayers--
   });
-  socket.on("id", function(id, char, name, x, y){
+  socket.on("id", function(id, char, charLeft, name, x, y){
     numPlayers++
     if(numPlayers <= 25){
-      players[`${id}`] = [char, x, y, name, numPlayers];
+      players[`${id}`] = [char, charLeft, x, y, name, numPlayers];
     }
     else {
       socket.emit("roomFull");

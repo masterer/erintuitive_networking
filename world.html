@@ -274,6 +274,9 @@
 		//skew
 		$("#girlPushBody").css({'-ms-transform': 'skewX(' + degrees + ')', '-webkit-transform': 'skewX(' + degrees + ')', 'transform': 'skewX(' + degrees + ')'});
 	});
+	setInterval(function(){	
+		socket.emit("blinkInterval", userId);
+	}, 3000);
 	socket.on("blinkResponse", function(id){
 		if(document.getElementById(id) != null){
 			var blink = document.getElementById(id).querySelectorAll(".blink")[0];

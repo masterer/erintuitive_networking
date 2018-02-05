@@ -28,6 +28,7 @@ io.on('connection', function(socket){
   });
   socket.on("removePlayer", function(id){
     io.emit("removePlayerReturn", id);
+    delete players[id];
     numPlayers--
   });
   socket.on("id", function(id, char, name, x, y){

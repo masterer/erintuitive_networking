@@ -31,6 +31,13 @@ io.on('connection', function(socket){
     delete players[id];
     numPlayers--
   });
+  socket.on("updateId", function(id, x, y){
+    if(players[`${id}`] != null && players[`${id}`] != undefined){
+      players[`${id}`][2] = x;
+      players[`${id}`][3] = y;
+      io.emit("playerUpdate", id, x, y);
+    }
+  });
   socket.on("id", function(id, char, charLeft, name, x, y){
     numPlayers++
     if(numPlayers <= 25){

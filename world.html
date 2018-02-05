@@ -17,6 +17,7 @@
 	<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
 	<div id="staging2" style="position: absolute; left: 7px; top: 0; margin-left: 1000px;"></div>
 	<canvas id="myCanvas" width="440" height="370" style="border:1px solid #000000; margin-left: 1000px;"></canvas>
+	<canvas id="bounds" width="800" height="800" style="position: fixed; left: 0; top: 0;"></canvas>
 	<div id="playersDiv" style="position: fixed; top: 0; left: 0;"></div>
 	<!-- message form -->
 	<div id="form">
@@ -191,6 +192,16 @@
 	});
 	fireContainer.addChild(SpriteSVG);
 	var arms = 0;
+	document.getElementById("bounds").onclick = function(e) {
+		var xPosition = e.clientX;
+		var yPosition = e.clientY - 190;
+		console.log(xPosition, yPosition);
+		socket.emit("updateId", userId, xPosition.toString() + "px", yPosition.toString() + "px");
+	}
+	socket.on("playerUpdate", function(id, x, y){
+		players[id][2] = x;
+		players[id][3] = y;
+	});
 	app.ticker.add(function(delta) {
 		count -= 0.1;
 		displacementSprite.y = count * 10;
@@ -212,11 +223,12 @@
 		else {
 			toAdd = 0;	
 		}
-		//avatar motion
 		
+		//avatar motion
 		for (player in players){
 			if(document.getElementById(player) != null ){
 				var thePlayer = document.getElementById(player);
+				var thePlayerName = document.getElementById(player + "name");
 				var oldX = parseInt(thePlayer.style.left.replace("px", ""));
 				var oldY = parseInt(thePlayer.style.top.replace("px", ""));
 				var newX = parseInt(players[player][2].replace("px", ""));
@@ -228,21 +240,25 @@
 					if(newX > oldX){
 						oldX++
 						thePlayer.innerHTML = charRight;
+						thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) + 1).toString() + "px";
 					}
 					else if(newX < oldX){
 						oldX--
 						thePlayer.innerHTML = charLeft;
+						thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) - 1).toString() + "px";
 					}
 					thePlayer.style.left = oldX.toString() + "px";
 				}
 				if(oldY != newY){
 					if(newY > oldY){
-						oldX++
+						oldY++
+						thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) + 1).toString() + "px";
 					}
 					else if(newY < oldY){
-						oldX--
+						oldY--
+						thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) - 1).toString() + "px";
 					}
-					thePlayer.style.left = oldX.toString() + "px";
+					thePlayer.style.top = oldY.toString() + "px";
 				}
 			}
 		}
@@ -273,7 +289,7 @@
 		players = player2;
 		for(player in players) {
 			if(document.getElementById(player) == null ){
-				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player">' + players[player][0] + '</div><div style="position: relative; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
+				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);" id="' + player + 'name"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
 			}
 			/*else {
 				var x = parseInt(players[player][1].replace("px", ""));

@@ -171,13 +171,13 @@
 			var elemName = userId + "afk";
 			var elem = document.getElementById(elemName);
 			if(id == userId){
-				if(afk[`${id}`] <= 8) {
+				if(afk[`${id}`] <= 80) {
 					elem.style.visibility = "hidden";
 				}
-				else if(afk[`${id}`] > 8){
+				else if(afk[`${id}`] > 80){
 					elem.style.visibility = "visible";
 				}
-				if(afk[`${id}`] > 12){
+				if(afk[`${id}`] > 600){
 					socket.emit("removePlayer", id);
 					//$("#inworld").hide();
 					$("#girlArms, #girlBody, #speech").css({'visibility': 'visible'});

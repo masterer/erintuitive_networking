@@ -32,6 +32,7 @@ io.on('connection', function(socket){
     numPlayers--
   });
   socket.on("updateId", function(id, x, y){
+    afk[`${id}`] = 0;
     if(players[`${id}`] != null && players[`${id}`] != undefined){
       players[`${id}`][2] = x;
       players[`${id}`][3] = y;

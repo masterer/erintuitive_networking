@@ -1,0 +1,93 @@
+body {
+  overflow: hidden; }
+
+#m {
+  position: fixed;
+  left: 445px;
+  top: 420px;
+  border: solid 2px; }
+
+#n {
+  position: fixed;
+  left: 615px;
+  top: 420px;
+  border: solid 2px; }
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  height: 430px; }
+  #messages li {
+    padding: 5px 10px; }
+  #messages li:nth-child(odd) {
+    background-color: #AAA; }
+
+button, input {
+  font-family: rubik, sans-serif;
+  font-size: 19px;
+  background-color: #3FC;
+  border-radius: 3px;
+  border-color: #FFF; }
+
+.player {
+  position: absolute;
+  -webkit-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  transform: scale(0.85); }
+
+@font-face {
+  font-family: rubik;
+  src: url("/assets/fonts/rubik/Rubik-Medium.ttf"); }
+
+#blockage {
+  padding: 200px;
+  position: fixed;
+  left: 0;
+  top: 0; }
+
+#skip {
+  position: absolute;
+  left: 150px; }
+
+#skip2 {
+  position: fixed;
+  top: 450px;
+  left: 0px; }
+
+#girlPushArms, #girlPushBody, #girlBody, #girlArms {
+  position: absolute;
+  left: 153px;
+  top: 0;
+  visibility: hidden; }
+
+#menuSuggestions {
+  z-index: 801;
+  width: 150px;
+  padding-left: 20px;
+  font-family: rubik, sans-serif;
+  font-size: 19px;
+  position: fixed;
+  top: -10px;
+  left: 126px; }
+
+#speech, #menuSuggestions {
+  visibility: hidden; }
+
+#speech {
+  z-index: 800;
+  position: fixed;
+  top: 0px;
+  left: 70px; }
+
+#form {
+  background: #FFF;
+  border: solid 3px;
+  padding: 4px;
+  position: fixed;
+  top: 0px;
+  left: 445px;
+  width: 250px;
+  height: 430px;
+  opacity: 0.8; }

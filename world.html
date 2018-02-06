@@ -10,6 +10,7 @@
 	<script src="/assets/js/dom-to-image.min.js"></script>
 	<script src="/assets/js/blob-util.min.js"></script>
 	<script src="/assets/js/TweenMax.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 </head>
 <body bgcolor="purple">
 <div id="inworld">
@@ -29,39 +30,9 @@
 	<font color="purple"><br>You have been <br>logged out of <br>chat due to messaging<br> inactivity. You can <br>still play a <br>minigame or rejoin<br> the room."</font><br>
 	<!-- include menu sugggestions here as images -->
 </div>
-<div id="girlBody" style="position: absolute; left: -38px; top: 0; visibility: hidden;"></div>
-<div id="girlArms" style="position: absolute; left: -38px; top: 0; visibility: hidden;"></div>
+<div id="girlBody"></div>
+<div id="girlArms"></div>
 <img id="speech" alt="speech bubble" src="/assets/svg/speech.svg" height="270px">
-<style>
-	body {
-		overflow: hidden;
-	}
-	@font-face {
-		font-family: rubik;
-		src: url('/assets/fonts/rubik/Rubik-Medium.ttf');
-	}
-	#menuSuggestions {
-		z-index: 801;
-		width: 150px;
-		padding-left: 20px;
-		font-family: rubik, sans-serif;
-		font-size: 19px;
-		position: fixed; top: -10px; left: 126px;
-	}
-	#speech, #menuSuggestions {
-		visibility: hidden;
-	}
-	#speech {
-		z-index: 800;
-		position: fixed; top: 0px; left: 70px;
-	}
-	#form {background: #FFF; border: solid 3px; padding: 4px; position: fixed; top: 0px; left: 445px; width: 250px; height: 430px; opacity: 0.8;}
-	#m {position: fixed; left: 445px; top: 420px; border: solid 2px;}
-	#n {position: fixed; left: 615px; top: 420px; border: solid 2px;}
-	#messages {list-style-type: none; margin: 0; padding: 0; overflow: scroll; height: 430px;}
-	#messages li {padding: 5px 10px; }
-	#messages li:nth-child(odd) { background: #ddd; }
-</style>
 <script>
 	var name = window.localStorage.getItem("name");
 	$("#m").focus(function(){
@@ -171,16 +142,16 @@
 			var elemName = userId + "afk";
 			var elem = document.getElementById(elemName);
 			if(id == userId){
-				if(afk[`${id}`] <= 80) {
+				if(afk[`${id}`] <= 10) {
 					elem.style.visibility = "hidden";
 				}
-				else if(afk[`${id}`] > 80){
+				else if(afk[`${id}`] > 10){
 					elem.style.visibility = "visible";
 				}
-				if(afk[`${id}`] > 600){
+				if(afk[`${id}`] > 20){
 					socket.emit("removePlayer", id);
 					//$("#inworld").hide();
-					$("#girlArms, #girlBody, #speech").css({'visibility': 'visible'});
+					$("#girlArms, #girlBody, #girlPushArms, #girlPushBody, #speech").css({'visibility': 'visible'});
 					$("#menuSuggestions").css({'visibility': 'visible'});
 					$("#m, #n").css({'visibility': 'hidden'});
 					motionTime = true;
@@ -238,59 +209,42 @@
 				//var ratio = (newY - oldY) / (newX - oldX);
 				if(oldX != newX){
 					if(newX > oldX){
-						oldX += 2;
+						oldX++
 						thePlayer.innerHTML = charRight;
-						if(Math.abs(newX-oldX) > 1){
-							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) + 2).toString() + "px";
-						}
-						else if(Math.abs(newX-oldX) == 1){
-							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) + 1).toString() + "px";
-						}
+						thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) + 1).toString() + "px";
 					}
 					else if(newX < oldX){
-						oldX -= 2;
-						if(Math.abs(newX-oldX) > 1){
-							thePlayer.innerHTML = charLeft;
-							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) - 2).toString() + "px";
-						}
-						else if(Math.abs(newX-oldX) == 1){
-							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) - 1).toString() + "px";
-						}
+						oldX--
+						thePlayer.innerHTML = charLeft;
+						thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) - 1).toString() + "px";
+						
 					}
 					thePlayer.style.left = oldX.toString() + "px";
 				}
 				if(oldY != newY){
 					if(newY > oldY){
-						oldY += 2;
-						if(Math.abs(newY-oldY) > 1){
-							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) + 2).toString() + "px";
-							thePlayer.style.top = oldY.toString() + "px";
-						}
-						else if(Math.abs(newY-oldY) == 1){
-							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) + 1).toString() + "px";
-						}
+						oldY++
+						thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) + 1).toString() + "px";
+						thePlayer.style.top = oldY.toString() + "px";
 					}
 					else if(newY < oldY){
-						oldY -= 2;
-						if(Math.abs(newY-oldY) > 1){
-							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) - 2).toString() + "px";
-							thePlayer.style.top = oldY.toString() + "px";
-						}
-						else if(Math.abs(newY-oldY) == 1){
-							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) - 1).toString() + "px";
-						}
+						oldY--
+						thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) - 1).toString() + "px";
+						thePlayer.style.top = oldY.toString() + "px";	
 					}
 				}
 			}
 		}
 		//girl motion
-		var girlArmMotion = (toAdd + parseInt($("#girlArms").css('left').replace("px", ""))).toString() + "px";
-		$("#girlArms").css({'left': girlArmMotion});
-		var girlBodyMotion = (toAdd + parseInt($("#girlBody").css('left').replace("px", ""))).toString() + "px";
-		$("#girlBody").css({'left': girlArmMotion});
-		if(motionTime == true){
-			var formMotion = (toAdd + parseInt($("#form").css('left').replace("px", ""))).toString() + "px";
-			$("#form").css({'left': formMotion});
+		if(document.getElementById("girlArms").style.visibility == 'visible'){
+			var girlArmMotion = (toAdd + parseInt($("#girlPushArms").css('left').replace("px", ""))).toString() + "px";
+			$("#girlPushArms").css({'left': girlArmMotion});
+			var girlBodyMotion = (toAdd + parseInt($("#girlPushBody").css('left').replace("px", ""))).toString() + "px";
+			$("#girlPushBody").css({'left': girlArmMotion});
+			if(motionTime == true){
+				var formMotion = (toAdd + parseInt($("#form").css('left').replace("px", ""))).toString() + "px";
+				$("#form").css({'left': formMotion});
+			}
 		}
 		//skew
 		$("#girlPushBody").css({'-ms-transform': 'skewX(' + degrees + ')', '-webkit-transform': 'skewX(' + degrees + ')', 'transform': 'skewX(' + degrees + ')'});
@@ -313,7 +267,7 @@
 		players = player2;
 		for(player in players) {
 			if(document.getElementById(player) == null ){
-				document.getElementById("playersDiv").innerHTML += '<div style="position: absolute; webkit-transform: scale(0.85); -ms-transform: scale(0.85); transform: scale(0.85);"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);" id="' + player + 'name"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
+				document.getElementById("playersDiv").innerHTML += '<div class="player"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);" id="' + player + 'name"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
 			}
 			/*else {
 				var x = parseInt(players[player][1].replace("px", ""));

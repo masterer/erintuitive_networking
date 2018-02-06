@@ -239,9 +239,12 @@
 				if(oldX != newX){
 					if(newX > oldX){
 						oldX += 2;
+						thePlayer.innerHTML = charRight;
 						if(Math.abs(newX-oldX) > 1){
-							thePlayer.innerHTML = charRight;
 							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) + 2).toString() + "px";
+						}
+						else if(Math.abs(newX-oldX) == 1){
+							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) + 1).toString() + "px";
 						}
 					}
 					else if(newX < oldX){
@@ -249,6 +252,9 @@
 						if(Math.abs(newX-oldX) > 1){
 							thePlayer.innerHTML = charLeft;
 							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) - 2).toString() + "px";
+						}
+						else if(Math.abs(newX-oldX) == 1){
+							thePlayerName.style.left = (parseInt((thePlayerName.style.left).replace("px", "")) - 1).toString() + "px";
 						}
 					}
 					thePlayer.style.left = oldX.toString() + "px";
@@ -260,12 +266,18 @@
 							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) + 2).toString() + "px";
 							thePlayer.style.top = oldY.toString() + "px";
 						}
+						else if(Math.abs(newY-oldY) == 1){
+							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) + 1).toString() + "px";
+						}
 					}
 					else if(newY < oldY){
 						oldY -= 2;
 						if(Math.abs(newY-oldY) > 1){
 							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) - 2).toString() + "px";
 							thePlayer.style.top = oldY.toString() + "px";
+						}
+						else if(Math.abs(newY-oldY) == 1){
+							thePlayerName.style.top = (parseInt((thePlayerName.style.top).replace("px", "")) - 1).toString() + "px";
 						}
 					}
 				}

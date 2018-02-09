@@ -68,6 +68,9 @@ app.get('/clothes', (req, res) => {
 app.get("/world", function(req, res, next){
 	res.sendFile('/world.html', { root: __dirname });
 });
+app.get("/thanks", (req, res) => {
+  res.sendFile('/thankyou.html', { root: __dirname});
+});
 
 app.use(express.static((__dirname + '/static')));
 app.use(bodyParser.urlencoded({

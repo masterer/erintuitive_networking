@@ -56,6 +56,11 @@ button, input {
   top: 450px;
   left: 0px; }
 
+#drawingButton {
+  position: fixed;
+  top: 455px;
+  left: 50px; }
+
 #girlPushArms, #girlPushBody, #girlBody, #girlArms {
   position: absolute;
   left: 153px;

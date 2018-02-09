@@ -12,7 +12,18 @@
 	<script src="/assets/js/TweenMax.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 </head>
-<body bgcolor="purple">
+<body bgcolor="purple" >
+<style>
+	html {
+		display: table;
+		margin: auto;
+	}
+	
+	body {
+		display: table-cell;
+		vertical-align: middle;
+	}
+</style>
 <div id="inworld">
 	<img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 	<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
@@ -29,6 +40,9 @@
 <div id="menuSuggestions" height="430">
 	<font color="purple"><br>You have been <br>logged out of <br>chat due to messaging<br> inactivity. You can <br>still play a <br>minigame or rejoin<br> the room."</font><br>
 	<!-- include menu sugggestions here as images -->
+</div>
+<div id="drawingButton"><button onclick="drawing()">Draw a picture for me to interpret!</button><br>
+	<font color="white" size="14">Request a reading by Erintuitive!<br>Tweet "reading" to @masterer</font>
 </div>
 <div id="girlBody"></div>
 <div id="girlArms"></div>
@@ -136,6 +150,12 @@
 		var element2 = element.parentNode;
 		element2.parentNode.removeChild(element2);
 	});
+	function drawing() {
+		if(document.getElementById(userId) != null){
+			socket.emit("removePlayer", userId);
+			window.location.replace("/Sketchy-master/sketchy.html");
+		}
+	}
 	socket.on("afkReturn", function(id, afk){
 		if(document.getElementById(userId) != null){
 			var element = document.getElementById(userId);

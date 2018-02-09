@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Thank you!</title>
+    </head>
+    <body>
+        <img src="/assets/svg/girlMoneyThanks.svg" width="400" height="400" alt="thank you for supporting me!"/>
+        <br>You will be redirected in &nbsp;
+        <span id="secondsLeft">5</span>
+        <script>
+            setTimeout(function(){
+                window.location.replace("/world");
+            }, 4000);
+            setInterval(function(){
+                var secondsElem = document.getElementById("secondsLeft");
+                var secondsText = secondsElem.innerHTML;
+                var secondsNum = parseInt(secondsText);
+                secondsNum--;
+                secondsText = secondsNum.toString();
+                secondsElem.innerHTML = secondsText;
+            }, 1000);
+        </script>
+    </body>
+</html>

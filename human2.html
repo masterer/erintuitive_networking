@@ -3,17 +3,107 @@
 <head>
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/jquery.colorPicker.js"></script>
+	<script src="/assets/js/pixi.min.js"></script>
 	<link rel="stylesheet" href="/assets/css/colorPicker.css" type="text/css" />
 	<link red="stylesheet" href="/assets/css/style.css" type="text/css"/>
 	<title>Erintuitive's Avatar Building Room</title>
 </head>
 <body>
-	<div id="blockage" bgcolor="white" width="750px" height="490px">
+	<!-- <div id="blockage" bgcolor="white" width="750px" height="490px">
 		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+	</div> -->
+	<div id="appViews">
+		<div id="appView" width="900px" height="450px" style="position: absolute; z-index: 900; left: 3px; top: 10px;"></div>
+		<img style="position: absolute; z-index: 902; left: 0; top: 0;" alt="welcome text" src="/assets/img/girlWelcomeText.png"/>
+		<img style="position: absolute; z-index: 901; left: 700px; top: 0;" alt="welcoming anime girl" src="/assets/img/girlWelcome2.png"/>
+		<button id="enter" style="position: absolute; z-index: 902; left: 600px;"><font size="20" color="black">Enter</font></button>
 	</div>
 	<script>
-	var me_id = '';
+		var app = new PIXI.Application();
+		
+		document.getElementById("appView").appendChild(app.view);
 
+		app.stage.interactive = true;
+
+		var bg = PIXI.Sprite.fromImage('/assets/img/galaxy.jpg');
+		bg.anchor.set(0.5);
+
+		bg.x = app.screen.width / 2;
+		bg.y = app.screen.height / 2;
+
+		var filter = new PIXI.filters.ColorMatrixFilter();
+
+		var container = new PIXI.Container();
+		container.x = app.screen.width / 2;
+		container.y = app.screen.height / 2;
+
+		var bgFront = PIXI.Sprite.fromImage('/assets/img/purple2.jpg');
+		bgFront.anchor.set(0.5);
+
+		container.addChild(bgFront);
+
+		var light2 = PIXI.Sprite.fromImage('/assets/img/purple.jpg');
+		light2.anchor.set(0.5);
+		container.addChild(light2);
+
+		var light1 = PIXI.Sprite.fromImage('/assets/img/displacement_map.jpg');
+		light1.anchor.set(0.5);
+		container.addChild(light1);
+
+		var chakra =  PIXI.Sprite.fromImage('/assets/img/chakrasmine.png');
+		chakra.anchor.set(0.5);
+
+		container.addChild(chakra);
+
+		app.stage.addChild(container);
+
+		app.stage.filters = [filter];
+
+		var count = 0;
+		var enabled = true;
+
+		/*app.stage.on('pointertap', function() {
+			enabled = !enabled;
+			app.stage.filters = enabled ? [filter] : null;
+		});
+
+		/*var help = new PIXI.Text('Click or tap to turn filters on / off.', {
+			fontFamily: 'Arial',
+			fontSize: 12,
+			fontWeight:'bold',
+			fill: 'white'
+		});
+		help.y = app.screen.height - 25;
+		help.x = 10;
+
+		app.stage.addChild(help);*/
+
+		app.ticker.add(function(delta) {
+
+		//    bg.rotation += 0.01;
+		//  bgFront.rotation -= 0.01;
+			light1.rotation += 0.02;
+			light2.rotation += 0.01;
+
+			chakra.scale.x = 1 + Math.sin(count) * 0.04;
+			chakra.scale.y = 1 + Math.cos(count) * 0.04;
+
+			count += 0.1;
+
+			var matrix = filter.matrix;
+
+			matrix[1] = Math.sin(count) * 3;
+			matrix[2] = Math.cos(count);
+			matrix[3] = Math.cos(count) * 1.5;
+			matrix[4] = Math.sin(count / 3) * 2;
+			matrix[5] = Math.sin(count / 2);
+			matrix[6] = Math.sin(count / 4);
+		});
+		$("#enter").click(function(){
+			$("#appViews").remove();
+		});
+	//var me_id = '';
+/*
 	  window.fbAsyncInit = function() {
 		FB.init({
 		  appId            : '817064305070781',
@@ -48,7 +138,7 @@
 				me_id = response.id;
 				window.localStorage.setItem("me_id", me_id);
 			});
-		}
+		}*/
 		//Please make your character as customized as possible. I use it to interpret your personality in my intuitive readings.
 	</script>
 	<script>

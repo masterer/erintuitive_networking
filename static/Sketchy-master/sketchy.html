@@ -135,8 +135,15 @@
 				
 				<h2 id="step-2"><a href="#">Share with Erintuitive back in chatroom</a></h2>
 				<div>
-					<h2></h2>
-					<img id="output-img" />
+                    <img id="output-img" />
+                    <script>
+                        var output = document.getElementById("output-img");
+                        function gotoWorld(){
+                            window.localStorage.setItem("drawing", output.getAttribute("src"));
+                            window.location.replace("/world");
+                        }
+                    </script>
+                    <button onclick="gotoWorld()">Go back and share!</button>
 				</div>
 			</div>
 		</div>

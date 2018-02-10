@@ -40,6 +40,13 @@ io.on('connection', function(socket){
   });
   socket.on("id", function(id, char, charLeft, name, x, y){
     numPlayers++
+    for(player in players){
+      var myPlayer = players[player];
+      if(myPlayer[0] == char){
+        io.emit("removePlayerReturn", player);
+        delete players[player];
+      }
+    }
     if(numPlayers <= 25){
       players[`${id}`] = [char, charLeft, x, y, name, numPlayers];
     }

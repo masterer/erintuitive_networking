@@ -189,13 +189,13 @@
 			var elemName = userId + "afk";
 			var elem = document.getElementById(elemName);
 			if(id == userId){
-				if(afk[`${id}`] <= 80) {
+				if(afk[`${id}`] <= 500) {
 					elem.style.visibility = "hidden";
 				}
-				else if(afk[`${id}`] > 80){
+				else if(afk[`${id}`] > 500){
 					elem.style.visibility = "visible";
 				}
-				if(afk[`${id}`] > 300){
+				if(afk[`${id}`] > 2200){
 					socket.emit("removePlayer", id);
 					//$("#inworld").hide();
 					$("#girlArms, #girlBody, #girlPushArms, #girlPushBody, #speech").css({'visibility': 'visible'});

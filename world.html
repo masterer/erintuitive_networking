@@ -180,7 +180,7 @@
 	function drawing() {
 		if(document.getElementById(userId) != null){
 			socket.emit("removePlayer", userId);
-			window.location.replace("/Sketchy-master/sketchy.html");
+			window.location.replace("/drawing");
 		}
 	}
 	socket.on("afkReturn", function(id, afk){

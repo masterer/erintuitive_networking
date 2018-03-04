@@ -345,7 +345,7 @@
 		window.localStorage.setItem("avatarClothed_left", document.getElementById("leftBlinkless").innerHTML);
 		window.localStorage.setItem("avatarClothed_rightBlink", document.getElementById("rightBlink").innerHTML);
 		window.localStorage.setItem("avatarClothed_leftBlink", document.getElementById("leftBlink").innerHTML);
-		itemPreview.innerHTML = '<form action="/world" method="post"><input type="hidden" name="world" value="world.html"/><input id="skip" value="Go inworld!" name="clothingSubmit" type="submit"/></form>';
+		window.location.replace("/world");	
 	}
 	function spriteSheet(){
 		html2canvas($("#sprite"), {

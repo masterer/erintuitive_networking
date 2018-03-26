@@ -54,7 +54,7 @@ io.on('connection', function(socket){
       socket.emit("roomFull");
     }
     afk[`${id}`] = 0; 
-    io.emit("players", players);
+    io.emit("players", players, numPlayers);
   });
   socket.on("blinkInterval", function(id){
     io.emit("blinkResponse", id);

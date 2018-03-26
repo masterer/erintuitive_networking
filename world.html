@@ -58,11 +58,11 @@
 		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 	</form> -->
 </div>
-<!-- <form style="position: fixed; top: 450px; left: 450px;" id="payment" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<form style="position: fixed; top: 450px; left: 450px;" id="payment" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 	<input type="hidden" name="cmd" value="_s-xclick">
 	<input type="hidden" name="hosted_button_id" value="PRUWLY3PGJUFA">
 	<table>
-	<tr><td><input type="hidden" name="on0" value="Tip jar payment options">Tip jar payment options</td></tr><tr><td><select name="os0">
+	<tr><td><input type="hidden" name="on0" value="Tip jar payment options">Payment totally optional! (but greatly appreciated)</td></tr><tr><td><select name="os0">
 		<option value="Option1:">Option1: $5.00 USD</option>
 		<option value="Option2:">Option2: $10.00 USD</option>
 		<option value="Option3:">Option3: $20.00 USD</option>
@@ -71,7 +71,7 @@
 	<input type="hidden" name="currency_code" value="USD">
 	<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 	<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form> -->
+</form>
 <div id="girlBody"></div>
 <div id="girlArms"></div>
 <img id="speech" alt="speech bubble" src="/assets/svg/speech.svg" height="270px">
@@ -325,7 +325,22 @@
 	socket.emit("id", userId, right, left, name, "0px", "0px");
 	//here
 	socket.on('players', function(player2){
+		var beforePlayers = false;
+		var afterPlayers = false;
+		for(player1 in player2){
+			if(player1[4] == "Erintuitive"){
+				beforePlayers = true;
+			}
+		}
 		players = player2;
+		for(player1 in players){
+			if(player1[4] == "Erintuitive"){
+				afterPlayers = true;
+			}
+		}
+		if(name == "Erintuitive" && beforePlayers == afterPlayers){
+			alert("Erintuitive, a person has entered your chatroom!");
+		}
 		for(player in players) {
 			if(document.getElementById(player) == null ){
 				document.getElementById("playersDiv").innerHTML += '<div class="player"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);" id="' + player + 'name"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';

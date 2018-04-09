@@ -88,7 +88,7 @@
 <div  style="position: fixed; top: 550px; left: 450px;">
 	<div class="fb-share-button" data-href="https://erintuitive6.herokuapp.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ferintuitive6.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 	<a class="twitter-share-button"
-	href="https://twitter.com/intent/tweet?text=Erintuitive%20psychic"
+	href="https://twitter.com/intent/tweet?text=I%20was%20read%20by%20%23Erintuitive%21"
 	data-size="large"><font color="yellow">Tweet about this!</font></a>	
 </div>
 <div id="girlBody"></div>
@@ -351,9 +351,11 @@
 		//skew
 		$("#girlPushBody").css({'-ms-transform': 'skewX(' + degrees + ')', '-webkit-transform': 'skewX(' + degrees + ')', 'transform': 'skewX(' + degrees + ')'});
 	});
-	setInterval(function(){	
-		socket.emit("blinkInterval", userId);
-	}, 3000);
+	if( document.getElementById(userId) != null && document.getElementById(userId) != undefined ){
+		setInterval(function(){	
+			socket.emit("blinkInterval", userId);
+		}, 3000);
+	}
 	socket.on("blinkResponse", function(id){
 		if(document.getElementById(id) != null){
 			var blink = document.getElementById(id).querySelectorAll(".blink")[0];

@@ -365,6 +365,7 @@
 			}, 100);
 		}
 	});
+	/*document.getElementById("playersDiv").innerHTML += '<div class="player"><div class="' + userId + '" id="' + userId + '" style="position: absolute; top: 0px + ; left: 0px;" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);" id="' + player + 'name"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';*/
 	socket.emit("id", userId, right, left, name, "0px", "0px");
 	//here
 	socket.on('players', function(player2, numPlyr){
@@ -385,9 +386,9 @@
 			alert("Erintuitive, a person has entered your chatroom!");
 		}
 		for(player in players) {
-			//if(document.getElementById(player) == null || document.getElementById(player) == undefined){
+			if(document.getElementById(player) == null || document.getElementById(player) == undefined){
 				document.getElementById("playersDiv").innerHTML += '<div class="player"><div class="' + player + '" id="' + player + '" style="position: absolute; top: ' + players[player][3] + '; left: ' + players[player][2] + ';" alt="player">' + players[player][0] + '</div><div style="position: absolute; left: ' + (parseInt(players[player][2].replace("px", "")) - 50).toString() + 'px; top: ' + (parseInt(players[player][3].replace("px", "")) + 259).toString() + 'px; webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);" id="' + player + 'name"><font color="white" size="23px">' + players[player][4] + '</font><br><div id="' + player + 'afk" style="visibility: hidden; position: relative; left: 35px;"><font size="18" color="silver">(afk)</font></div></div></div></div>';
-			//}
+			}
 			/*else {
 				var x = parseInt(players[player][1].replace("px", ""));
 				var y = parseInt(players[player][2].replace("px", ""));

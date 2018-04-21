@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Erintuitive's psychic chatroom</title>	
-	<script src="/assets/js/socket.io.js"></script>
-	<script src="/assets/js/htmlgl.js"></script>
-	<script src="/assets/js/pixi.min.js"></script>
-	<script src="/assets/js/pixi.dom.js"></script>
-	<script src="/assets/js/jquery.js"></script>
-	<script src="/assets/js/dom-to-image.min.js"></script>
-	<script src="/assets/js/blob-util.min.js"></script>
-	<script src="/assets/js/TweenMax.min.js"></script>
+	<title>Erintuitive's psychic chatroom</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 	<meta property="og:url"           content="https://erintuitive6.herokuapp.com/human2.html" />
 	<meta property="og:type"          content="website" />
@@ -86,7 +78,7 @@
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=817064305070781&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div  style="position: fixed; top: 550px; left: 450px;">
+<div style="position: fixed; top: 550px; left: 450px;">
 	<div class="fb-share-button" data-href="https://erintuitive6.herokuapp.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ferintuitive6.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 	<a class="twitter-share-button"
 	href="https://twitter.com/intent/tweet?text=I%20was%20read%20by%20%23Erintuitive%21"
@@ -95,6 +87,16 @@
 <div id="girlBody"></div>
 <div id="girlArms"></div>
 <img id="speech" alt="speech bubble" src="/assets/svg/speech.svg" height="270px">
+<!-- start embed scripts -->
+<script src="/assets/js/socket.io.js"></script>
+<script src="/assets/js/htmlgl.js"></script>
+<script src="/assets/js/pixi.min.js"></script>
+<script src="/assets/js/pixi.dom.js"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/dom-to-image.min.js"></script>
+<script src="/assets/js/blob-util.min.js"></script>
+<script src="/assets/js/TweenMax.min.js"></script>
+<!-- end embed scripts -->
 <script>
 	var name = window.localStorage.getItem("name");
 	$("#m").focus(function(){

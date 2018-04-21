@@ -2,8 +2,6 @@
 <html>
     <head>
         <title>Drawing</title>
-        <script src="/assets/js/jquery.js"></script>
-        <script src="/DrawingBoard/js/drawingboard.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/DrawingBoard/css/drawingboard.min.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +15,8 @@
                 height: 600px;
             }
         </style>
+        <script src="/assets/js/jquery.js"></script>
+        <script src="/DrawingBoard/js/drawingboard.min.js"></script>
         <script>
             var myBoard = new DrawingBoard.Board('drawingboard');
             $("#inworld").click(function(){

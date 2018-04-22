@@ -5,7 +5,12 @@ html {
 body {
   display: table-cell;
   vertical-align: middle;
-  overflow: hidden;
+  overflow: hidden; }
+
+#worldBody {
+  background-color: purple; }
+
+#humanBody, #clothesBody, #drawingBody {
   background-color: #FFBB22; }
 
 #drawingboard {
@@ -20,9 +25,10 @@ body {
 
 #n {
   position: fixed;
-  left: 615px;
-  top: 420px;
-  border: solid 2px; }
+  left: 662px;
+  top: 475px;
+  border: solid 2px;
+  padding: 5px; }
 
 #messages {
   list-style-type: none;
@@ -35,26 +41,29 @@ body {
   #messages li:nth-child(odd) {
     background-color: #AAA; }
 
-button, input, #skip {
+input, #skip, #next, #back, #skip, #skip2, #enter {
   font-family: rubik, sans-serif;
   font-size: 19px;
   background-color: #3FC;
+  padding: 2px;
+  border: 2px;
+  border-color: #000;
   border-radius: 3px;
   border-color: #FFF; }
-
-button:focus, input:focus {
-  background-color: #00c040; }
 
 #buttons {
   position: fixed;
   top: 458px;
   left: 150px; }
 
-#back {
-  left: 620px;
+#back, #next {
   position: fixed; }
-  #back #next {
-    left: 680px; }
+
+#back {
+  left: 620px; }
+
+#next {
+  left: 680px; }
 
 #itemPreview {
   vertical-align: text-top;
@@ -83,11 +92,11 @@ button:focus, input:focus {
   top: 0; }
 
 #avatarOptions {
-  position: relative;
-  float: left; }
-
-#avatarOptions {
   height: 450px; }
+
+#avatarBuilder {
+  position: absolute;
+  left: 5px; }
 
 .eyes {
   position: relative;
@@ -97,7 +106,7 @@ button:focus, input:focus {
   position: fixed;
   top: 360px; }
 
-#relativeContainer button {
+#relativeContainer, .eyes1, .eyes2, .eyes3, .eyes4, .eyes5, .eyes6, .eyes7, .eyes8, .eyes9, .eyes10, .eyes11, button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -166,7 +175,7 @@ div.colorPicker-swatch {
 #girlPushArms, #girlPushBody, #girlBody, #girlArms {
   position: absolute;
   left: 153px;
-  top: 0;
+  top: 7px;
   visibility: hidden; }
 
 #menuSuggestions {

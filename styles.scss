@@ -7,9 +7,9 @@ body {
     vertical-align: middle;
     //begin here
     overflow: hidden;
-    background-color: #FFBB22;
-
 }
+#worldBody { background-color: purple; }
+#humanBody, #clothesBody, #drawingBody { background-color: #FFBB22; }
 #drawingboard {
     width: 600px;
     height: 600px;
@@ -19,32 +19,34 @@ $msgTop: 420px;
 $message-position: 445;
 $white : #FFF;
 #m {position: fixed; left: 445px; top: $msgTop; border: $msgBorder;}
-#n {position: fixed; left: 615px; top: $msgTop; border: $msgBorder;}
+#n {position: fixed; left: 662px; top: 475px; border: $msgBorder; padding: 5px;}
 #messages {list-style-type: none; margin: 0; padding: 0; overflow: scroll; height: 430px;
     li {padding: 5px 10px; }
     li:nth-child(odd) { background-color: #AAA; }
 }
-button, input, #skip {
+input, #skip, #next, #back, #skip, #skip2, #enter, {
     font-family: rubik, sans-serif;
     font-size: 19px;
     background-color: #3FC;
+    padding: 2px;
+    border: 2px;
+    border-color: #000;
     border-radius: 3px;
     border-color: $white;
-}
-button:focus, input:focus {
-    background-color: rgb(0, 192, 64);
 }
 #buttons {
     position: fixed;
     top: 458px;
     left: 150px;
 }
+#back, #next {
+    position: fixed;
+}
 #back {
     left: 620px;
-    position: fixed;
-    #next {
-        left: 680px;
-    }
+}
+#next {
+    left: 680px;
 }
 #itemPreview {
     vertical-align: text-top;
@@ -71,11 +73,11 @@ button:focus, input:focus {
     padding: 200px; position: fixed; left: 0; top: 0;
 }
 #avatarOptions {
-    position: relative;
-    float: left;
-}
-#avatarOptions {
     height: 450px;
+}
+#avatarBuilder {
+    position: absolute;
+    left: 5px;
 }
 .eyes {
     position: relative;
@@ -85,13 +87,11 @@ button:focus, input:focus {
     position: fixed;
     top: 360px;
 }
-#relativeContainer {
-    button {
-        margin:0;
-        padding:0;
-        border:0;
-        background:transparent;
-    }
+#relativeContainer, .eyes1, .eyes2, .eyes3, .eyes4, .eyes5, .eyes6, .eyes7, .eyes8, .eyes9, .eyes10, .eyes11, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
 }
 div.colorPicker-picker {
     height: 16px;
@@ -141,7 +141,7 @@ div.colorPicker-swatch {
     left: 50px;
 }
 #girlPushArms, #girlPushBody, #girlBody, #girlArms {
-    position: absolute; left: 153px; top: 0; visibility: hidden;
+    position: absolute; left: 153px; top: 7px; visibility: hidden;
 }
 #menuSuggestions {
     z-index: 801;

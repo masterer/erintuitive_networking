@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Erintuitive's psychic chatroom</title>
-	<link rel="stylesheet" type="text/css" href="https://erintuitive6.herokuapp.com/static/assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 	<meta property="og:url"           content="https://erintuitive6.herokuapp.com/human2.html" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Erintuitive" />
@@ -10,7 +10,7 @@
 	<meta property="og:image"         content="https://erintuitive6.herokuapp.com/assets/img/inRoom.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body bgcolor="purple">
+<body id="worldBody">
 <div id="inworld">
 	<img src="/assets/svg/fire_room.svg" alt="torchlight" width="745px" height="440px" style="position: absolute; left: 7px; top: 0;"/>
 	<div id="staging" style="position: absolute; left: 7px; top: 0;"></div>
@@ -22,7 +22,7 @@
 	<div id="form">
 		<ul id="messages"></ul>
 	</div>
-	<input id="m" autocomplete="off" /><button id="n">Send</button>
+	<textarea id="m" rows="5" cols="34"></textarea><button id="n">Send</button>
 </div>
 <div id="menuSuggestions" height="430">
 	<font color="purple"><br>You have been <br>logged out of <br>chat due to messaging<br> inactivity. You can <br>still play a <br>minigame or rejoin<br> the room."</font><br>

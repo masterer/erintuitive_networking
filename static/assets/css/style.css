@@ -41,7 +41,7 @@ body {
   #messages li:nth-child(odd) {
     background-color: #AAA; }
 
-input, #skip, #next, #back, #skip, #skip2, #enter, #buttons button {
+input, #skip, #next, #back, #skip, #skip2, #enter, #buttons button, #drawingButton button {
   font-family: rubik, sans-serif;
   font-size: 19px;
   background-color: #3FC;

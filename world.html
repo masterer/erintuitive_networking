@@ -189,7 +189,18 @@
 	var motionTime = false;
 	socket.on("msgReturn", function(value, name2){
 		if(value != "" && value != null){
-			$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
+			if(value.indexOf("/remove ") == 0){
+				var nameValue = value.substr(8);
+				for (player in players){
+					//name
+					if(players[player][4] == nameValue){
+						socket.emit("removePlayer", player);
+					}
+				}
+			}
+			else {
+				$("#messages").append("<font color='purple'>" + name2 + "</font>: " + value + "</li><br>");
+			}
 		}
 		var chatWindow = document.getElementById("messages");
 		chatWindow.scrollTop = chatWindow.scrollHeight;
@@ -389,7 +400,6 @@
 			}*/
 		}
 	});
-	
 </script>
 </body>
 </html>

@@ -70,7 +70,8 @@
 		
 	</div>
 	<div id="aftermath"></div>
-	<script>
+	<script>	
+		var socket = io.connect("/");
 		var currentPet = '';
 		var currentCape = '';
 		var currentNecklace = '';
@@ -337,17 +338,33 @@
 	}
 	function postAvatarWithName(){
 		$("#buttons").html('');
-		relativeContainer.innerHTML = `<div id="rightBlinkless"><div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">${relativeContainer.innerHTML}</div></div><div id="leftBlinkless"><div class="sprite" style="webkit-transform: scale(-0.45, 0.45); -ms-transform: scale(-0.45, 0.45); transform: scale(-0.45, 0.45);">${relativeContainer.innerHTML}</div></div><div id="rightBlink"><div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">${relativeContainer.innerHTML}</div></div></div><div id="leftBlink"><div class="sprite" style="webkit-transform: scale(-0.45, 0.45); -ms-transform: scale(-0.45, 0.45); transform: scale(-0.45, 0.45);">${relativeContainer.innerHTML}</div></div>`;
-		$("#rightBlink .blink").css({'visibility':'visible'});
-		$("#leftBlink .blink").css({'visibility':'visible'});
-		window.localStorage.setItem("name", document.getElementById("avatarName").value);
-		
-		window.localStorage.setItem("avatarClothed_right", document.getElementById("rightBlinkless").innerHTML);
-		window.localStorage.setItem("avatarClothed_left", document.getElementById("leftBlinkless").innerHTML);
-		window.localStorage.setItem("avatarClothed_rightBlink", document.getElementById("rightBlink").innerHTML);
-		window.localStorage.setItem("avatarClothed_leftBlink", document.getElementById("leftBlink").innerHTML);
-		window.location.replace("/world");	
+		socket.emit("checkPlayers");
 	}
+	socket.on("checkReturn", function(players){
+		var myName = document.getElementById("avatarName").value;
+		var bool = false;
+		for(player in players){
+			if(players[player][4] == myName){
+				bool = true;
+			}
+		}
+		if(bool == true){
+			document.getElementById("avatarOptions").innerHTML = 'Name already taken. Please try again.';
+			document.getElementById("avatarName").value = "";
+			document.getElementById("buttons").innerHTML = `<button onclick="postAvatarWithName()">Choose name</button>`;
+		}
+		else {
+			window.localStorage.setItem("name", document.getElementById("avatarName").value);
+			relativeContainer.innerHTML = `<div id="rightBlinkless"><div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">${relativeContainer.innerHTML}</div></div><div id="leftBlinkless"><div class="sprite" style="webkit-transform: scale(-0.45, 0.45); -ms-transform: scale(-0.45, 0.45); transform: scale(-0.45, 0.45);">${relativeContainer.innerHTML}</div></div><div id="rightBlink"><div class="sprite" style="webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">${relativeContainer.innerHTML}</div></div></div><div id="leftBlink"><div class="sprite" style="webkit-transform: scale(-0.45, 0.45); -ms-transform: scale(-0.45, 0.45); transform: scale(-0.45, 0.45);">${relativeContainer.innerHTML}</div></div>`;
+			$("#rightBlink .blink").css({'visibility':'visible'});
+			$("#leftBlink .blink").css({'visibility':'visible'});
+			window.localStorage.setItem("avatarClothed_right", document.getElementById("rightBlinkless").innerHTML);
+			window.localStorage.setItem("avatarClothed_left", document.getElementById("leftBlinkless").innerHTML);
+			window.localStorage.setItem("avatarClothed_rightBlink", document.getElementById("rightBlink").innerHTML);
+			window.localStorage.setItem("avatarClothed_leftBlink", document.getElementById("leftBlink").innerHTML);
+			window.location.replace("/world");
+		}
+	});
 	function spriteSheet(){
 		html2canvas($("#sprite"), {
 			onrendered: function(canvas) {

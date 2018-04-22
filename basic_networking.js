@@ -38,6 +38,9 @@ io.on('connection', function(socket){
       io.emit("playerUpdate", id, x, y);
     }
   });
+  socket.on("checkPlayers", function(){
+    socket.emit("checkReturn", players);
+  });
   socket.on("id", function(id, char, charLeft, name, x, y){
     numPlayers++
     /*for(player in players){

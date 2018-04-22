@@ -175,7 +175,7 @@
 	}
 	submitDrawing(window.localStorage.getItem("drawing"));
 	function submitDrawing(dataUrl) {
-		if(document.getElementById("myDrawing").getAttribute("src") != null){
+		if(document.getElementById("myDrawing").getAttribute("src").length > 15){
 			document.getElementById("myDrawing").style.visibility = 'visible';
 			socket.emit("msg", '<a href="' + dataUrl + '">My drawing</a>', name, userId);
 			setTimeout(function(){
@@ -183,7 +183,7 @@
 			}, 60);
 		}
 		else {
-			document.getElementById("myDrawing").style.visibility = hidden;
+			document.getElementById("myDrawing").style.visibility = 'hidden';
 		}
 	}
 	var motionTime = false;

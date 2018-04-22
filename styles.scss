@@ -24,7 +24,7 @@ $white : #FFF;
     li {padding: 5px 10px; }
     li:nth-child(odd) { background-color: #AAA; }
 }
-input, #skip, #next, #back, #skip, #skip2, #enter, {
+input, #skip, #next, #back, #skip, #skip2, #enter, #buttons button {
     font-family: rubik, sans-serif;
     font-size: 19px;
     background-color: #3FC;
@@ -33,6 +33,7 @@ input, #skip, #next, #back, #skip, #skip2, #enter, {
     border-color: #000;
     border-radius: 3px;
     border-color: $white;
+    margin: 3px;
 }
 #buttons {
     position: fixed;

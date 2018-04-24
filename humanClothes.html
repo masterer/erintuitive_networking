@@ -146,7 +146,7 @@
 		$("#relativeContainer .pets").remove();
 		currentPet = pet();
 		console.log(currentPet);
-		var fullPetPath =  "/assets/js/pythonDir/pets/" + currentPet;
+		var fullPetPath =  "/assets/js/human/humanClothes/pythonDir/pets/" + currentPet;
 		$.getScript(fullPetPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .pets").css({'position':'absolute', 'top':'-6px', 'left':'8px', 'margin-top':'0', 'z-index':'31'});
 			if(currentPet == "pet19.svg.js" && currentPet != "female_pet19.svg.js" && currentPet != "pet8.svg.js" && currentPet !=="pet3.svg.js"){
@@ -171,7 +171,7 @@
 		$("#relativeContainer .capes").remove();
 		currentCape = cape();
 		console.log(currentCape);
-		var fullCapePath =  "/assets/js/pythonDir/capes/" + currentCape;
+		var fullCapePath =  "/assets/js/human/humanClothes/pythonDir/capes/" + currentCape;
 		console.log(fullCapePath);
 		$.getScript(fullCapePath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'45px', 'margin-top':'0', 'z-index':'-42', '-webkit-transform':'scale(2.1)', '-ms-transform':'scale(2.1)', 'transform':'scale(2.1)'});
@@ -181,7 +181,7 @@
 		$("#relativeContainer .necklaces").remove();
 		currentNecklace = necklace();
 		console.log(currentNecklace);
-		var fullNecklacePath =  "/assets/js/pythonDir/necklaces/" + currentNecklace;
+		var fullNecklacePath =  "/assets/js/human/humanClothes/pythonDir/necklaces/" + currentNecklace;
 		console.log(fullNecklacePath);
 		$.getScript(fullNecklacePath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .necklaces").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
@@ -192,7 +192,7 @@
 			relativeContainer.innerHTML = previousClothes;
 			currentMaleShoes = maleShoes();
 			console.log(currentMaleShoes);
-			var fullMaleShoesPath =  "/assets/js/pythonDir/shoes/" + currentMaleShoes;
+			var fullMaleShoesPath =  "/assets/js/human/humanClothes/pythonDir/shoes/" + currentMaleShoes;
 			console.log(fullMaleShoesPath);
 			$.getScript(fullMaleShoesPath, function( data, textStatus, jqxhr ) {
 				$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
@@ -205,7 +205,7 @@
 			relativeContainer.innerHTML = previousClothes; 
 			currentFemaleShoes = femaleShoes();
 			console.log(currentFemaleShoes);
-			var fullFemaleShoesPath =  "/assets/js/pythonDir/female_shoes/" + currentFemaleShoes;
+			var fullFemaleShoesPath =  "/assets/js/human/humanClothes/pythonDir/female_shoes/" + currentFemaleShoes;
 			console.log(fullFemaleShoesPath);
 			$.getScript(fullFemaleShoesPath, function( data, textStatus, jqxhr ) {
 				$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
@@ -418,7 +418,7 @@
 		if($(".man")[0]){
 			currentMaleHairpiece = maleHairPieces();
 			console.log(currentMaleHairpiece);
-			var fullMaleHairPiecePath =  "/assets/js/pythonDir/male_hairPieces/" + currentMaleHairpiece;
+			var fullMaleHairPiecePath =  "/assets/js/human/humanClothes/pythonDir/male_hairPieces/" + currentMaleHairpiece;
 			console.log(fullMaleHairPiecePath);
 			$.getScript(fullMaleHairPiecePath, function( data, textStatus, jqxhr ) {
 				$("#relativeContainer .hairPieces").css({'position':'absolute', 'top':'-32px', 'left':'0', 'margin-top':'0', 'z-index':'40'});
@@ -438,7 +438,7 @@
 		else if($(".woman")[0]){
 			currentFemaleHairpiece = femaleHairPieces();
 			console.log(currentFemaleHairpiece);
-			var fullFemaleHairPiecePath =  "/assets/js/pythonDir/female_hairPieces/" + currentFemaleHairpiece;
+			var fullFemaleHairPiecePath =  "/assets/js/human/humanClothes/pythonDir/female_hairPieces/" + currentFemaleHairpiece;
 			console.log(fullFemaleHairPiecePath);
 			$.getScript(fullFemaleHairPiecePath, function( data, textStatus, jqxhr ) {
 				$("#relativeContainer .hairPieces").css({'position':'absolute', 'top':'-32px', 'left':'0', 'margin-top':'0', 'z-index':'40'});			
@@ -469,7 +469,7 @@
 		$(".glasses").remove();
 		currentGlasses = glasses_func();
 		console.log(currentGlasses);
-		var fullGlassesPath =  "/assets/js/pythonDir/glasses/" + currentGlasses;
+		var fullGlassesPath =  "/assets/js/human/humanClothes/pythonDir/glasses/" + currentGlasses;
 		console.log(fullGlassesPath);
 		$.getScript(fullGlassesPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .glasses").css({'position':'absolute', 'z-index':'40', 'top':'5px', 'left':'0', 'margin-top':'0'});
@@ -479,7 +479,7 @@
 		$(".accessories").remove();
 		currentAccessories = accessories_func();
 		console.log(currentAccessories);
-		var fullAccessoriesPath =  "/assets/js/pythonDir/accessories/" + currentAccessories;
+		var fullAccessoriesPath =  "/assets/js/human/humanClothes/pythonDir/accessories/" + currentAccessories;
 		console.log(fullAccessoriesPath);
 		$.getScript(fullAccessoriesPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .accessories").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0', 'z-index':'30'});
@@ -492,7 +492,7 @@
 		$(".wings").remove();
 		currentWings = wings_func();
 		console.log(currentWings);
-		var fullWingsPath =  "/assets/js/pythonDir/wings/" + currentWings;
+		var fullWingsPath =  "/assets/js/human/humanClothes/pythonDir/wings/" + currentWings;
 		console.log(fullWingsPath);
 		$.getScript(fullWingsPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'0', 'z-index':'-18', 'margin-top':'0', '-ms-transform': 'scale(3)', '-webkit-transform': 'scale(3)', 'transform': 'scale(3)'});
@@ -503,7 +503,7 @@
 		$(".tails").remove();
 		currentTail = tail();
 		console.log(currentTail);
-		var fullTailPath =  "/assets/js/pythonDir/tails/" + currentTail;
+		var fullTailPath =  "/assets/js/human/humanClothes/pythonDir/tails/" + currentTail;
 		console.log(fullTailPath);
 		$.getScript(fullTailPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .tails").css({'position':'absolute', 'top':'0', 'left':'51px', 'margin-top':'0'});
@@ -539,7 +539,7 @@
 			var maleTopsKeys = ['shirt1_stickers', 'shirt2_stickers', 'shirt3_stickers', 'shirt4_stickers', 'shirt5_stickers', 'shirt6_stickers', 'shirt7_stickers', 'shirt8_stickers', 'shirt9_stickers', 'shirt10_stickers', 'shirt11_stickers', 'shirt12_stickers', 'shirt13_stickers'];
 			var k = Math.floor(Math.random() * maleTopsJs.length);
 			var k2 = Math.floor(Math.random() * numbers[k]);
-			var itemPath = "/assets/js/pythonDir/" + maleTopsKeys[k] + "/" + maleTopsJs[k][k2];
+			var itemPath = "/assets/js/human/humanClothes/pythonDir/" + maleTopsKeys[k] + "/" + maleTopsJs[k][k2];
 			console.log(maleTopsJs[k][k2]);
 			console.log(k2);
 			$("#relativeContainer").append(specificItems[k]);
@@ -584,7 +584,7 @@
 			var femaleTopsKeys = ['female_shirt1_stickers', 'female_shirt2_stickers', 'female_shirt3_stickers', 'female_shirt4_stickers', 'female_shirt5_stickers', 'female_shirt6_stickers', 'female_shirt7_stickers', 'female_shirt8_stickers', 'female_shirt9_stickers', 'female_shirt10_stickers', 'female_shirt11_stickers', 'female_shirt12_stickers', 'female_shirt13_stickers', 'female_shirt14_stickers', 'female_shirt15_stickers', 'female_shirt16_stickers'];
 			var k = Math.floor(Math.random() * femaleTopsJs.length);
 			var k2 = Math.floor(Math.random() * numbers[k]);
-			var itemPath = "/assets/js/pythonDir/" + femaleTopsKeys[k] + "/" + femaleTopsJs[k][k2];
+			var itemPath = "/assets/js/human/humanClothes/pythonDir/" + femaleTopsKeys[k] + "/" + femaleTopsJs[k][k2];
 			console.log(femaleTopsJs[k][k2]);
 			console.log(k2);
 			$("#relativeContainer").append(specificItems[k]);
@@ -622,7 +622,7 @@
 			var maleBottomsKeys = ['pants1_stickers', 'pants2_stickers', 'pants3_stickers', 'skirt1_stickers', 'skirt2_stickers'];
 			var k = Math.floor(Math.random() * maleBottomsJs.length);
 			var k2 = Math.floor(Math.random() * numbers[k]);
-			var itemPath = "/assets/js/pythonDir/" + maleBottomsKeys[k] + "/" + maleBottomsJs[k][k2];
+			var itemPath = "/assets/js/human/humanClothes/pythonDir/" + maleBottomsKeys[k] + "/" + maleBottomsJs[k][k2];
 			console.log(maleBottomsJs[k][k2]);
 			console.log(k2);
 			$("#relativeContainer").append(specificItems[k]);
@@ -665,7 +665,7 @@
 			//here
 			var k = Math.floor(Math.random() * femaleBottomsJs.length);
 			var k2 = Math.floor(Math.random() * numbers[k]);
-			var itemPath = "/assets/js/pythonDir/" + femaleBottomsKeys[k] + "/" + femaleBottomsJs[k][k2];
+			var itemPath = "/assets/js/human/humanClothes/pythonDir/" + femaleBottomsKeys[k] + "/" + femaleBottomsJs[k][k2];
 			console.log(femaleBottomsJs[k][k2]);
 			console.log(k2);
 			$("#relativeContainer").append(specificItems[k]);

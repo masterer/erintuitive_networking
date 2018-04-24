@@ -1,0 +1,2 @@
+var item = `<svg class="bottomOverlay" width="86" height="380" viewBox="202.715 584.407 86.593 380.048" xmlns="http://www.w3.org/2000/svg"><path fill="#d8d8d8" stroke="#000" d="M253.875 804.274l5.482 22.535 24.362 1.218-.609-25.58zM211.242 805.493l19.489 2.436-9.135 20.708-12.791-2.437-3.045-4.872z"/></svg>`;
+$("#relativeContainer").append(item);

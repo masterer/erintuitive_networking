@@ -1,16 +1,1 @@
-<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs id="svgEditorDefs">
-    <path id="svgEditorClosePathDefs" fill="red" style="stroke-width: 0px; stroke: none;"/>
-    <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
-      <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
-    </pattern>
-    <pattern id="pattern-0-0" patternTransform="matrix(0.743002, 0.184315, -0.477418, 1.924544, 244.624878, 810.287476)" xlink:href="#pattern-0"/>
-    <pattern id="pattern-0-1" patternTransform="matrix(0.473875, 0, 0, 0.721463, 236.971497, 775.882019)" xlink:href="#pattern-0"/>
-    <pattern id="pattern-0-2" patternTransform="matrix(0.992567, -0.121698, 0.1217, 0.992566, 230.257843, 758.294312)" xlink:href="#pattern-0"/>
-  </defs>
-  <g>
-    <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-0);" points="217.57 786.191 249.138 870.371 286.276 782.478 281.943 774.431 247.9 843.137"/>
-    <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-1);" points="218.189 775.669 226.855 791.762 246.043 821.473 275.754 768.241 266.469 750.291 242.948 798.571"/>
-    <polygon style="stroke: rgb(0, 0, 0); fill: url(#pattern-0-2);" points="218.808 762.671 227.474 752.148 242.948 773.812 263.993 745.958 242.329 788.048"/>
-  </g>
-</svg>
+<svg class="shirtOverlay" width="86" height="380" viewBox="202.715 584.407 86.593 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><pattern id="a" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100"><path d="M0 0h50v100H0z"/></pattern><pattern id="b" patternTransform="matrix(.743 .18432 -.47742 1.92454 244.625 810.287)" xlink:href="#a"/><pattern id="c" patternTransform="matrix(.47387 0 0 .72146 236.971 775.882)" xlink:href="#a"/><pattern id="d" patternTransform="rotate(-6.99 6322.925 -1505.855)" xlink:href="#a"/></defs><g stroke="#000"><path fill="url(#b)" d="M217.57 786.191l31.568 84.18 37.138-87.893-4.333-8.047-34.043 68.706z"/><path fill="url(#c)" d="M218.189 775.669l8.666 16.093 19.188 29.711 29.711-53.232-9.285-17.95-23.521 48.28z"/><path fill="url(#d)" d="M218.808 762.671l8.666-10.523 15.474 21.664 21.045-27.854-21.664 42.09z"/></g></svg>

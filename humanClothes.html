@@ -143,6 +143,7 @@
 		$(".pants").find("path, polygon").css({"fill": randColor});	
 	}
 	function randomizePets() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$("#relativeContainer .pets").remove();
 		currentPet = pet();
 		console.log(currentPet);
@@ -165,9 +166,11 @@
 			$("#pet15").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 			$("#pet18").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 			$("#pet16").css({'top':'-15px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeCapes() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$("#relativeContainer .capes").remove();
 		currentCape = cape();
 		console.log(currentCape);
@@ -175,9 +178,11 @@
 		console.log(fullCapePath);
 		$.getScript(fullCapePath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'45px', 'margin-top':'0', 'z-index':'-42', '-webkit-transform':'scale(2.1)', '-ms-transform':'scale(2.1)', 'transform':'scale(2.1)'});
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeNecklaces() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$("#relativeContainer .necklaces").remove();
 		currentNecklace = necklace();
 		console.log(currentNecklace);
@@ -185,9 +190,11 @@
 		console.log(fullNecklacePath);
 		$.getScript(fullNecklacePath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .necklaces").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeShoes() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		if($(".man")[0]){
 			relativeContainer.innerHTML = previousClothes;
 			currentMaleShoes = maleShoes();
@@ -197,8 +204,9 @@
 			$.getScript(fullMaleShoesPath, function( data, textStatus, jqxhr ) {
 				$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 				if(currentMaleShoes == "/assets/svg/human/humanClothes/shoes/shoes11.svg" || currentMaleShoes == "/assets/svg/human/humanClothes/shoes/shoes12.svg" || currentMaleShoes == "/assets/svg/human/humanClothes/shoes/shoes13.svg"){
-					$("#relativeContainer .shoes").css({'top':'6px'});
+					$("#relativeContainer .shoes").css({'top':'6px'});	
 				}
+				$("#coat_hanger").remove();
 			});
 		}
 		else if($(".woman")[0]){
@@ -209,6 +217,7 @@
 			console.log(fullFemaleShoesPath);
 			$.getScript(fullFemaleShoesPath, function( data, textStatus, jqxhr ) {
 				$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+				$("#coat_hanger").remove();
 			});
 		}
 	}
@@ -414,6 +423,7 @@
 		return shuffle(female_hairPieces)[0];
 	}
 	function randomizeHairPieces(){
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$(".hairPieces").remove();
 		if($(".man")[0]){
 			currentMaleHairpiece = maleHairPieces();
@@ -433,6 +443,7 @@
 				else if(currentMaleHairpiece == "neutralHairPiece3.svg.js"){
 					$("#relativeContainer .hairPieces").css({'top':'-65px'});
 				}
+				$("#coat_hanger").remove();
 			});
 		}
 		else if($(".woman")[0]){
@@ -462,10 +473,12 @@
 				else if(currentFemaleHairpiece == "female_hairPiece2.svg.js"){
 					$("#relativeContainer .hairPieces").css({'top':'-25px'});
 				}
+				$("#coat_hanger").remove();
 			});
 		}
 	}
 	function randomizeGlasses(){
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$(".glasses").remove();
 		currentGlasses = glasses_func();
 		console.log(currentGlasses);
@@ -473,9 +486,11 @@
 		console.log(fullGlassesPath);
 		$.getScript(fullGlassesPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .glasses").css({'position':'absolute', 'z-index':'40', 'top':'5px', 'left':'0', 'margin-top':'0'});
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeAccessories(){
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$(".accessories").remove();
 		currentAccessories = accessories_func();
 		console.log(currentAccessories);
@@ -486,9 +501,11 @@
 			$("#accessory6").css({'position':'absolute', 'top':'0', 'left':'25px', 'margin-top':'0'});
 			$("#accessory7").css({'position':'absolute', 'top':'0', 'left':'25px', 'margin-top':'0'});
 			$("#accessory8").css({'position':'absolute', 'top':'0', 'left':'25px', 'margin-top':'0'});
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeWings() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$(".wings").remove();
 		currentWings = wings_func();
 		console.log(currentWings);
@@ -496,9 +513,11 @@
 		console.log(fullWingsPath);
 		$.getScript(fullWingsPath, function( data, textStatus, jqxhr ) {
 			$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'0', 'z-index':'-18', 'margin-top':'0', '-ms-transform': 'scale(3)', '-webkit-transform': 'scale(3)', 'transform': 'scale(3)'});
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeTail() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		relativeContainer.innerHTML = ``;
 		$(".tails").remove();
 		currentTail = tail();
@@ -510,9 +529,11 @@
 			$("#relativeContainer").append(previousShoes);
 			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'z-index':'1', 'margin-top':'0'});
 			$(".tails").find("path, polygon").attr("fill", getRandomColor());
+			$("#coat_hanger").remove();
 		});
 	}
 	function randomizeTop() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
 			var pants = $("#relativeContainer .pants")[0];
@@ -555,6 +576,7 @@
 				$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 				$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
 				$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+				$("#coat_hanger").remove();
 			});
 		}
 		else if ($(".woman")[0]){
@@ -600,10 +622,12 @@
 				$("#relativeContainer .mouth").remove();
 				$("#relativeContainer").append(mouth);
 				$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+				$("#coat_hanger").remove();
 			});
 		}
 	}
 	function randomizeBottom() {
+		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
@@ -642,6 +666,7 @@
 				$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 				$(".pants").find("path, polygon").attr("fill", randColor);
 				$(".pants").find("path, polygon").css({"fill": randColor});
+				$("#coat_hanger").remove();
 			});
 		}
 		else if ($(".woman")[0]){
@@ -684,6 +709,7 @@
 				$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 				$(".pants").find("path, polygon").attr("fill", randColor);
 				$(".pants").find("path, polygon").css({"fill": randColor});
+				$("#coat_hanger").remove();
 			});
 		}
 	}

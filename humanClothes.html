@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body id="clothesBody">
+	<div id="coatHanger"></div>
 	<script src="/assets/js/jquery.colorPicker.js"></script>
 	<script src="/assets/js/socket.io.js"></script>
 	<script src="/assets/js/ES6.js"></script>
@@ -143,7 +144,7 @@
 		$(".pants").find("path, polygon").css({"fill": randColor});	
 	}
 	function randomizePets() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$("#relativeContainer .pets").remove();
 		currentPet = pet();
 		console.log(currentPet);
@@ -170,7 +171,7 @@
 		});
 	}
 	function randomizeCapes() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$("#relativeContainer .capes").remove();
 		currentCape = cape();
 		console.log(currentCape);
@@ -182,7 +183,7 @@
 		});
 	}
 	function randomizeNecklaces() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$("#relativeContainer .necklaces").remove();
 		currentNecklace = necklace();
 		console.log(currentNecklace);
@@ -194,7 +195,7 @@
 		});
 	}
 	function randomizeShoes() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		if($(".man")[0]){
 			relativeContainer.innerHTML = previousClothes;
 			currentMaleShoes = maleShoes();
@@ -423,7 +424,7 @@
 		return shuffle(female_hairPieces)[0];
 	}
 	function randomizeHairPieces(){
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$(".hairPieces").remove();
 		if($(".man")[0]){
 			currentMaleHairpiece = maleHairPieces();
@@ -478,7 +479,7 @@
 		}
 	}
 	function randomizeGlasses(){
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$(".glasses").remove();
 		currentGlasses = glasses_func();
 		console.log(currentGlasses);
@@ -490,7 +491,7 @@
 		});
 	}
 	function randomizeAccessories(){
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$(".accessories").remove();
 		currentAccessories = accessories_func();
 		console.log(currentAccessories);
@@ -505,7 +506,7 @@
 		});
 	}
 	function randomizeWings() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$(".wings").remove();
 		currentWings = wings_func();
 		console.log(currentWings);
@@ -517,7 +518,7 @@
 		});
 	}
 	function randomizeTail() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		relativeContainer.innerHTML = ``;
 		$(".tails").remove();
 		currentTail = tail();
@@ -533,7 +534,7 @@
 		});
 	}
 	function randomizeTop() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
 			var pants = $("#relativeContainer .pants")[0];
@@ -627,7 +628,7 @@
 		}
 	}
 	function randomizeBottom() {
-		document.body.append('<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>')
+		document.getElementById("coatHanger").innerHTML = '<img id="coat_hanger" src="/assets/img/hanger.gif" style="position: fixed; top: 0; left: 0;" alt="coat hanger loading screen"/>';
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];

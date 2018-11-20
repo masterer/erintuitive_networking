@@ -22,10 +22,9 @@
 	<!-- message form -->
 	<div id="form">
 		<ul id="messages" style="word-break: break-all; word-wrap: break-word;"></ul>
-	</div>
-	<textarea id="m" rows="5" cols="34" value=""></textarea><button id="n">Send</button>
+	</div>	<textarea id="m" rows="5" cols="34" value=""></textarea><button id="n">Send</button>
+
 </div>
-<button id="sendAvatar" onclick="sendAvatar()" style="padding: 10px">Send your avatar to the database!</button>
 <div id="menuSuggestions" height="430">
 	<font color="purple"><br>You have been <br>logged out of <br>chat due to messaging<br> inactivity. You can <br>still play a <br>minigame or rejoin<br> the room."</font><br>
 	<!-- include menu sugggestions here as images -->
@@ -76,10 +75,12 @@
 	href="https://twitter.com/intent/tweet?text=I%20was%20read%20by%20%23Erintuitive%21"
 	data-size="large"><font color="yellow">Tweet about this!</font></a>	
 </div>
-<div id="girlBody"></div>
+<div id="girlBody"></div>  
 <div id="girlArms"></div>
 <img id="speech" alt="speech bubble" src="/assets/svg/speech.svg" height="270px">
-<div bgcolor="white" id="allAvatars">Display of all created avatars.</div>
+<div style="position: absolute; top: 650px; left: 0; z-index: 4000;" bgcolor="white" id="allAvatars">Display of all created avatars.
+	<button id="sendAvatar" onclick="sendAvatar()" style="padding: 10px">Send your avatar to the database!</button>
+</div>
 <!-- start embed scripts -->
 <script src="/assets/js/socket.io.js"></script>
 <script src="/assets/js/htmlgl.js"></script>

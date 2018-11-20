@@ -27,7 +27,7 @@ io.on('connection', function(socket){
       avatar = [{ thisAvatar: avatar }];
       avatars.insert(avatar, function(err, result){
         if (err) throw err;
-        avatars.find({}).toArray(function (err, docs){
+        avatars.find({ thisAvatar }).toArray(function (err, docs){
           docs.array.forEach(element => {
             socket.emit('thisAvatar', element);
           });

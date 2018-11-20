@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Erintuitive's psychic chatroom</title>
+	<!-- Come back to this later. -->
+	<title>Erintuitive's chatroom</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 	<meta property="og:url"           content="https://erintuitive6.herokuapp.com/human2.html" />
 	<meta property="og:type"          content="website" />
@@ -24,12 +25,14 @@
 	</div>
 	<textarea id="m" rows="5" cols="34" value=""></textarea><button id="n">Send</button>
 </div>
+<button id="sendAvatar" onclick="sendAvatar()" style="padding: 10px">Send your avatar to the database!</button>
 <div id="menuSuggestions" height="430">
 	<font color="purple"><br>You have been <br>logged out of <br>chat due to messaging<br> inactivity. You can <br>still play a <br>minigame or rejoin<br> the room."</font><br>
 	<!-- include menu sugggestions here as images -->
 </div>
 <div id="drawingButton"><button onclick="drawing()">Draw a picture for me to interpret!</button><br>
-	<font color="white" style="font-size: 26px;">Request a reading by Erintuitive!<br>Tweet "reading" to @masterer</font>
+	<!-- come back to this later -->
+	<!-- <font color="white" style="font-size: 26px;">Request a reading by Erintuitive!<br>Tweet "reading" to @masterer</font> -->
 	<!-- <form style="position: fixed; top: 450px; left: 450px;" id="payment" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 		<input type="hidden" name="cmd" value="_s-xclick">
 		<input type="hidden" name="hosted_button_id" value="PRUWLY3PGJUFA">
@@ -76,6 +79,7 @@
 <div id="girlBody"></div>
 <div id="girlArms"></div>
 <img id="speech" alt="speech bubble" src="/assets/svg/speech.svg" height="270px">
+<div bgcolor="white" id="allAvatars">Display of all created avatars.</div>
 <!-- start embed scripts -->
 <script src="/assets/js/socket.io.js"></script>
 <script src="/assets/js/htmlgl.js"></script>
@@ -168,11 +172,20 @@
 	var right = window.localStorage.getItem("avatarClothed_right");
 	var left = window.localStorage.getItem("avatarClothed_left");
 	var players = {};
+
 	var socket = io.connect("/");
 	function submit() {
 		socket.emit("msg", $("#m").val(), name, userId);
 		$("#m").val('');
 	}
+	function sendAvatar() {
+		var uriMongoDB = 'mongodb://heroku_mq1nx7l4:heroku_mq1nx7l4@ds153835.mlab.com:53835/heroku_mq1nx7l4';
+		socket.emit("mongo", uriMongoDB, right);
+	}
+	socket.on("mongo", function(element){
+		var allAvatars = document.getElementById("allAvatars");
+		allAvatars.innerHTML += element['thisAvatar'];
+	});
 	submitDrawing(window.localStorage.getItem("drawing"));
 	function submitDrawing(dataUrl) {
 		if(document.getElementById("myDrawing").getAttribute("src").length > 15){

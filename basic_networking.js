@@ -3,6 +3,8 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const fs = require('fs');
+const mongodb = require('mongodb');
+
 require('es6');
 //const SetInterval = require('set-interval');
 
@@ -17,6 +19,22 @@ var afk = {};
 var numPlayers = 0;
 io.on('connection', function(socket){
   //A new user has connected!
+  socket.on("mongo", function(uri, avatar){
+    mongodb.MongoClient.connect(uri, function(err, client){
+      if (err) throw err;
+      var db = client.db('db');
+      var avatars = db.collection('avatars');
+      avatar = [{ thisAvatar: avatar }];
+      avatars.insert(avatar, function(err, result){
+        if (err) throw err;
+        avatars.find({ thisAvatar }).toArray(function (err, docs){
+          docs.array.forEach(element => {
+            socket.emit('thisAvatar', element);
+          });
+        });
+      });
+    });
+  });
   socket.on("msg", function(value, name, id){
     io.emit("msgReturn", value, name);
     afk[`${id}`] = 0;

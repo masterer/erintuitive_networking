@@ -11,7 +11,7 @@
     "img": "^3.0.3",
     "intervalometer": "^1.0.4",
     "mongodb": "^3.1.10",
-    "mongoose": "^5.0.12",
+    "mongoose": "^5.7.5",
     "mysql": "^2.15.0",
     "set-interval": "^1.1.1",
     "socket.io": "^1.4.4"
